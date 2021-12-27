@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ListNFTsResponse model module.
  * @module model/ListNFTsResponse
- * @version 1.0.9
+ * @version null
  */
 var ListNFTsResponse = /*#__PURE__*/function () {
   /**

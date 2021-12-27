@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SecretPhrase model module.
  * @module model/SecretPhrase
- * @version 1.0.9
+ * @version null
  */
 var SecretPhrase = /*#__PURE__*/function () {
   /**

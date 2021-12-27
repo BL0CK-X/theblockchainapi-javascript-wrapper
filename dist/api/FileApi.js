@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * File service.
 * @module api/FileApi
-* @version 1.0.9
+* @version null
 */
 var FileApi = /*#__PURE__*/function () {
   /**

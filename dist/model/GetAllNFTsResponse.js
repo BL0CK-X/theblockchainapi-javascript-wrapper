@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetAllNFTsResponse model module.
  * @module model/GetAllNFTsResponse
- * @version 1.0.9
+ * @version null
  */
 var GetAllNFTsResponse = /*#__PURE__*/function () {
   /**
@@ -65,6 +65,10 @@ var GetAllNFTsResponse = /*#__PURE__*/function () {
         if (data.hasOwnProperty('unminted_nfts')) {
           obj['unminted_nfts'] = _ApiClient["default"].convertToType(data['unminted_nfts'], [_GetAllNFTsResponseUnmintedNfts["default"]]);
         }
+
+        if (data.hasOwnProperty('all_nfts')) {
+          obj['all_nfts'] = _ApiClient["default"].convertToType(data['all_nfts'], [_GetAllNFTsResponseUnmintedNfts["default"]]);
+        }
       }
 
       return obj;
@@ -74,15 +78,23 @@ var GetAllNFTsResponse = /*#__PURE__*/function () {
   return GetAllNFTsResponse;
 }();
 /**
+ * The minted NFTs. Only filled in for `v1` candy machines. Left empty for `v2`.
  * @member {Array.<module:model/GetAllNFTsResponseMintedNfts>} minted_nfts
  */
 
 
 GetAllNFTsResponse.prototype['minted_nfts'] = undefined;
 /**
+ * The unminted NFTs. Only filled in for `v1` candy machines. Left empty for `v2`.
  * @member {Array.<module:model/GetAllNFTsResponseUnmintedNfts>} unminted_nfts
  */
 
 GetAllNFTsResponse.prototype['unminted_nfts'] = undefined;
+/**
+ * The list of all NFTs. Filled in for both `v1` and `v2` NFTs.
+ * @member {Array.<module:model/GetAllNFTsResponseUnmintedNfts>} all_nfts
+ */
+
+GetAllNFTsResponse.prototype['all_nfts'] = undefined;
 var _default = GetAllNFTsResponse;
 exports["default"] = _default;

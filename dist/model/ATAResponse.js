@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ATAResponse model module.
  * @module model/ATAResponse
- * @version 1.0.9
+ * @version null
  */
 var ATAResponse = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PublicKey model module.
  * @module model/PublicKey
- * @version 1.0.9
+ * @version null
  */
 var PublicKey = /*#__PURE__*/function () {
   /**

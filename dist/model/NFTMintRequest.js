@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFTMintRequest model module.
  * @module model/NFTMintRequest
- * @version 1.0.9
+ * @version null
  */
 var NFTMintRequest = /*#__PURE__*/function () {
   /**
@@ -181,7 +181,7 @@ NFTMintRequest.prototype['nft_url'] = '';
 
 NFTMintRequest.prototype['nft_metadata'] = '{}';
 /**
- * When you choose S3, all of the nft_description, nft_name, nft_symbol, nft_metadata, and nft_url are put into a json dictionary and uploaded to S3 as a text file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored on the NFT on the blockchain.   When you choose LINK, the nft_url you provide is stored on the blockchain, and the nft_metadata and nft_description are ignored and not stored anywhere.  
+ * When you choose S3, all of the nft_description, nft_name, nft_symbol, nft_metadata, and nft_url are put into a json dictionary and uploaded to S3 as a text file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored on the NFT on the blockchain.   When you choose LINK, the nft_url you provide is stored on the blockchain, and the nft_metadata and nft_description are ignored and not stored anywhere. S3 is then NOT used. 
  * @member {module:model/NFTMintRequest.NftUploadMethodEnum} nft_upload_method
  * @default 'S3'
  */

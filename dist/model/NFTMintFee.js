@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFTMintFee model module.
  * @module model/NFTMintFee
- * @version 1.0.9
+ * @version null
  */
 var NFTMintFee = /*#__PURE__*/function () {
   /**

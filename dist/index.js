@@ -63,6 +63,18 @@ Object.defineProperty(exports, "BalanceResponse", {
     return _BalanceResponse["default"];
   }
 });
+Object.defineProperty(exports, "CandyMachineSearchRequest", {
+  enumerable: true,
+  get: function get() {
+    return _CandyMachineSearchRequest["default"];
+  }
+});
+Object.defineProperty(exports, "CandyMachineSearchResponse", {
+  enumerable: true,
+  get: function get() {
+    return _CandyMachineSearchResponse["default"];
+  }
+});
 Object.defineProperty(exports, "CreateTestCandyMachineRequest", {
   enumerable: true,
   get: function get() {
@@ -99,24 +111,6 @@ Object.defineProperty(exports, "GetAllNFTsResponseUnmintedNfts", {
     return _GetAllNFTsResponseUnmintedNfts["default"];
   }
 });
-Object.defineProperty(exports, "GetCandyDetailsErrorResponse", {
-  enumerable: true,
-  get: function get() {
-    return _GetCandyDetailsErrorResponse["default"];
-  }
-});
-Object.defineProperty(exports, "GetCandyDetailsRequest", {
-  enumerable: true,
-  get: function get() {
-    return _GetCandyDetailsRequest["default"];
-  }
-});
-Object.defineProperty(exports, "GetCandyDetailsResponse", {
-  enumerable: true,
-  get: function get() {
-    return _GetCandyDetailsResponse["default"];
-  }
-});
 Object.defineProperty(exports, "GetCandyMachineIDRequest", {
   enumerable: true,
   get: function get() {
@@ -129,40 +123,34 @@ Object.defineProperty(exports, "GetCandyMachineIDResponse", {
     return _GetCandyMachineIDResponse["default"];
   }
 });
-Object.defineProperty(exports, "GetConfigInfoRequest", {
+Object.defineProperty(exports, "GetCandyMetadataErrorResponse", {
   enumerable: true,
   get: function get() {
-    return _GetConfigInfoRequest["default"];
+    return _GetCandyMetadataErrorResponse["default"];
   }
 });
-Object.defineProperty(exports, "GetConfigInfoResponse", {
+Object.defineProperty(exports, "GetCandyMetadataRequest", {
   enumerable: true,
   get: function get() {
-    return _GetConfigInfoResponse["default"];
+    return _GetCandyMetadataRequest["default"];
   }
 });
-Object.defineProperty(exports, "GetConfigInfoResponseCreators", {
+Object.defineProperty(exports, "GetCandyMetadataResponse", {
   enumerable: true,
   get: function get() {
-    return _GetConfigInfoResponseCreators["default"];
+    return _GetCandyMetadataResponse["default"];
+  }
+});
+Object.defineProperty(exports, "GetCandyMetadataResponseCreators", {
+  enumerable: true,
+  get: function get() {
+    return _GetCandyMetadataResponseCreators["default"];
   }
 });
 Object.defineProperty(exports, "GetFileResponse", {
   enumerable: true,
   get: function get() {
     return _GetFileResponse["default"];
-  }
-});
-Object.defineProperty(exports, "GetMintedNFTsRequest", {
-  enumerable: true,
-  get: function get() {
-    return _GetMintedNFTsRequest["default"];
-  }
-});
-Object.defineProperty(exports, "GetMintedNFTsResponse", {
-  enumerable: true,
-  get: function get() {
-    return _GetMintedNFTsResponse["default"];
   }
 });
 Object.defineProperty(exports, "GetPublicKeyRequest", {
@@ -175,6 +163,12 @@ Object.defineProperty(exports, "ListNFTsResponse", {
   enumerable: true,
   get: function get() {
     return _ListNFTsResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ListTokensRequest", {
+  enumerable: true,
+  get: function get() {
+    return _ListTokensRequest["default"];
   }
 });
 Object.defineProperty(exports, "MintNFTErrorResponse", {
@@ -231,6 +225,18 @@ Object.defineProperty(exports, "NFTOwnerResponse", {
     return _NFTOwnerResponse["default"];
   }
 });
+Object.defineProperty(exports, "NFTSearchRequest", {
+  enumerable: true,
+  get: function get() {
+    return _NFTSearchRequest["default"];
+  }
+});
+Object.defineProperty(exports, "NFTSearchResponse", {
+  enumerable: true,
+  get: function get() {
+    return _NFTSearchResponse["default"];
+  }
+});
 Object.defineProperty(exports, "PublicKey", {
   enumerable: true,
   get: function get() {
@@ -271,18 +277,6 @@ Object.defineProperty(exports, "SolanaWalletApi", {
   enumerable: true,
   get: function get() {
     return _SolanaWalletApi["default"];
-  }
-});
-Object.defineProperty(exports, "Task", {
-  enumerable: true,
-  get: function get() {
-    return _Task["default"];
-  }
-});
-Object.defineProperty(exports, "TaskApi", {
-  enumerable: true,
-  get: function get() {
-    return _TaskApi["default"];
   }
 });
 Object.defineProperty(exports, "Transaction", {
@@ -330,6 +324,10 @@ var _BalanceRequest = _interopRequireDefault(require("./model/BalanceRequest"));
 
 var _BalanceResponse = _interopRequireDefault(require("./model/BalanceResponse"));
 
+var _CandyMachineSearchRequest = _interopRequireDefault(require("./model/CandyMachineSearchRequest"));
+
+var _CandyMachineSearchResponse = _interopRequireDefault(require("./model/CandyMachineSearchResponse"));
+
 var _CreateTestCandyMachineRequest = _interopRequireDefault(require("./model/CreateTestCandyMachineRequest"));
 
 var _CreateTestCandyMachineResponse = _interopRequireDefault(require("./model/CreateTestCandyMachineResponse"));
@@ -340,31 +338,25 @@ var _GetAllNFTsResponseMintedNfts = _interopRequireDefault(require("./model/GetA
 
 var _GetAllNFTsResponseUnmintedNfts = _interopRequireDefault(require("./model/GetAllNFTsResponseUnmintedNfts"));
 
-var _GetCandyDetailsErrorResponse = _interopRequireDefault(require("./model/GetCandyDetailsErrorResponse"));
-
-var _GetCandyDetailsRequest = _interopRequireDefault(require("./model/GetCandyDetailsRequest"));
-
-var _GetCandyDetailsResponse = _interopRequireDefault(require("./model/GetCandyDetailsResponse"));
-
 var _GetCandyMachineIDRequest = _interopRequireDefault(require("./model/GetCandyMachineIDRequest"));
 
 var _GetCandyMachineIDResponse = _interopRequireDefault(require("./model/GetCandyMachineIDResponse"));
 
-var _GetConfigInfoRequest = _interopRequireDefault(require("./model/GetConfigInfoRequest"));
+var _GetCandyMetadataErrorResponse = _interopRequireDefault(require("./model/GetCandyMetadataErrorResponse"));
 
-var _GetConfigInfoResponse = _interopRequireDefault(require("./model/GetConfigInfoResponse"));
+var _GetCandyMetadataRequest = _interopRequireDefault(require("./model/GetCandyMetadataRequest"));
 
-var _GetConfigInfoResponseCreators = _interopRequireDefault(require("./model/GetConfigInfoResponseCreators"));
+var _GetCandyMetadataResponse = _interopRequireDefault(require("./model/GetCandyMetadataResponse"));
+
+var _GetCandyMetadataResponseCreators = _interopRequireDefault(require("./model/GetCandyMetadataResponseCreators"));
 
 var _GetFileResponse = _interopRequireDefault(require("./model/GetFileResponse"));
-
-var _GetMintedNFTsRequest = _interopRequireDefault(require("./model/GetMintedNFTsRequest"));
-
-var _GetMintedNFTsResponse = _interopRequireDefault(require("./model/GetMintedNFTsResponse"));
 
 var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyRequest"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
+
+var _ListTokensRequest = _interopRequireDefault(require("./model/ListTokensRequest"));
 
 var _MintNFTErrorResponse = _interopRequireDefault(require("./model/MintNFTErrorResponse"));
 
@@ -384,11 +376,13 @@ var _NFTMintRequest = _interopRequireDefault(require("./model/NFTMintRequest"));
 
 var _NFTOwnerResponse = _interopRequireDefault(require("./model/NFTOwnerResponse"));
 
+var _NFTSearchRequest = _interopRequireDefault(require("./model/NFTSearchRequest"));
+
+var _NFTSearchResponse = _interopRequireDefault(require("./model/NFTSearchResponse"));
+
 var _PublicKey = _interopRequireDefault(require("./model/PublicKey"));
 
 var _SecretPhrase = _interopRequireDefault(require("./model/SecretPhrase"));
-
-var _Task = _interopRequireDefault(require("./model/Task"));
 
 var _Transaction = _interopRequireDefault(require("./model/Transaction"));
 
@@ -409,7 +403,5 @@ var _SolanaNFTApi = _interopRequireDefault(require("./api/SolanaNFTApi"));
 var _SolanaTransactionApi = _interopRequireDefault(require("./api/SolanaTransactionApi"));
 
 var _SolanaWalletApi = _interopRequireDefault(require("./api/SolanaWalletApi"));
-
-var _TaskApi = _interopRequireDefault(require("./api/TaskApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

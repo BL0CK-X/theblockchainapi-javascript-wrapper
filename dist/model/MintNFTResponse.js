@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MintNFTResponse model module.
  * @module model/MintNFTResponse
- * @version 1.0.9
+ * @version null
  */
 var MintNFTResponse = /*#__PURE__*/function () {
   /**
@@ -58,8 +58,8 @@ var MintNFTResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new MintNFTResponse();
 
-        if (data.hasOwnProperty('task_id')) {
-          obj['task_id'] = _ApiClient["default"].convertToType(data['task_id'], 'String');
+        if (data.hasOwnProperty('transaction_signature')) {
+          obj['transaction_signature'] = _ApiClient["default"].convertToType(data['transaction_signature'], 'String');
         }
       }
 
@@ -70,11 +70,11 @@ var MintNFTResponse = /*#__PURE__*/function () {
   return MintNFTResponse;
 }();
 /**
- * The task ID of the task launched to complete the request
- * @member {String} task_id
+ * The signature of the transaction. Just because this is returned does not mean it was successful.  To determine if the mint was successful, use this Gist: https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d 
+ * @member {String} transaction_signature
  */
 
 
-MintNFTResponse.prototype['task_id'] = undefined;
+MintNFTResponse.prototype['transaction_signature'] = undefined;
 var _default = MintNFTResponse;
 exports["default"] = _default;

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Account model module.
  * @module model/Account
- * @version 1.0.9
+ * @version null
  */
 var Account = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountValue model module.
  * @module model/AccountValue
- * @version 1.0.9
+ * @version null
  */
 var AccountValue = /*#__PURE__*/function () {
   /**

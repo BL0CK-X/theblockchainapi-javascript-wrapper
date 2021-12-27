@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BalanceResponse model module.
  * @module model/BalanceResponse
- * @version 1.0.9
+ * @version null
  */
 var BalanceResponse = /*#__PURE__*/function () {
   /**
@@ -100,7 +100,7 @@ BalanceResponse.prototype['balance'] = undefined;
 
 BalanceResponse.prototype['integer_balance'] = undefined;
 /**
- * Not included if retreiving SOL balance
+ * Not included if retreiving SOL balance. Sometimes not included if the balance of the token is '0'.
  * @member {Number} decimals
  */
 
@@ -111,7 +111,7 @@ BalanceResponse.prototype['decimals'] = undefined;
 
 BalanceResponse.prototype['network'] = undefined;
 /**
- * Not included if retreiving an SPL token balance
+ * Not included if retreiving an SPL token/NFT balance
  * @member {module:model/BalanceResponse.UnitEnum} unit
  */
 

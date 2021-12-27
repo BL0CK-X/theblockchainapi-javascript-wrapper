@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetFileResponse model module.
  * @module model/GetFileResponse
- * @version 1.0.9
+ * @version null
  */
 var GetFileResponse = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateTestCandyMachineResponse model module.
  * @module model/CreateTestCandyMachineResponse
- * @version 1.0.9
+ * @version null
  */
 var CreateTestCandyMachineResponse = /*#__PURE__*/function () {
   /**
@@ -54,10 +54,6 @@ var CreateTestCandyMachineResponse = /*#__PURE__*/function () {
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
-      try {
-        data = JSON.parse(data);
-      } catch (_unused) {}
-
       if (data) {
         obj = obj || new CreateTestCandyMachineResponse();
 

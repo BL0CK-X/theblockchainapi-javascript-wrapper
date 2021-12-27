@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFTData model module.
  * @module model/NFTData
- * @version 1.0.9
+ * @version null
  */
 var NFTData = /*#__PURE__*/function () {
   /**

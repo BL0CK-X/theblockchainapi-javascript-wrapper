@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Transaction model module.
  * @module model/Transaction
- * @version 1.0.9
+ * @version null
  */
 var Transaction = /*#__PURE__*/function () {
   /**

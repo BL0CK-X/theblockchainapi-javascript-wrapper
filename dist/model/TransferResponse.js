@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransferResponse model module.
  * @module model/TransferResponse
- * @version 1.0.9
+ * @version null
  */
 var TransferResponse = /*#__PURE__*/function () {
   /**

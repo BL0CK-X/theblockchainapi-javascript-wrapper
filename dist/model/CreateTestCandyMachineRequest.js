@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateTestCandyMachineRequest model module.
  * @module model/CreateTestCandyMachineRequest
- * @version 1.0.9
+ * @version null
  */
 var CreateTestCandyMachineRequest = /*#__PURE__*/function () {
   /**
@@ -54,6 +54,10 @@ var CreateTestCandyMachineRequest = /*#__PURE__*/function () {
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
+      try {
+        data = JSON.parse(data);
+      } catch (_unused) {}
+
       if (data) {
         obj = obj || new CreateTestCandyMachineRequest();
 
@@ -71,6 +75,14 @@ var CreateTestCandyMachineRequest = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('network')) {
           obj['network'] = _ApiClient["default"].convertToType(data['network'], 'String');
+        }
+
+        if (data.hasOwnProperty('candy_machine_contract_version')) {
+          obj['candy_machine_contract_version'] = _ApiClient["default"].convertToType(data['candy_machine_contract_version'], 'String');
+        }
+
+        if (data.hasOwnProperty('include_gatekeeper')) {
+          obj['include_gatekeeper'] = _ApiClient["default"].convertToType(data['include_gatekeeper'], 'Boolean');
         }
       }
 
@@ -108,6 +120,20 @@ CreateTestCandyMachineRequest.prototype['passphrase'] = '';
 
 CreateTestCandyMachineRequest.prototype['network'] = 'devnet';
 /**
+ * The contract you want to use to create the candy machine
+ * @member {module:model/CreateTestCandyMachineRequest.CandyMachineContractVersionEnum} candy_machine_contract_version
+ * @default 'v1'
+ */
+
+CreateTestCandyMachineRequest.prototype['candy_machine_contract_version'] = 'v1';
+/**
+ * Whether or not to include a gatekeeper for testing purposes. Only applies to v2 candy machines.
+ * @member {Boolean} include_gatekeeper
+ * @default false
+ */
+
+CreateTestCandyMachineRequest.prototype['include_gatekeeper'] = false;
+/**
  * Allowed values for the <code>network</code> property.
  * @enum {String}
  * @readonly
@@ -125,6 +151,25 @@ CreateTestCandyMachineRequest['NetworkEnum'] = {
    * @const
    */
   "mainnet-beta": "mainnet-beta"
+};
+/**
+ * Allowed values for the <code>candy_machine_contract_version</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+CreateTestCandyMachineRequest['CandyMachineContractVersionEnum'] = {
+  /**
+   * value: "v1"
+   * @const
+   */
+  "v1": "v1",
+
+  /**
+   * value: "v2"
+   * @const
+   */
+  "v2": "v2"
 };
 var _default = CreateTestCandyMachineRequest;
 exports["default"] = _default;

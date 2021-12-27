@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MintNFTRequest model module.
  * @module model/MintNFTRequest
- * @version 1.0.9
+ * @version null
  */
 var MintNFTRequest = /*#__PURE__*/function () {
   /**
@@ -78,6 +78,10 @@ var MintNFTRequest = /*#__PURE__*/function () {
         if (data.hasOwnProperty('network')) {
           obj['network'] = _ApiClient["default"].convertToType(data['network'], 'String');
         }
+
+        if (data.hasOwnProperty('candy_machine_contract_version')) {
+          obj['candy_machine_contract_version'] = _ApiClient["default"].convertToType(data['candy_machine_contract_version'], 'String');
+        }
       }
 
       return obj;
@@ -120,6 +124,13 @@ MintNFTRequest.prototype['passphrase'] = '';
 
 MintNFTRequest.prototype['network'] = 'devnet';
 /**
+ * The candy machine contract of the candy machine from which you're minting. If you are minting from a `v1` candy machine ID, set this to `v1`. If you are minting from a `v2` candy machine ID, set this to `v2`. If you don't know which the version of your candy machine, check out <a href=\"#operation/solanaGetAccountIsCandyMachine\">this endpoint</a>. 
+ * @member {module:model/MintNFTRequest.CandyMachineContractVersionEnum} candy_machine_contract_version
+ * @default 'v1'
+ */
+
+MintNFTRequest.prototype['candy_machine_contract_version'] = 'v1';
+/**
  * Allowed values for the <code>network</code> property.
  * @enum {String}
  * @readonly
@@ -137,6 +148,25 @@ MintNFTRequest['NetworkEnum'] = {
    * @const
    */
   "mainnet-beta": "mainnet-beta"
+};
+/**
+ * Allowed values for the <code>candy_machine_contract_version</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+MintNFTRequest['CandyMachineContractVersionEnum'] = {
+  /**
+   * value: "v1"
+   * @const
+   */
+  "v1": "v1",
+
+  /**
+   * value: "v2"
+   * @const
+   */
+  "v2": "v2"
 };
 var _default = MintNFTRequest;
 exports["default"] = _default;

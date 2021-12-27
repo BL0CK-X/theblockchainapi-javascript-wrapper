@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFT model module.
  * @module model/NFT
- * @version 1.0.9
+ * @version null
  */
 var NFT = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFTOwnerResponse model module.
  * @module model/NFTOwnerResponse
- * @version 1.0.9
+ * @version null
  */
 var NFTOwnerResponse = /*#__PURE__*/function () {
   /**

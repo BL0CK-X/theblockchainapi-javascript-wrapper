@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFTMintErrorResponse model module.
  * @module model/NFTMintErrorResponse
- * @version 1.0.9
+ * @version null
  */
 var NFTMintErrorResponse = /*#__PURE__*/function () {
   /**

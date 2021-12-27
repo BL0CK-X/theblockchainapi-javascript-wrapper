@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MintNFTErrorResponse model module.
  * @module model/MintNFTErrorResponse
- * @version 1.0.9
+ * @version null
  */
 var MintNFTErrorResponse = /*#__PURE__*/function () {
   /**

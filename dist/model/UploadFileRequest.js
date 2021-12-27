@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UploadFileRequest model module.
  * @module model/UploadFileRequest
- * @version 1.0.9
+ * @version null
  */
 var UploadFileRequest = /*#__PURE__*/function () {
   /**

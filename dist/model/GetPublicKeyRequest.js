@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPublicKeyRequest model module.
  * @module model/GetPublicKeyRequest
- * @version 1.0.9
+ * @version null
  */
 var GetPublicKeyRequest = /*#__PURE__*/function () {
   /**

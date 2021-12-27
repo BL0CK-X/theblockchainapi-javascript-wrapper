@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountIsCandyMachine model module.
  * @module model/AccountIsCandyMachine
- * @version 1.0.9
+ * @version null
  */
 var AccountIsCandyMachine = /*#__PURE__*/function () {
   /**
@@ -60,6 +60,10 @@ var AccountIsCandyMachine = /*#__PURE__*/function () {
         if (data.hasOwnProperty('is_candy_machine')) {
           obj['is_candy_machine'] = _ApiClient["default"].convertToType(data['is_candy_machine'], 'Boolean');
         }
+
+        if (data.hasOwnProperty('candy_machine_contract_version')) {
+          obj['candy_machine_contract_version'] = _ApiClient["default"].convertToType(data['candy_machine_contract_version'], 'String');
+        }
       }
 
       return obj;
@@ -74,5 +78,36 @@ var AccountIsCandyMachine = /*#__PURE__*/function () {
 
 
 AccountIsCandyMachine.prototype['is_candy_machine'] = undefined;
+/**
+ * Whether or not this corresponds to candy machine v1, candy machine v2, or a Magic Eden candy machine.
+ * @member {module:model/AccountIsCandyMachine.CandyMachineContractVersionEnum} candy_machine_contract_version
+ */
+
+AccountIsCandyMachine.prototype['candy_machine_contract_version'] = undefined;
+/**
+ * Allowed values for the <code>candy_machine_contract_version</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+AccountIsCandyMachine['CandyMachineContractVersionEnum'] = {
+  /**
+   * value: "v1"
+   * @const
+   */
+  "v1": "v1",
+
+  /**
+   * value: "v2"
+   * @const
+   */
+  "v2": "v2",
+
+  /**
+   * value: "magic-eden-v1"
+   * @const
+   */
+  "magic-eden-v1": "magic-eden-v1"
+};
 var _default = AccountIsCandyMachine;
 exports["default"] = _default;
