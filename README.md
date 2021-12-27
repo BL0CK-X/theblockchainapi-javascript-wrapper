@@ -1,3 +1,9 @@
+# npm
+
+You can install via npm 
+
+`npm install theblockchainapi`
+
 # theblockchainapi
 
 theblockchainapi - JavaScript client for theblockchainapi
