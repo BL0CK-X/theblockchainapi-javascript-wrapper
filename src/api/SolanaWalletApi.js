@@ -19,7 +19,6 @@ import BalanceRequest from '../model/BalanceRequest';
 import BalanceResponse from '../model/BalanceResponse';
 import GetPublicKeyRequest from '../model/GetPublicKeyRequest';
 import ListNFTsResponse from '../model/ListNFTsResponse';
-import ListTokensRequest from '../model/ListTokensRequest';
 import PublicKey from '../model/PublicKey';
 import SecretPhrase from '../model/SecretPhrase';
 import TransferRequest from '../model/TransferRequest';
@@ -341,12 +340,13 @@ export default class SolanaWalletApi {
      * @param {String} network The network ID (devnet, mainnet-beta)
      * @param {String} publicKey The public key of the account whose list of owned NFTs you want to get
      * @param {Object} opts Optional parameters
-     * @param {module:model/ListTokensRequest} opts.listTokensRequest 
+     * @param {Boolean} opts.includeNfts Whether or not to include NFTs in the response (default to false)
+     * @param {Boolean} opts.includeZeroBalanceHoldings Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Object>} and HTTP response
      */
     solanaGetTokensBelongingToWalletWithHttpInfo(network, publicKey, opts) {
       opts = opts || {};
-      let postBody = opts['listTokensRequest'];
+      let postBody = null;
       // verify the required parameter 'network' is set
       if (network === undefined || network === null) {
         throw new Error("Missing the required parameter 'network' when calling solanaGetTokensBelongingToWallet");
@@ -361,6 +361,8 @@ export default class SolanaWalletApi {
         'public_key': publicKey
       };
       let queryParams = {
+        'include_nfts': opts['includeNfts'],
+        'include_zero_balance_holdings': opts['includeZeroBalanceHoldings']
       };
       let headerParams = {
       };
@@ -368,7 +370,7 @@ export default class SolanaWalletApi {
       };
 
       let authNames = ['APIKeyID', 'APISecretKey'];
-      let contentTypes = ['application/json'];
+      let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
       return this.apiClient.callApi(
@@ -384,7 +386,8 @@ export default class SolanaWalletApi {
      * @param {String} network The network ID (devnet, mainnet-beta)
      * @param {String} publicKey The public key of the account whose list of owned NFTs you want to get
      * @param {Object} opts Optional parameters
-     * @param {module:model/ListTokensRequest} opts.listTokensRequest 
+     * @param {Boolean} opts.includeNfts Whether or not to include NFTs in the response (default to false)
+     * @param {Boolean} opts.includeZeroBalanceHoldings Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Object>}
      */
     solanaGetTokensBelongingToWallet(network, publicKey, opts) {

@@ -28,7 +28,6 @@ docs/GetCandyMetadataResponseCreators.md
 docs/GetFileResponse.md
 docs/GetPublicKeyRequest.md
 docs/ListNFTsResponse.md
-docs/ListTokensRequest.md
 docs/MintNFTErrorResponse.md
 docs/MintNFTRequest.md
 docs/MintNFTResponse.md
@@ -87,7 +86,6 @@ src/model/GetCandyMetadataResponseCreators.js
 src/model/GetFileResponse.js
 src/model/GetPublicKeyRequest.js
 src/model/ListNFTsResponse.js
-src/model/ListTokensRequest.js
 src/model/MintNFTErrorResponse.js
 src/model/MintNFTRequest.js
 src/model/MintNFTResponse.js
@@ -105,4 +103,3 @@ src/model/Transaction.js
 src/model/TransferRequest.js
 src/model/TransferResponse.js
 src/model/UploadFileRequest.js
-test/model/ListTokensRequest.spec.js

@@ -38,7 +38,6 @@ import GetCandyMetadataResponseCreators from './model/GetCandyMetadataResponseCr
 import GetFileResponse from './model/GetFileResponse';
 import GetPublicKeyRequest from './model/GetPublicKeyRequest';
 import ListNFTsResponse from './model/ListNFTsResponse';
-import ListTokensRequest from './model/ListTokensRequest';
 import MintNFTErrorResponse from './model/MintNFTErrorResponse';
 import MintNFTRequest from './model/MintNFTRequest';
 import MintNFTResponse from './model/MintNFTResponse';
@@ -251,12 +250,6 @@ export {
      * @property {module:model/ListNFTsResponse}
      */
     ListNFTsResponse,
-
-    /**
-     * The ListTokensRequest model constructor.
-     * @property {module:model/ListTokensRequest}
-     */
-    ListTokensRequest,
 
     /**
      * The MintNFTErrorResponse model constructor.

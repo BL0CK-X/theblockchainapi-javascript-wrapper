@@ -1,9 +1,3 @@
-# npm
-
-You can install via npm 
-
-`npm install theblockchainapi`
-
 # theblockchainapi
 
 theblockchainapi - JavaScript client for theblockchainapi
@@ -297,7 +291,6 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.GetFileResponse](docs/GetFileResponse.md)
  - [theblockchainapi.GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [theblockchainapi.ListNFTsResponse](docs/ListNFTsResponse.md)
- - [theblockchainapi.ListTokensRequest](docs/ListTokensRequest.md)
  - [theblockchainapi.MintNFTErrorResponse](docs/MintNFTErrorResponse.md)
  - [theblockchainapi.MintNFTRequest](docs/MintNFTRequest.md)
  - [theblockchainapi.MintNFTResponse](docs/MintNFTResponse.md)

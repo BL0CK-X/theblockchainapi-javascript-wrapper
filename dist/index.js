@@ -165,12 +165,6 @@ Object.defineProperty(exports, "ListNFTsResponse", {
     return _ListNFTsResponse["default"];
   }
 });
-Object.defineProperty(exports, "ListTokensRequest", {
-  enumerable: true,
-  get: function get() {
-    return _ListTokensRequest["default"];
-  }
-});
 Object.defineProperty(exports, "MintNFTErrorResponse", {
   enumerable: true,
   get: function get() {
@@ -355,8 +349,6 @@ var _GetFileResponse = _interopRequireDefault(require("./model/GetFileResponse")
 var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyRequest"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
-
-var _ListTokensRequest = _interopRequireDefault(require("./model/ListTokensRequest"));
 
 var _MintNFTErrorResponse = _interopRequireDefault(require("./model/MintNFTErrorResponse"));
 
