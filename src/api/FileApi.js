@@ -18,7 +18,7 @@ import GetFileResponse from '../model/GetFileResponse';
 /**
 * File service.
 * @module api/FileApi
-* @version null
+* @version 1.0.9
 */
 export default class FileApi {
 

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetCandyMachineIDResponse model module.
  * @module model/GetCandyMachineIDResponse
- * @version null
+ * @version 1.0.9
  */
 var GetCandyMachineIDResponse = /*#__PURE__*/function () {
   /**

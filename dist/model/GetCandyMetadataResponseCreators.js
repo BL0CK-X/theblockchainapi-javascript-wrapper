@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetCandyMetadataResponseCreators model module.
  * @module model/GetCandyMetadataResponseCreators
- * @version null
+ * @version 1.0.9
  */
 var GetCandyMetadataResponseCreators = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import GetCandyMetadataResponseCreators from './GetCandyMetadataResponseCreators
 /**
  * The GetCandyMetadataResponse model module.
  * @module model/GetCandyMetadataResponse
- * @version null
+ * @version 1.0.9
  */
 class GetCandyMetadataResponse {
     /**

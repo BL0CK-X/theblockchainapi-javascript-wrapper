@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTestCandyMachineResponse model module.
  * @module model/CreateTestCandyMachineResponse
- * @version null
+ * @version 1.0.9
  */
 class CreateTestCandyMachineResponse {
     /**
@@ -46,6 +46,8 @@ class CreateTestCandyMachineResponse {
      * @return {module:model/CreateTestCandyMachineResponse} The populated <code>CreateTestCandyMachineResponse</code> instance.
      */
     static constructFromObject(data, obj) {
+        try { data = JSON.parse(data); } catch (_unused) { }
+        
         if (data) {
             obj = obj || new CreateTestCandyMachineResponse();
 

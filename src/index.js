@@ -20,12 +20,13 @@ import AccountIsCandyMachine from './model/AccountIsCandyMachine';
 import AccountIsNFT from './model/AccountIsNFT';
 import AccountValue from './model/AccountValue';
 import AirdropRequest from './model/AirdropRequest';
+import B58PrivateKey from './model/B58PrivateKey';
 import BalanceRequest from './model/BalanceRequest';
 import BalanceResponse from './model/BalanceResponse';
 import CandyMachineSearchRequest from './model/CandyMachineSearchRequest';
-import CandyMachineSearchResponse from './model/CandyMachineSearchResponse';
 import CreateTestCandyMachineRequest from './model/CreateTestCandyMachineRequest';
 import CreateTestCandyMachineResponse from './model/CreateTestCandyMachineResponse';
+import GeneratePrivateKey from './model/GeneratePrivateKey';
 import GetAllNFTsResponse from './model/GetAllNFTsResponse';
 import GetAllNFTsResponseMintedNfts from './model/GetAllNFTsResponseMintedNfts';
 import GetAllNFTsResponseUnmintedNfts from './model/GetAllNFTsResponseUnmintedNfts';
@@ -37,6 +38,7 @@ import GetCandyMetadataResponse from './model/GetCandyMetadataResponse';
 import GetCandyMetadataResponseCreators from './model/GetCandyMetadataResponseCreators';
 import GetFileResponse from './model/GetFileResponse';
 import GetPublicKeyRequest from './model/GetPublicKeyRequest';
+import GetSPLTokenResponse from './model/GetSPLTokenResponse';
 import ListNFTsResponse from './model/ListNFTsResponse';
 import MintNFTErrorResponse from './model/MintNFTErrorResponse';
 import MintNFTRequest from './model/MintNFTRequest';
@@ -49,16 +51,21 @@ import NFTMintRequest from './model/NFTMintRequest';
 import NFTOwnerResponse from './model/NFTOwnerResponse';
 import NFTSearchRequest from './model/NFTSearchRequest';
 import NFTSearchResponse from './model/NFTSearchResponse';
+import PrivateKey from './model/PrivateKey';
 import PublicKey from './model/PublicKey';
 import SecretPhrase from './model/SecretPhrase';
+import SecretRecoveryPhrase from './model/SecretRecoveryPhrase';
 import Transaction from './model/Transaction';
+import TransactionResult from './model/TransactionResult';
 import TransferRequest from './model/TransferRequest';
 import TransferResponse from './model/TransferResponse';
 import UploadFileRequest from './model/UploadFileRequest';
+import Wallet from './model/Wallet';
 import FileApi from './api/FileApi';
 import SolanaAccountApi from './api/SolanaAccountApi';
 import SolanaCandyMachineApi from './api/SolanaCandyMachineApi';
 import SolanaNFTApi from './api/SolanaNFTApi';
+import SolanaSPLTokenApi from './api/SolanaSPLTokenApi';
 import SolanaTransactionApi from './api/SolanaTransactionApi';
 import SolanaWalletApi from './api/SolanaWalletApi';
 
@@ -92,7 +99,7 @@ import SolanaWalletApi from './api/SolanaWalletApi';
 * </pre>
 * </p>
 * @module index
-* @version null
+* @version 1.0.9
 */
 export {
     /**
@@ -144,6 +151,12 @@ export {
     AirdropRequest,
 
     /**
+     * The B58PrivateKey model constructor.
+     * @property {module:model/B58PrivateKey}
+     */
+    B58PrivateKey,
+
+    /**
      * The BalanceRequest model constructor.
      * @property {module:model/BalanceRequest}
      */
@@ -162,12 +175,6 @@ export {
     CandyMachineSearchRequest,
 
     /**
-     * The CandyMachineSearchResponse model constructor.
-     * @property {module:model/CandyMachineSearchResponse}
-     */
-    CandyMachineSearchResponse,
-
-    /**
      * The CreateTestCandyMachineRequest model constructor.
      * @property {module:model/CreateTestCandyMachineRequest}
      */
@@ -178,6 +185,12 @@ export {
      * @property {module:model/CreateTestCandyMachineResponse}
      */
     CreateTestCandyMachineResponse,
+
+    /**
+     * The GeneratePrivateKey model constructor.
+     * @property {module:model/GeneratePrivateKey}
+     */
+    GeneratePrivateKey,
 
     /**
      * The GetAllNFTsResponse model constructor.
@@ -244,6 +257,12 @@ export {
      * @property {module:model/GetPublicKeyRequest}
      */
     GetPublicKeyRequest,
+
+    /**
+     * The GetSPLTokenResponse model constructor.
+     * @property {module:model/GetSPLTokenResponse}
+     */
+    GetSPLTokenResponse,
 
     /**
      * The ListNFTsResponse model constructor.
@@ -318,6 +337,12 @@ export {
     NFTSearchResponse,
 
     /**
+     * The PrivateKey model constructor.
+     * @property {module:model/PrivateKey}
+     */
+    PrivateKey,
+
+    /**
      * The PublicKey model constructor.
      * @property {module:model/PublicKey}
      */
@@ -330,10 +355,22 @@ export {
     SecretPhrase,
 
     /**
+     * The SecretRecoveryPhrase model constructor.
+     * @property {module:model/SecretRecoveryPhrase}
+     */
+    SecretRecoveryPhrase,
+
+    /**
      * The Transaction model constructor.
      * @property {module:model/Transaction}
      */
     Transaction,
+
+    /**
+     * The TransactionResult model constructor.
+     * @property {module:model/TransactionResult}
+     */
+    TransactionResult,
 
     /**
      * The TransferRequest model constructor.
@@ -352,6 +389,12 @@ export {
      * @property {module:model/UploadFileRequest}
      */
     UploadFileRequest,
+
+    /**
+     * The Wallet model constructor.
+     * @property {module:model/Wallet}
+     */
+    Wallet,
 
     /**
     * The FileApi service constructor.
@@ -376,6 +419,12 @@ export {
     * @property {module:api/SolanaNFTApi}
     */
     SolanaNFTApi,
+
+    /**
+    * The SolanaSPLTokenApi service constructor.
+    * @property {module:api/SolanaSPLTokenApi}
+    */
+    SolanaSPLTokenApi,
 
     /**
     * The SolanaTransactionApi service constructor.

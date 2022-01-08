@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * SolanaTransaction service.
 * @module api/SolanaTransactionApi
-* @version null
+* @version 1.0.9
 */
 var SolanaTransactionApi = /*#__PURE__*/function () {
   /**

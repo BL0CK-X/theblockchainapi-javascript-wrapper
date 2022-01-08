@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BalanceRequest model module.
  * @module model/BalanceRequest
- * @version null
+ * @version 1.0.9
  */
 class BalanceRequest {
     /**

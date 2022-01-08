@@ -17,7 +17,7 @@ import NFT from './NFT';
 /**
  * The GetAllNFTsResponseMintedNfts model module.
  * @module model/GetAllNFTsResponseMintedNfts
- * @version null
+ * @version 1.0.9
  */
 class GetAllNFTsResponseMintedNfts {
     /**

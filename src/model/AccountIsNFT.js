@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountIsNFT model module.
  * @module model/AccountIsNFT
- * @version null
+ * @version 1.0.9
  */
 class AccountIsNFT {
     /**

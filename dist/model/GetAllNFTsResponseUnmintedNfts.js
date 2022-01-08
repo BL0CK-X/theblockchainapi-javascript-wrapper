@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetAllNFTsResponseUnmintedNfts model module.
  * @module model/GetAllNFTsResponseUnmintedNfts
- * @version null
+ * @version 1.0.9
  */
 var GetAllNFTsResponseUnmintedNfts = /*#__PURE__*/function () {
   /**

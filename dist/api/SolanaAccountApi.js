@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * SolanaAccount service.
 * @module api/SolanaAccountApi
-* @version null
+* @version 1.0.9
 */
 var SolanaAccountApi = /*#__PURE__*/function () {
   /**

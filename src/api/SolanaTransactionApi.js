@@ -18,7 +18,7 @@ import Transaction from '../model/Transaction';
 /**
 * SolanaTransaction service.
 * @module api/SolanaTransactionApi
-* @version null
+* @version 1.0.9
 */
 export default class SolanaTransactionApi {
 

@@ -18,7 +18,7 @@ import GetAllNFTsResponseUnmintedNfts from './GetAllNFTsResponseUnmintedNfts';
 /**
  * The GetAllNFTsResponse model module.
  * @module model/GetAllNFTsResponse
- * @version null
+ * @version 1.0.9
  */
 class GetAllNFTsResponse {
     /**
@@ -58,6 +58,9 @@ class GetAllNFTsResponse {
             if (data.hasOwnProperty('all_nfts')) {
                 obj['all_nfts'] = ApiClient.convertToType(data['all_nfts'], [GetAllNFTsResponseUnmintedNfts]);
             }
+            if (data.hasOwnProperty('accurate')) {
+                obj['accurate'] = ApiClient.convertToType(data['accurate'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -82,6 +85,12 @@ GetAllNFTsResponse.prototype['unminted_nfts'] = undefined;
  * @member {Array.<module:model/GetAllNFTsResponseUnmintedNfts>} all_nfts
  */
 GetAllNFTsResponse.prototype['all_nfts'] = undefined;
+
+/**
+ * Whether or not the division of NFTs among minted and unminted is accurate. If it is not accurate, then it is possible that NFTs have been included in the `minted` list that are not actually minted. If it is accurate, then the split of  minted and unminted is correct. `v1` candy machines always return a correct minted/unminted split.  
+ * @member {Boolean} accurate
+ */
+GetAllNFTsResponse.prototype['accurate'] = undefined;
 
 
 

@@ -26,7 +26,7 @@ import NFTSearchResponse from '../model/NFTSearchResponse';
 /**
 * SolanaNFT service.
 * @module api/SolanaNFTApi
-* @version null
+* @version 1.0.9
 */
 export default class SolanaNFTApi {
 
@@ -242,7 +242,7 @@ export default class SolanaNFTApi {
 
     /**
      * Get the ID of the candy machine of an NFT 
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-candy-machine-id\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the candy machine ID from where the NFT came, if any. NFTs can also be minted without a candy machine.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-candy-machine-id\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the candy machine ID from where the NFT came, if any. NFTs can also be minted without a candy machine.  It's also possible that we return \"Not Found\" when the NFT actually did come from a version of a candy machine. We check for the most popular versions of candy machine, but it is possible that someone creates their own candy machine version and mints NFTs from it.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {Object} opts Optional parameters
      * @param {module:model/GetCandyMachineIDRequest} opts.getCandyMachineIDRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCandyMachineIDResponse} and HTTP response
@@ -273,7 +273,7 @@ export default class SolanaNFTApi {
 
     /**
      * Get the ID of the candy machine of an NFT 
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-candy-machine-id\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the candy machine ID from where the NFT came, if any. NFTs can also be minted without a candy machine.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-candy-machine-id\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the candy machine ID from where the NFT came, if any. NFTs can also be minted without a candy machine.  It's also possible that we return \"Not Found\" when the NFT actually did come from a version of a candy machine. We check for the most popular versions of candy machine, but it is possible that someone creates their own candy machine version and mints NFTs from it.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {Object} opts Optional parameters
      * @param {module:model/GetCandyMachineIDRequest} opts.getCandyMachineIDRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCandyMachineIDResponse}
@@ -288,10 +288,10 @@ export default class SolanaNFTApi {
 
     /**
      * Search NFTs on Solana
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  With this endpoint, you can search for NFTs by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of NFTs that match your query.  You can also provide multiple search clauses, such as the update authority (`update_authority=\"G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\"`) and symbol begins with \"Sol\" (`symbol=\"Sol\", symbol_search_method='begins_with'`).  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/search-nfts\" target=\"_blank\">See examples (Python, JavaScript)</a>.  With this endpoint, you can search for NFTs by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of NFTs that match your query.  You can also provide multiple search clauses, such as the update authority (`update_authority=\"G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\"`) and symbol begins with \"Sol\" (`symbol=\"Sol\", symbol_search_method='begins_with'`).  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {Object} opts Optional parameters
      * @param {module:model/NFTSearchRequest} opts.nFTSearchRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NFTSearchResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NFTSearchResponse>} and HTTP response
      */
     solanaSearchNFTsWithHttpInfo(opts) {
       opts = opts || {};
@@ -309,7 +309,7 @@ export default class SolanaNFTApi {
       let authNames = ['APIKeyID', 'APISecretKey'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = NFTSearchResponse;
+      let returnType = [NFTSearchResponse];
       return this.apiClient.callApi(
         '/solana/nft/search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -319,10 +319,10 @@ export default class SolanaNFTApi {
 
     /**
      * Search NFTs on Solana
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  With this endpoint, you can search for NFTs by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of NFTs that match your query.  You can also provide multiple search clauses, such as the update authority (`update_authority=\"G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\"`) and symbol begins with \"Sol\" (`symbol=\"Sol\", symbol_search_method='begins_with'`).  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/search-nfts\" target=\"_blank\">See examples (Python, JavaScript)</a>.  With this endpoint, you can search for NFTs by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of NFTs that match your query.  You can also provide multiple search clauses, such as the update authority (`update_authority=\"G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\"`) and symbol begins with \"Sol\" (`symbol=\"Sol\", symbol_search_method='begins_with'`).  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {Object} opts Optional parameters
      * @param {module:model/NFTSearchRequest} opts.nFTSearchRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NFTSearchResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NFTSearchResponse>}
      */
     solanaSearchNFTs(opts) {
       return this.solanaSearchNFTsWithHttpInfo(opts)

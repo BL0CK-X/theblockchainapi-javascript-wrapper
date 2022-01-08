@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NFTMintErrorResponse model module.
  * @module model/NFTMintErrorResponse
- * @version null
+ * @version 1.0.9
  */
 class NFTMintErrorResponse {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MintNFTErrorResponse model module.
  * @module model/MintNFTErrorResponse
- * @version null
+ * @version 1.0.9
  */
 class MintNFTErrorResponse {
     /**

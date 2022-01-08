@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAllNFTsResponseUnmintedNfts model module.
  * @module model/GetAllNFTsResponseUnmintedNfts
- * @version null
+ * @version 1.0.9
  */
 class GetAllNFTsResponseUnmintedNfts {
     /**

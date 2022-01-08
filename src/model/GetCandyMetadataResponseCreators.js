@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCandyMetadataResponseCreators model module.
  * @module model/GetCandyMetadataResponseCreators
- * @version null
+ * @version 1.0.9
  */
 class GetCandyMetadataResponseCreators {
     /**

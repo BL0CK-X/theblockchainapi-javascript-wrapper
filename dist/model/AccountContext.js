@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountContext model module.
  * @module model/AccountContext
- * @version null
+ * @version 1.0.9
  */
 var AccountContext = /*#__PURE__*/function () {
   /**

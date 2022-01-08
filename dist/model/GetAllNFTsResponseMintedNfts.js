@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetAllNFTsResponseMintedNfts model module.
  * @module model/GetAllNFTsResponseMintedNfts
- * @version null
+ * @version 1.0.9
  */
 var GetAllNFTsResponseMintedNfts = /*#__PURE__*/function () {
   /**

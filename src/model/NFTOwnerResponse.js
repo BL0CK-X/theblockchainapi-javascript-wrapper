@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NFTOwnerResponse model module.
  * @module model/NFTOwnerResponse
- * @version null
+ * @version 1.0.9
  */
 class NFTOwnerResponse {
     /**

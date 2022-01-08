@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCandyMachineIDRequest model module.
  * @module model/GetCandyMachineIDRequest
- * @version null
+ * @version 1.0.9
  */
 class GetCandyMachineIDRequest {
     /**

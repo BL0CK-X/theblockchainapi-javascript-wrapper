@@ -18,7 +18,7 @@ import AccountValue from './AccountValue';
 /**
  * The Account model module.
  * @module model/Account
- * @version null
+ * @version 1.0.9
  */
 class Account {
     /**

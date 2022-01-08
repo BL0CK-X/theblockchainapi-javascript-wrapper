@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BalanceResponse model module.
  * @module model/BalanceResponse
- * @version null
+ * @version 1.0.9
  */
 class BalanceResponse {
     /**

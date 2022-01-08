@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountIsNFT model module.
  * @module model/AccountIsNFT
- * @version null
+ * @version 1.0.9
  */
 var AccountIsNFT = /*#__PURE__*/function () {
   /**

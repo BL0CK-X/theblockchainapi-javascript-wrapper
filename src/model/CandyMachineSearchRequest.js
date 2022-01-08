@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CandyMachineSearchRequest model module.
  * @module model/CandyMachineSearchRequest
- * @version null
+ * @version 1.0.9
  */
 class CandyMachineSearchRequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadFileRequest model module.
  * @module model/UploadFileRequest
- * @version null
+ * @version 1.0.9
  */
 class UploadFileRequest {
     /**

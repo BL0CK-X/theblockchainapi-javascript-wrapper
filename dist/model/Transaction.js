@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _TransactionResult = _interopRequireDefault(require("./TransactionResult"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Transaction model module.
  * @module model/Transaction
- * @version null
+ * @version 1.0.9
  */
 var Transaction = /*#__PURE__*/function () {
   /**
@@ -54,24 +56,16 @@ var Transaction = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Transaction();
 
-        if (data.hasOwnProperty('block_time')) {
-          obj['block_time'] = _ApiClient["default"].convertToType(data['block_time'], 'Number');
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
         }
 
-        if (data.hasOwnProperty('meta')) {
-          obj['meta'] = _ApiClient["default"].convertToType(data['meta'], Object);
+        if (data.hasOwnProperty('jsonrpc')) {
+          obj['jsonrpc'] = _ApiClient["default"].convertToType(data['jsonrpc'], 'String');
         }
 
-        if (data.hasOwnProperty('slot')) {
-          obj['slot'] = _ApiClient["default"].convertToType(data['slot'], 'Number');
-        }
-
-        if (data.hasOwnProperty('transaction')) {
-          obj['transaction'] = _ApiClient["default"].convertToType(data['transaction'], Object);
-        }
-
-        if (data.hasOwnProperty('network')) {
-          obj['network'] = _ApiClient["default"].convertToType(data['network'], 'String');
+        if (data.hasOwnProperty('result')) {
+          obj['result'] = _TransactionResult["default"].constructFromObject(data['result']);
         }
       }
 
@@ -82,50 +76,20 @@ var Transaction = /*#__PURE__*/function () {
   return Transaction;
 }();
 /**
- * @member {Number} block_time
+ * @member {Number} id
  */
 
 
-Transaction.prototype['block_time'] = undefined;
+Transaction.prototype['id'] = undefined;
 /**
- * @member {Object} meta
+ * @member {String} jsonrpc
  */
 
-Transaction.prototype['meta'] = undefined;
+Transaction.prototype['jsonrpc'] = undefined;
 /**
- * @member {Number} slot
+ * @member {module:model/TransactionResult} result
  */
 
-Transaction.prototype['slot'] = undefined;
-/**
- * @member {Object} transaction
- */
-
-Transaction.prototype['transaction'] = undefined;
-/**
- * @member {module:model/Transaction.NetworkEnum} network
- * @default 'devnet'
- */
-
-Transaction.prototype['network'] = 'devnet';
-/**
- * Allowed values for the <code>network</code> property.
- * @enum {String}
- * @readonly
- */
-
-Transaction['NetworkEnum'] = {
-  /**
-   * value: "devnet"
-   * @const
-   */
-  "devnet": "devnet",
-
-  /**
-   * value: "mainnet-beta"
-   * @const
-   */
-  "mainnet-beta": "mainnet-beta"
-};
+Transaction.prototype['result'] = undefined;
 var _default = Transaction;
 exports["default"] = _default;

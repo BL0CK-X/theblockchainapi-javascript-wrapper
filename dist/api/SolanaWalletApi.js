@@ -15,6 +15,8 @@ var _BalanceRequest = _interopRequireDefault(require("../model/BalanceRequest"))
 
 var _BalanceResponse = _interopRequireDefault(require("../model/BalanceResponse"));
 
+var _GeneratePrivateKey = _interopRequireDefault(require("../model/GeneratePrivateKey"));
+
 var _GetPublicKeyRequest = _interopRequireDefault(require("../model/GetPublicKeyRequest"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("../model/ListNFTsResponse"));
@@ -38,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * SolanaWallet service.
 * @module api/SolanaWalletApi
-* @version null
+* @version 1.0.9
 */
 var SolanaWalletApi = /*#__PURE__*/function () {
   /**
@@ -105,8 +107,48 @@ var SolanaWalletApi = /*#__PURE__*/function () {
       });
     }
     /**
+     * Derive private key
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/derive-private-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Returns a private key array and a base58-encoded private key given wallet authentication.  A wallet is defined by a public key. A public key is derived from a combination of seed phrase, derivation path, and passphrase. Changing any *one* of these three will change the public key output.  *You can generate a unique public key with each combination of secret recovery phrase, passphrase, and derivation path. Thus, with a single secret recovery phrase, you can generate many public keys. If you are just starting, just supply the secret recovery phrase you generated with the Solana Wallet Secret Recovery Phrase endpoint.*  *If you are trying to get a public key that already exists (e.g., created in the Phantom wallet), make sure you use the correct derivation path and passphrase. To read more about that, see the descriptions of those parameters below.*  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/GetPublicKeyRequest} getPublicKeyRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GeneratePrivateKey} and HTTP response
+     */
+
+  }, {
+    key: "solanaDerivePrivateKeyWithHttpInfo",
+    value: function solanaDerivePrivateKeyWithHttpInfo(getPublicKeyRequest) {
+      var postBody = getPublicKeyRequest; // verify the required parameter 'getPublicKeyRequest' is set
+
+      if (getPublicKeyRequest === undefined || getPublicKeyRequest === null) {
+        throw new Error("Missing the required parameter 'getPublicKeyRequest' when calling solanaDerivePrivateKey");
+      }
+
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['APIKeyID', 'APISecretKey'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _GeneratePrivateKey["default"];
+      return this.apiClient.callApi('/solana/wallet/private_key', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * Derive private key
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/derive-private-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Returns a private key array and a base58-encoded private key given wallet authentication.  A wallet is defined by a public key. A public key is derived from a combination of seed phrase, derivation path, and passphrase. Changing any *one* of these three will change the public key output.  *You can generate a unique public key with each combination of secret recovery phrase, passphrase, and derivation path. Thus, with a single secret recovery phrase, you can generate many public keys. If you are just starting, just supply the secret recovery phrase you generated with the Solana Wallet Secret Recovery Phrase endpoint.*  *If you are trying to get a public key that already exists (e.g., created in the Phantom wallet), make sure you use the correct derivation path and passphrase. To read more about that, see the descriptions of those parameters below.*  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/GetPublicKeyRequest} getPublicKeyRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GeneratePrivateKey}
+     */
+
+  }, {
+    key: "solanaDerivePrivateKey",
+    value: function solanaDerivePrivateKey(getPublicKeyRequest) {
+      return this.solanaDerivePrivateKeyWithHttpInfo(getPublicKeyRequest).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
      * Derive public key
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/derive-public-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Returns a public key given a secret recovery phrase and optionally a passphrase and a derivation path.  A wallet is defined by a public key. A public key is derived from a combination of seed phrase, derivation path, and passphrase. Changing any *one* of these three will change the public key output.  *You can generate a unique public key with each combination of secret recovery phrase, passphrase, and derivation path. Thus, with a single secret recovery phrase, you can generate many public keys. If you are just starting, just supply the secret recovery phrase you generated with the Solana Wallet Secret Recovery Phrase endpoint.*  *If you are trying to get a public key that already exists (e.g., created in the Phantom wallet), make sure you use the correct derivation path and passphrase. To read more about that, see the descriptions of those parameters below.*  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/derive-public-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Returns a public key given wallet authentication.  A wallet is identified by a public key. A public key is derived from a combination of seed phrase, derivation path, and passphrase. Changing any *one* of these three will change the public key output.   It can also be derived from a private key.  *You can generate a unique public key with each combination of secret recovery phrase, passphrase, and derivation path; or from a private key. Thus, with a single secret recovery phrase, you can generate many public keys; however, with a private key, you can only generate one public key. If you are just starting, generate a <a href=\"#operation/solanaGenerateSecretRecoveryPhrase\">secret recovery phrase</a> or <a href=\"#operation/solanaGeneratePrivateKey\">private key</a>.  *If you are trying to get a public key that already exists (e.g., created in the Phantom wallet), make sure you use the correct derivation path and passphrase; or just use the private key. To read more about that, see the descriptions of those parameters below.*  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {module:model/GetPublicKeyRequest} getPublicKeyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PublicKey} and HTTP response
      */
@@ -132,7 +174,7 @@ var SolanaWalletApi = /*#__PURE__*/function () {
     }
     /**
      * Derive public key
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/derive-public-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Returns a public key given a secret recovery phrase and optionally a passphrase and a derivation path.  A wallet is defined by a public key. A public key is derived from a combination of seed phrase, derivation path, and passphrase. Changing any *one* of these three will change the public key output.  *You can generate a unique public key with each combination of secret recovery phrase, passphrase, and derivation path. Thus, with a single secret recovery phrase, you can generate many public keys. If you are just starting, just supply the secret recovery phrase you generated with the Solana Wallet Secret Recovery Phrase endpoint.*  *If you are trying to get a public key that already exists (e.g., created in the Phantom wallet), make sure you use the correct derivation path and passphrase. To read more about that, see the descriptions of those parameters below.*  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/derive-public-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Returns a public key given wallet authentication.  A wallet is identified by a public key. A public key is derived from a combination of seed phrase, derivation path, and passphrase. Changing any *one* of these three will change the public key output.   It can also be derived from a private key.  *You can generate a unique public key with each combination of secret recovery phrase, passphrase, and derivation path; or from a private key. Thus, with a single secret recovery phrase, you can generate many public keys; however, with a private key, you can only generate one public key. If you are just starting, generate a <a href=\"#operation/solanaGenerateSecretRecoveryPhrase\">secret recovery phrase</a> or <a href=\"#operation/solanaGeneratePrivateKey\">private key</a>.  *If you are trying to get a public key that already exists (e.g., created in the Phantom wallet), make sure you use the correct derivation path and passphrase; or just use the private key. To read more about that, see the descriptions of those parameters below.*  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {module:model/GetPublicKeyRequest} getPublicKeyRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PublicKey}
      */
@@ -145,8 +187,41 @@ var SolanaWalletApi = /*#__PURE__*/function () {
       });
     }
     /**
+     * Generate private key
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/generate-private-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to securely and randomly generate a private key for a Solana wallet.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GeneratePrivateKey} and HTTP response
+     */
+
+  }, {
+    key: "solanaGeneratePrivateKeyWithHttpInfo",
+    value: function solanaGeneratePrivateKeyWithHttpInfo() {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['APIKeyID', 'APISecretKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _GeneratePrivateKey["default"];
+      return this.apiClient.callApi('/solana/wallet/generate/private_key', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * Generate private key
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/generate-private-key\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to securely and randomly generate a private key for a Solana wallet.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GeneratePrivateKey}
+     */
+
+  }, {
+    key: "solanaGeneratePrivateKey",
+    value: function solanaGeneratePrivateKey() {
+      return this.solanaGeneratePrivateKeyWithHttpInfo().then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
      * Generate secret phrase
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/generate-secret-phrase\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to securely and randomly generate a secret recovery phrase for a Solana wallet. Complete the wallet creation by using the endpoint below.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/generate-secret-phrase\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to securely and randomly generate a secret recovery phrase for a Solana wallet.   `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SecretPhrase} and HTTP response
      */
 
@@ -162,11 +237,11 @@ var SolanaWalletApi = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _SecretPhrase["default"];
-      return this.apiClient.callApi('/solana/wallet/secret_recovery_phrase', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/solana/wallet/generate/secret_recovery_phrase', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Generate secret phrase
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/generate-secret-phrase\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to securely and randomly generate a secret recovery phrase for a Solana wallet. Complete the wallet creation by using the endpoint below.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/generate-secret-phrase\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to securely and randomly generate a secret recovery phrase for a Solana wallet.   `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SecretPhrase}
      */
 

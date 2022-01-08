@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListNFTsResponse model module.
  * @module model/ListNFTsResponse
- * @version null
+ * @version 1.0.9
  */
 class ListNFTsResponse {
     /**

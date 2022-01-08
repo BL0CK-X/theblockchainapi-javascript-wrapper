@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BalanceRequest model module.
  * @module model/BalanceRequest
- * @version null
+ * @version 1.0.9
  */
 var BalanceRequest = /*#__PURE__*/function () {
   /**

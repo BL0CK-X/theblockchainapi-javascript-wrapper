@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AirdropRequest model module.
  * @module model/AirdropRequest
- * @version null
+ * @version 1.0.9
  */
 var AirdropRequest = /*#__PURE__*/function () {
   /**

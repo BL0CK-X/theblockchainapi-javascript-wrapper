@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NFTSearchRequest model module.
  * @module model/NFTSearchRequest
- * @version null
+ * @version 1.0.9
  */
 var NFTSearchRequest = /*#__PURE__*/function () {
   /**

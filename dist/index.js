@@ -51,6 +51,12 @@ Object.defineProperty(exports, "ApiClient", {
     return _ApiClient["default"];
   }
 });
+Object.defineProperty(exports, "B58PrivateKey", {
+  enumerable: true,
+  get: function get() {
+    return _B58PrivateKey["default"];
+  }
+});
 Object.defineProperty(exports, "BalanceRequest", {
   enumerable: true,
   get: function get() {
@@ -69,12 +75,6 @@ Object.defineProperty(exports, "CandyMachineSearchRequest", {
     return _CandyMachineSearchRequest["default"];
   }
 });
-Object.defineProperty(exports, "CandyMachineSearchResponse", {
-  enumerable: true,
-  get: function get() {
-    return _CandyMachineSearchResponse["default"];
-  }
-});
 Object.defineProperty(exports, "CreateTestCandyMachineRequest", {
   enumerable: true,
   get: function get() {
@@ -91,6 +91,12 @@ Object.defineProperty(exports, "FileApi", {
   enumerable: true,
   get: function get() {
     return _FileApi["default"];
+  }
+});
+Object.defineProperty(exports, "GeneratePrivateKey", {
+  enumerable: true,
+  get: function get() {
+    return _GeneratePrivateKey["default"];
   }
 });
 Object.defineProperty(exports, "GetAllNFTsResponse", {
@@ -157,6 +163,12 @@ Object.defineProperty(exports, "GetPublicKeyRequest", {
   enumerable: true,
   get: function get() {
     return _GetPublicKeyRequest["default"];
+  }
+});
+Object.defineProperty(exports, "GetSPLTokenResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GetSPLTokenResponse["default"];
   }
 });
 Object.defineProperty(exports, "ListNFTsResponse", {
@@ -231,6 +243,12 @@ Object.defineProperty(exports, "NFTSearchResponse", {
     return _NFTSearchResponse["default"];
   }
 });
+Object.defineProperty(exports, "PrivateKey", {
+  enumerable: true,
+  get: function get() {
+    return _PrivateKey["default"];
+  }
+});
 Object.defineProperty(exports, "PublicKey", {
   enumerable: true,
   get: function get() {
@@ -241,6 +259,12 @@ Object.defineProperty(exports, "SecretPhrase", {
   enumerable: true,
   get: function get() {
     return _SecretPhrase["default"];
+  }
+});
+Object.defineProperty(exports, "SecretRecoveryPhrase", {
+  enumerable: true,
+  get: function get() {
+    return _SecretRecoveryPhrase["default"];
   }
 });
 Object.defineProperty(exports, "SolanaAccountApi", {
@@ -261,6 +285,12 @@ Object.defineProperty(exports, "SolanaNFTApi", {
     return _SolanaNFTApi["default"];
   }
 });
+Object.defineProperty(exports, "SolanaSPLTokenApi", {
+  enumerable: true,
+  get: function get() {
+    return _SolanaSPLTokenApi["default"];
+  }
+});
 Object.defineProperty(exports, "SolanaTransactionApi", {
   enumerable: true,
   get: function get() {
@@ -277,6 +307,12 @@ Object.defineProperty(exports, "Transaction", {
   enumerable: true,
   get: function get() {
     return _Transaction["default"];
+  }
+});
+Object.defineProperty(exports, "TransactionResult", {
+  enumerable: true,
+  get: function get() {
+    return _TransactionResult["default"];
   }
 });
 Object.defineProperty(exports, "TransferRequest", {
@@ -297,6 +333,12 @@ Object.defineProperty(exports, "UploadFileRequest", {
     return _UploadFileRequest["default"];
   }
 });
+Object.defineProperty(exports, "Wallet", {
+  enumerable: true,
+  get: function get() {
+    return _Wallet["default"];
+  }
+});
 
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
@@ -314,17 +356,19 @@ var _AccountValue = _interopRequireDefault(require("./model/AccountValue"));
 
 var _AirdropRequest = _interopRequireDefault(require("./model/AirdropRequest"));
 
+var _B58PrivateKey = _interopRequireDefault(require("./model/B58PrivateKey"));
+
 var _BalanceRequest = _interopRequireDefault(require("./model/BalanceRequest"));
 
 var _BalanceResponse = _interopRequireDefault(require("./model/BalanceResponse"));
 
 var _CandyMachineSearchRequest = _interopRequireDefault(require("./model/CandyMachineSearchRequest"));
 
-var _CandyMachineSearchResponse = _interopRequireDefault(require("./model/CandyMachineSearchResponse"));
-
 var _CreateTestCandyMachineRequest = _interopRequireDefault(require("./model/CreateTestCandyMachineRequest"));
 
 var _CreateTestCandyMachineResponse = _interopRequireDefault(require("./model/CreateTestCandyMachineResponse"));
+
+var _GeneratePrivateKey = _interopRequireDefault(require("./model/GeneratePrivateKey"));
 
 var _GetAllNFTsResponse = _interopRequireDefault(require("./model/GetAllNFTsResponse"));
 
@@ -347,6 +391,8 @@ var _GetCandyMetadataResponseCreators = _interopRequireDefault(require("./model/
 var _GetFileResponse = _interopRequireDefault(require("./model/GetFileResponse"));
 
 var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyRequest"));
+
+var _GetSPLTokenResponse = _interopRequireDefault(require("./model/GetSPLTokenResponse"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
 
@@ -372,17 +418,25 @@ var _NFTSearchRequest = _interopRequireDefault(require("./model/NFTSearchRequest
 
 var _NFTSearchResponse = _interopRequireDefault(require("./model/NFTSearchResponse"));
 
+var _PrivateKey = _interopRequireDefault(require("./model/PrivateKey"));
+
 var _PublicKey = _interopRequireDefault(require("./model/PublicKey"));
 
 var _SecretPhrase = _interopRequireDefault(require("./model/SecretPhrase"));
 
+var _SecretRecoveryPhrase = _interopRequireDefault(require("./model/SecretRecoveryPhrase"));
+
 var _Transaction = _interopRequireDefault(require("./model/Transaction"));
+
+var _TransactionResult = _interopRequireDefault(require("./model/TransactionResult"));
 
 var _TransferRequest = _interopRequireDefault(require("./model/TransferRequest"));
 
 var _TransferResponse = _interopRequireDefault(require("./model/TransferResponse"));
 
 var _UploadFileRequest = _interopRequireDefault(require("./model/UploadFileRequest"));
+
+var _Wallet = _interopRequireDefault(require("./model/Wallet"));
 
 var _FileApi = _interopRequireDefault(require("./api/FileApi"));
 
@@ -391,6 +445,8 @@ var _SolanaAccountApi = _interopRequireDefault(require("./api/SolanaAccountApi")
 var _SolanaCandyMachineApi = _interopRequireDefault(require("./api/SolanaCandyMachineApi"));
 
 var _SolanaNFTApi = _interopRequireDefault(require("./api/SolanaNFTApi"));
+
+var _SolanaSPLTokenApi = _interopRequireDefault(require("./api/SolanaSPLTokenApi"));
 
 var _SolanaTransactionApi = _interopRequireDefault(require("./api/SolanaTransactionApi"));
 

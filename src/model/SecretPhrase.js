@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretPhrase model module.
  * @module model/SecretPhrase
- * @version null
+ * @version 1.0.9
  */
 class SecretPhrase {
     /**
@@ -58,7 +58,7 @@ class SecretPhrase {
 }
 
 /**
- * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.
+ * The twelve word phrase that can be used to derive many public key addresses (e.g., bottom army bless castle alter habit dish embody child flame smooth zone).  To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase.   Alternatively, you can derive a public key with a private key.
  * @member {String} secret_recovery_phrase
  */
 SecretPhrase.prototype['secret_recovery_phrase'] = undefined;

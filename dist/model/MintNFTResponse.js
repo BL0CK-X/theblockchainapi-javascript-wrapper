@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MintNFTResponse model module.
  * @module model/MintNFTResponse
- * @version null
+ * @version 1.0.9
  */
 var MintNFTResponse = /*#__PURE__*/function () {
   /**

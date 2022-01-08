@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountIsCandyMachine model module.
  * @module model/AccountIsCandyMachine
- * @version null
+ * @version 1.0.9
  */
 var AccountIsCandyMachine = /*#__PURE__*/function () {
   /**

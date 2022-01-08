@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MintNFTResponse model module.
  * @module model/MintNFTResponse
- * @version null
+ * @version 1.0.9
  */
 class MintNFTResponse {
     /**

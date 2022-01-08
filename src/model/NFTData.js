@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NFTData model module.
  * @module model/NFTData
- * @version null
+ * @version 1.0.9
  */
 class NFTData {
     /**

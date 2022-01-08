@@ -20,7 +20,7 @@ import AccountIsNFT from '../model/AccountIsNFT';
 /**
 * SolanaAccount service.
 * @module api/SolanaAccountApi
-* @version null
+* @version 1.0.9
 */
 export default class SolanaAccountApi {
 

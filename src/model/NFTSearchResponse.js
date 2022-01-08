@@ -17,7 +17,7 @@ import NFT from './NFT';
 /**
  * The NFTSearchResponse model module.
  * @module model/NFTSearchResponse
- * @version null
+ * @version 1.0.9
  */
 class NFTSearchResponse {
     /**

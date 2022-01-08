@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountIsCandyMachine model module.
  * @module model/AccountIsCandyMachine
- * @version null
+ * @version 1.0.9
  */
 class AccountIsCandyMachine {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ATAResponse model module.
  * @module model/ATAResponse
- * @version null
+ * @version 1.0.9
  */
 class ATAResponse {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AirdropRequest model module.
  * @module model/AirdropRequest
- * @version null
+ * @version 1.0.9
  */
 class AirdropRequest {
     /**

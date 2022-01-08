@@ -17,7 +17,7 @@ import NFTData from './NFTData';
 /**
  * The NFT model module.
  * @module model/NFT
- * @version null
+ * @version 1.0.9
  */
 class NFT {
     /**
@@ -46,6 +46,7 @@ class NFT {
      */
     static constructFromObject(data, obj) {
         try { data = JSON.parse(data); } catch (_unused) { }
+        
         if (data) {
             obj = obj || new NFT();
 

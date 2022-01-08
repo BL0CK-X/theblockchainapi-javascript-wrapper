@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import TransactionResult from './TransactionResult';
 
 /**
  * The Transaction model module.
  * @module model/Transaction
- * @version null
+ * @version 1.0.9
  */
 class Transaction {
     /**
@@ -44,25 +45,17 @@ class Transaction {
      * @return {module:model/Transaction} The populated <code>Transaction</code> instance.
      */
     static constructFromObject(data, obj) {
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
         if (data) {
             obj = obj || new Transaction();
 
-            if (data.hasOwnProperty('block_time')) {
-                obj['block_time'] = ApiClient.convertToType(data['block_time'], 'Number');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = ApiClient.convertToType(data['meta'], Object);
+            if (data.hasOwnProperty('jsonrpc')) {
+                obj['jsonrpc'] = ApiClient.convertToType(data['jsonrpc'], 'String');
             }
-            if (data.hasOwnProperty('slot')) {
-                obj['slot'] = ApiClient.convertToType(data['slot'], 'Number');
-            }
-            if (data.hasOwnProperty('transaction')) {
-                obj['transaction'] = ApiClient.convertToType(data['transaction'], Object);
-            }
-            if (data.hasOwnProperty('network')) {
-                obj['network'] = ApiClient.convertToType(data['network'], 'String');
+            if (data.hasOwnProperty('result')) {
+                obj['result'] = TransactionResult.constructFromObject(data['result']);
             }
         }
         return obj;
@@ -72,54 +65,22 @@ class Transaction {
 }
 
 /**
- * @member {Number} block_time
+ * @member {Number} id
  */
-Transaction.prototype['block_time'] = undefined;
+Transaction.prototype['id'] = undefined;
 
 /**
- * @member {Object} meta
+ * @member {String} jsonrpc
  */
-Transaction.prototype['meta'] = undefined;
+Transaction.prototype['jsonrpc'] = undefined;
 
 /**
- * @member {Number} slot
+ * @member {module:model/TransactionResult} result
  */
-Transaction.prototype['slot'] = undefined;
-
-/**
- * @member {Object} transaction
- */
-Transaction.prototype['transaction'] = undefined;
-
-/**
- * @member {module:model/Transaction.NetworkEnum} network
- * @default 'devnet'
- */
-Transaction.prototype['network'] = 'devnet';
+Transaction.prototype['result'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>network</code> property.
- * @enum {String}
- * @readonly
- */
-Transaction['NetworkEnum'] = {
-
-    /**
-     * value: "devnet"
-     * @const
-     */
-    "devnet": "devnet",
-
-    /**
-     * value: "mainnet-beta"
-     * @const
-     */
-    "mainnet-beta": "mainnet-beta"
-};
 
 
 
