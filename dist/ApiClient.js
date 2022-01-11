@@ -38,14 +38,14 @@ var ApiClient = /*#__PURE__*/function () {
    * @param {String} basePath
    */
   function ApiClient() {
-    var basePath = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'https://api.theblockchainapi.com/v1';
+    var basePath = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'https://api.blockchainapi.com/v1';
 
     _classCallCheck(this, ApiClient);
 
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://api.theblockchainapi.com/v1
+     * @default https://api.blockchainapi.com/v1
      */
     this.basePath = basePath.replace(/\/+$/, '');
     /**
@@ -577,7 +577,7 @@ var ApiClient = /*#__PURE__*/function () {
       */
     function hostSettings() {
       return [{
-        'url': "https://api.theblockchainapi.com/v1",
+        'url': "https://api.blockchainapi.com/v1",
         'description': "No description provided"
       }];
     }

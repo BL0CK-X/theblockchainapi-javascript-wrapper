@@ -117,10 +117,3 @@ src/model/TransferRequest.js
 src/model/TransferResponse.js
 src/model/UploadFileRequest.js
 src/model/Wallet.js
-test/api/SolanaSPLTokenApi.spec.js
-test/model/B58PrivateKey.spec.js
-test/model/GeneratePrivateKey.spec.js
-test/model/GetSPLTokenResponse.spec.js
-test/model/PrivateKey.spec.js
-test/model/SecretRecoveryPhrase.spec.js
-test/model/Wallet.spec.js
