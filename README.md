@@ -33,7 +33,7 @@ Got a feature request? Submit it as an issue on <a target=\"_blank\" href=\"http
             height=\"40px\" 
             src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/email.svg\"
         />
-        <figcaption style=\"textAlign:center;\">Email us: info@theblockchainapi.com</figcaption>
+        <figcaption style=\"textAlign:center;\">Email us: info@blockchainapi.com</figcaption>
     </figure>
 </a> <a href=\"https://discord.gg/d49yzrZRAF\" target=\"_blank\">
     <figure>
