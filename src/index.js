@@ -37,6 +37,7 @@ import GetCandyMetadataRequest from './model/GetCandyMetadataRequest';
 import GetCandyMetadataResponse from './model/GetCandyMetadataResponse';
 import GetCandyMetadataResponseCreators from './model/GetCandyMetadataResponseCreators';
 import GetFileResponse from './model/GetFileResponse';
+import GetNFTListingResponse from './model/GetNFTListingResponse';
 import GetPublicKeyRequest from './model/GetPublicKeyRequest';
 import GetSPLTokenResponse from './model/GetSPLTokenResponse';
 import ListNFTsResponse from './model/ListNFTsResponse';
@@ -55,6 +56,12 @@ import PrivateKey from './model/PrivateKey';
 import PublicKey from './model/PublicKey';
 import SecretPhrase from './model/SecretPhrase';
 import SecretRecoveryPhrase from './model/SecretRecoveryPhrase';
+import SolSeaBuyRequest from './model/SolSeaBuyRequest';
+import SolSeaBuyResponse from './model/SolSeaBuyResponse';
+import SolSeaDelistRequest from './model/SolSeaDelistRequest';
+import SolSeaDelistResponse from './model/SolSeaDelistResponse';
+import SolSeaListRequest from './model/SolSeaListRequest';
+import SolSeaListResponse from './model/SolSeaListResponse';
 import Transaction from './model/Transaction';
 import TransactionResult from './model/TransactionResult';
 import TransferRequest from './model/TransferRequest';
@@ -65,6 +72,7 @@ import FileApi from './api/FileApi';
 import SolanaAccountApi from './api/SolanaAccountApi';
 import SolanaCandyMachineApi from './api/SolanaCandyMachineApi';
 import SolanaNFTApi from './api/SolanaNFTApi';
+import SolanaNFTMarketplacesApi from './api/SolanaNFTMarketplacesApi';
 import SolanaSPLTokenApi from './api/SolanaSPLTokenApi';
 import SolanaTransactionApi from './api/SolanaTransactionApi';
 import SolanaWalletApi from './api/SolanaWalletApi';
@@ -253,6 +261,12 @@ export {
     GetFileResponse,
 
     /**
+     * The GetNFTListingResponse model constructor.
+     * @property {module:model/GetNFTListingResponse}
+     */
+    GetNFTListingResponse,
+
+    /**
      * The GetPublicKeyRequest model constructor.
      * @property {module:model/GetPublicKeyRequest}
      */
@@ -361,6 +375,42 @@ export {
     SecretRecoveryPhrase,
 
     /**
+     * The SolSeaBuyRequest model constructor.
+     * @property {module:model/SolSeaBuyRequest}
+     */
+    SolSeaBuyRequest,
+
+    /**
+     * The SolSeaBuyResponse model constructor.
+     * @property {module:model/SolSeaBuyResponse}
+     */
+    SolSeaBuyResponse,
+
+    /**
+     * The SolSeaDelistRequest model constructor.
+     * @property {module:model/SolSeaDelistRequest}
+     */
+    SolSeaDelistRequest,
+
+    /**
+     * The SolSeaDelistResponse model constructor.
+     * @property {module:model/SolSeaDelistResponse}
+     */
+    SolSeaDelistResponse,
+
+    /**
+     * The SolSeaListRequest model constructor.
+     * @property {module:model/SolSeaListRequest}
+     */
+    SolSeaListRequest,
+
+    /**
+     * The SolSeaListResponse model constructor.
+     * @property {module:model/SolSeaListResponse}
+     */
+    SolSeaListResponse,
+
+    /**
      * The Transaction model constructor.
      * @property {module:model/Transaction}
      */
@@ -419,6 +469,12 @@ export {
     * @property {module:api/SolanaNFTApi}
     */
     SolanaNFTApi,
+
+    /**
+    * The SolanaNFTMarketplacesApi service constructor.
+    * @property {module:api/SolanaNFTMarketplacesApi}
+    */
+    SolanaNFTMarketplacesApi,
 
     /**
     * The SolanaSPLTokenApi service constructor.

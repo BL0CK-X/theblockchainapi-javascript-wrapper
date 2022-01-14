@@ -159,6 +159,12 @@ Object.defineProperty(exports, "GetFileResponse", {
     return _GetFileResponse["default"];
   }
 });
+Object.defineProperty(exports, "GetNFTListingResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GetNFTListingResponse["default"];
+  }
+});
 Object.defineProperty(exports, "GetPublicKeyRequest", {
   enumerable: true,
   get: function get() {
@@ -267,6 +273,42 @@ Object.defineProperty(exports, "SecretRecoveryPhrase", {
     return _SecretRecoveryPhrase["default"];
   }
 });
+Object.defineProperty(exports, "SolSeaBuyRequest", {
+  enumerable: true,
+  get: function get() {
+    return _SolSeaBuyRequest["default"];
+  }
+});
+Object.defineProperty(exports, "SolSeaBuyResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SolSeaBuyResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SolSeaDelistRequest", {
+  enumerable: true,
+  get: function get() {
+    return _SolSeaDelistRequest["default"];
+  }
+});
+Object.defineProperty(exports, "SolSeaDelistResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SolSeaDelistResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SolSeaListRequest", {
+  enumerable: true,
+  get: function get() {
+    return _SolSeaListRequest["default"];
+  }
+});
+Object.defineProperty(exports, "SolSeaListResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SolSeaListResponse["default"];
+  }
+});
 Object.defineProperty(exports, "SolanaAccountApi", {
   enumerable: true,
   get: function get() {
@@ -283,6 +325,12 @@ Object.defineProperty(exports, "SolanaNFTApi", {
   enumerable: true,
   get: function get() {
     return _SolanaNFTApi["default"];
+  }
+});
+Object.defineProperty(exports, "SolanaNFTMarketplacesApi", {
+  enumerable: true,
+  get: function get() {
+    return _SolanaNFTMarketplacesApi["default"];
   }
 });
 Object.defineProperty(exports, "SolanaSPLTokenApi", {
@@ -390,6 +438,8 @@ var _GetCandyMetadataResponseCreators = _interopRequireDefault(require("./model/
 
 var _GetFileResponse = _interopRequireDefault(require("./model/GetFileResponse"));
 
+var _GetNFTListingResponse = _interopRequireDefault(require("./model/GetNFTListingResponse"));
+
 var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyRequest"));
 
 var _GetSPLTokenResponse = _interopRequireDefault(require("./model/GetSPLTokenResponse"));
@@ -426,6 +476,18 @@ var _SecretPhrase = _interopRequireDefault(require("./model/SecretPhrase"));
 
 var _SecretRecoveryPhrase = _interopRequireDefault(require("./model/SecretRecoveryPhrase"));
 
+var _SolSeaBuyRequest = _interopRequireDefault(require("./model/SolSeaBuyRequest"));
+
+var _SolSeaBuyResponse = _interopRequireDefault(require("./model/SolSeaBuyResponse"));
+
+var _SolSeaDelistRequest = _interopRequireDefault(require("./model/SolSeaDelistRequest"));
+
+var _SolSeaDelistResponse = _interopRequireDefault(require("./model/SolSeaDelistResponse"));
+
+var _SolSeaListRequest = _interopRequireDefault(require("./model/SolSeaListRequest"));
+
+var _SolSeaListResponse = _interopRequireDefault(require("./model/SolSeaListResponse"));
+
 var _Transaction = _interopRequireDefault(require("./model/Transaction"));
 
 var _TransactionResult = _interopRequireDefault(require("./model/TransactionResult"));
@@ -445,6 +507,8 @@ var _SolanaAccountApi = _interopRequireDefault(require("./api/SolanaAccountApi")
 var _SolanaCandyMachineApi = _interopRequireDefault(require("./api/SolanaCandyMachineApi"));
 
 var _SolanaNFTApi = _interopRequireDefault(require("./api/SolanaNFTApi"));
+
+var _SolanaNFTMarketplacesApi = _interopRequireDefault(require("./api/SolanaNFTMarketplacesApi"));
 
 var _SolanaSPLTokenApi = _interopRequireDefault(require("./api/SolanaSPLTokenApi"));
 

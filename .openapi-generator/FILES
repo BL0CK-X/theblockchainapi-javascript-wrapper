@@ -27,6 +27,7 @@ docs/GetCandyMetadataRequest.md
 docs/GetCandyMetadataResponse.md
 docs/GetCandyMetadataResponseCreators.md
 docs/GetFileResponse.md
+docs/GetNFTListingResponse.md
 docs/GetPublicKeyRequest.md
 docs/GetSPLTokenResponse.md
 docs/ListNFTsResponse.md
@@ -45,9 +46,16 @@ docs/PrivateKey.md
 docs/PublicKey.md
 docs/SecretPhrase.md
 docs/SecretRecoveryPhrase.md
+docs/SolSeaBuyRequest.md
+docs/SolSeaBuyResponse.md
+docs/SolSeaDelistRequest.md
+docs/SolSeaDelistResponse.md
+docs/SolSeaListRequest.md
+docs/SolSeaListResponse.md
 docs/SolanaAccountApi.md
 docs/SolanaCandyMachineApi.md
 docs/SolanaNFTApi.md
+docs/SolanaNFTMarketplacesApi.md
 docs/SolanaSPLTokenApi.md
 docs/SolanaTransactionApi.md
 docs/SolanaWalletApi.md
@@ -65,6 +73,7 @@ src/api/FileApi.js
 src/api/SolanaAccountApi.js
 src/api/SolanaCandyMachineApi.js
 src/api/SolanaNFTApi.js
+src/api/SolanaNFTMarketplacesApi.js
 src/api/SolanaSPLTokenApi.js
 src/api/SolanaTransactionApi.js
 src/api/SolanaWalletApi.js
@@ -93,6 +102,7 @@ src/model/GetCandyMetadataRequest.js
 src/model/GetCandyMetadataResponse.js
 src/model/GetCandyMetadataResponseCreators.js
 src/model/GetFileResponse.js
+src/model/GetNFTListingResponse.js
 src/model/GetPublicKeyRequest.js
 src/model/GetSPLTokenResponse.js
 src/model/ListNFTsResponse.js
@@ -111,6 +121,12 @@ src/model/PrivateKey.js
 src/model/PublicKey.js
 src/model/SecretPhrase.js
 src/model/SecretRecoveryPhrase.js
+src/model/SolSeaBuyRequest.js
+src/model/SolSeaBuyResponse.js
+src/model/SolSeaDelistRequest.js
+src/model/SolSeaDelistResponse.js
+src/model/SolSeaListRequest.js
+src/model/SolSeaListResponse.js
 src/model/Transaction.js
 src/model/TransactionResult.js
 src/model/TransferRequest.js

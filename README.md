@@ -253,6 +253,10 @@ Class | Method | HTTP request | Description
 *theblockchainapi.SolanaNFTApi* | [**solanaGetNFTOwner**](docs/SolanaNFTApi.md#solanaGetNFTOwner) | **GET** /solana/nft/{network}/{mint_address}/owner | Get owner of an NFT
 *theblockchainapi.SolanaNFTApi* | [**solanaGetNFTsCandyMachineId**](docs/SolanaNFTApi.md#solanaGetNFTsCandyMachineId) | **POST** /solana/nft/candy_machine_id | Get the ID of the candy machine of an NFT 
 *theblockchainapi.SolanaNFTApi* | [**solanaSearchNFTs**](docs/SolanaNFTApi.md#solanaSearchNFTs) | **POST** /solana/nft/search | Search NFTs on Solana
+*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaBuyNFTFromSolSea**](docs/SolanaNFTMarketplacesApi.md#solanaBuyNFTFromSolSea) | **POST** /solana/nft/marketplaces/solsea/buy/{network}/{mint_address} | Buy from SolSea
+*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaDelistNFTFromSolSea**](docs/SolanaNFTMarketplacesApi.md#solanaDelistNFTFromSolSea) | **POST** /solana/nft/marketplaces/solsea/delist/{network}/{mint_address} | Delist from SolSea
+*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaGetNFTListing**](docs/SolanaNFTMarketplacesApi.md#solanaGetNFTListing) | **GET** /solana/nft/marketplaces/listing/{network}/{mint_address} | Get NFT Listing
+*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaListNFTOnSolSea**](docs/SolanaNFTMarketplacesApi.md#solanaListNFTOnSolSea) | **POST** /solana/nft/marketplaces/solsea/list/{network}/{mint_address} | List on SolSea
 *theblockchainapi.SolanaSPLTokenApi* | [**solanaGetSPLToken**](docs/SolanaSPLTokenApi.md#solanaGetSPLToken) | **GET** /solana/spl-token/{network}/{public_key} | Get SPL token metadata
 *theblockchainapi.SolanaTransactionApi* | [**solanaGetTransaction**](docs/SolanaTransactionApi.md#solanaGetTransaction) | **GET** /solana/transaction/{network}/{tx_signature} | Get the details of a transaction made on Solana
 *theblockchainapi.SolanaWalletApi* | [**solanaDeriveAssociatedTokenAccountAddress**](docs/SolanaWalletApi.md#solanaDeriveAssociatedTokenAccountAddress) | **GET** /solana/wallet/{public_key}/associated_token_account/{mint_address} | Derive an associated token account address
@@ -293,6 +297,7 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.GetCandyMetadataResponse](docs/GetCandyMetadataResponse.md)
  - [theblockchainapi.GetCandyMetadataResponseCreators](docs/GetCandyMetadataResponseCreators.md)
  - [theblockchainapi.GetFileResponse](docs/GetFileResponse.md)
+ - [theblockchainapi.GetNFTListingResponse](docs/GetNFTListingResponse.md)
  - [theblockchainapi.GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [theblockchainapi.GetSPLTokenResponse](docs/GetSPLTokenResponse.md)
  - [theblockchainapi.ListNFTsResponse](docs/ListNFTsResponse.md)
@@ -311,6 +316,12 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.PublicKey](docs/PublicKey.md)
  - [theblockchainapi.SecretPhrase](docs/SecretPhrase.md)
  - [theblockchainapi.SecretRecoveryPhrase](docs/SecretRecoveryPhrase.md)
+ - [theblockchainapi.SolSeaBuyRequest](docs/SolSeaBuyRequest.md)
+ - [theblockchainapi.SolSeaBuyResponse](docs/SolSeaBuyResponse.md)
+ - [theblockchainapi.SolSeaDelistRequest](docs/SolSeaDelistRequest.md)
+ - [theblockchainapi.SolSeaDelistResponse](docs/SolSeaDelistResponse.md)
+ - [theblockchainapi.SolSeaListRequest](docs/SolSeaListRequest.md)
+ - [theblockchainapi.SolSeaListResponse](docs/SolSeaListResponse.md)
  - [theblockchainapi.Transaction](docs/Transaction.md)
  - [theblockchainapi.TransactionResult](docs/TransactionResult.md)
  - [theblockchainapi.TransferRequest](docs/TransferRequest.md)
