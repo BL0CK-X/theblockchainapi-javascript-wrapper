@@ -69,6 +69,18 @@ Object.defineProperty(exports, "BalanceResponse", {
     return _BalanceResponse["default"];
   }
 });
+Object.defineProperty(exports, "BuyRequest", {
+  enumerable: true,
+  get: function get() {
+    return _BuyRequest["default"];
+  }
+});
+Object.defineProperty(exports, "BuyResponse", {
+  enumerable: true,
+  get: function get() {
+    return _BuyResponse["default"];
+  }
+});
 Object.defineProperty(exports, "CandyMachineSearchRequest", {
   enumerable: true,
   get: function get() {
@@ -85,6 +97,18 @@ Object.defineProperty(exports, "CreateTestCandyMachineResponse", {
   enumerable: true,
   get: function get() {
     return _CreateTestCandyMachineResponse["default"];
+  }
+});
+Object.defineProperty(exports, "DelistRequest", {
+  enumerable: true,
+  get: function get() {
+    return _DelistRequest["default"];
+  }
+});
+Object.defineProperty(exports, "DelistResponse", {
+  enumerable: true,
+  get: function get() {
+    return _DelistResponse["default"];
   }
 });
 Object.defineProperty(exports, "FileApi", {
@@ -183,6 +207,18 @@ Object.defineProperty(exports, "ListNFTsResponse", {
     return _ListNFTsResponse["default"];
   }
 });
+Object.defineProperty(exports, "ListRequest", {
+  enumerable: true,
+  get: function get() {
+    return _ListRequest["default"];
+  }
+});
+Object.defineProperty(exports, "ListResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ListResponse["default"];
+  }
+});
 Object.defineProperty(exports, "MintNFTErrorResponse", {
   enumerable: true,
   get: function get() {
@@ -271,42 +307,6 @@ Object.defineProperty(exports, "SecretRecoveryPhrase", {
   enumerable: true,
   get: function get() {
     return _SecretRecoveryPhrase["default"];
-  }
-});
-Object.defineProperty(exports, "SolSeaBuyRequest", {
-  enumerable: true,
-  get: function get() {
-    return _SolSeaBuyRequest["default"];
-  }
-});
-Object.defineProperty(exports, "SolSeaBuyResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SolSeaBuyResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SolSeaDelistRequest", {
-  enumerable: true,
-  get: function get() {
-    return _SolSeaDelistRequest["default"];
-  }
-});
-Object.defineProperty(exports, "SolSeaDelistResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SolSeaDelistResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SolSeaListRequest", {
-  enumerable: true,
-  get: function get() {
-    return _SolSeaListRequest["default"];
-  }
-});
-Object.defineProperty(exports, "SolSeaListResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SolSeaListResponse["default"];
   }
 });
 Object.defineProperty(exports, "SolanaAccountApi", {
@@ -410,11 +410,19 @@ var _BalanceRequest = _interopRequireDefault(require("./model/BalanceRequest"));
 
 var _BalanceResponse = _interopRequireDefault(require("./model/BalanceResponse"));
 
+var _BuyRequest = _interopRequireDefault(require("./model/BuyRequest"));
+
+var _BuyResponse = _interopRequireDefault(require("./model/BuyResponse"));
+
 var _CandyMachineSearchRequest = _interopRequireDefault(require("./model/CandyMachineSearchRequest"));
 
 var _CreateTestCandyMachineRequest = _interopRequireDefault(require("./model/CreateTestCandyMachineRequest"));
 
 var _CreateTestCandyMachineResponse = _interopRequireDefault(require("./model/CreateTestCandyMachineResponse"));
+
+var _DelistRequest = _interopRequireDefault(require("./model/DelistRequest"));
+
+var _DelistResponse = _interopRequireDefault(require("./model/DelistResponse"));
 
 var _GeneratePrivateKey = _interopRequireDefault(require("./model/GeneratePrivateKey"));
 
@@ -446,6 +454,10 @@ var _GetSPLTokenResponse = _interopRequireDefault(require("./model/GetSPLTokenRe
 
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
 
+var _ListRequest = _interopRequireDefault(require("./model/ListRequest"));
+
+var _ListResponse = _interopRequireDefault(require("./model/ListResponse"));
+
 var _MintNFTErrorResponse = _interopRequireDefault(require("./model/MintNFTErrorResponse"));
 
 var _MintNFTRequest = _interopRequireDefault(require("./model/MintNFTRequest"));
@@ -475,18 +487,6 @@ var _PublicKey = _interopRequireDefault(require("./model/PublicKey"));
 var _SecretPhrase = _interopRequireDefault(require("./model/SecretPhrase"));
 
 var _SecretRecoveryPhrase = _interopRequireDefault(require("./model/SecretRecoveryPhrase"));
-
-var _SolSeaBuyRequest = _interopRequireDefault(require("./model/SolSeaBuyRequest"));
-
-var _SolSeaBuyResponse = _interopRequireDefault(require("./model/SolSeaBuyResponse"));
-
-var _SolSeaDelistRequest = _interopRequireDefault(require("./model/SolSeaDelistRequest"));
-
-var _SolSeaDelistResponse = _interopRequireDefault(require("./model/SolSeaDelistResponse"));
-
-var _SolSeaListRequest = _interopRequireDefault(require("./model/SolSeaListRequest"));
-
-var _SolSeaListResponse = _interopRequireDefault(require("./model/SolSeaListResponse"));
 
 var _Transaction = _interopRequireDefault(require("./model/Transaction"));
 

@@ -7,19 +7,19 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _BuyRequest = _interopRequireDefault(require("../model/BuyRequest"));
+
+var _BuyResponse = _interopRequireDefault(require("../model/BuyResponse"));
+
+var _DelistRequest = _interopRequireDefault(require("../model/DelistRequest"));
+
+var _DelistResponse = _interopRequireDefault(require("../model/DelistResponse"));
+
 var _GetNFTListingResponse = _interopRequireDefault(require("../model/GetNFTListingResponse"));
 
-var _SolSeaBuyRequest = _interopRequireDefault(require("../model/SolSeaBuyRequest"));
+var _ListRequest = _interopRequireDefault(require("../model/ListRequest"));
 
-var _SolSeaBuyResponse = _interopRequireDefault(require("../model/SolSeaBuyResponse"));
-
-var _SolSeaDelistRequest = _interopRequireDefault(require("../model/SolSeaDelistRequest"));
-
-var _SolSeaDelistResponse = _interopRequireDefault(require("../model/SolSeaDelistResponse"));
-
-var _SolSeaListRequest = _interopRequireDefault(require("../model/SolSeaListRequest"));
-
-var _SolSeaListResponse = _interopRequireDefault(require("../model/SolSeaListResponse"));
+var _ListResponse = _interopRequireDefault(require("../model/ListResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -48,33 +48,40 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Buy from SolSea
-   * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  Buy an NFT from SolSea.  **We are not responsible for any SOL or NFT lost.**  `Cost: 50 Credits`, Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)
-   * @param {String} network The network ID (devnet, mainnet-beta)
+   * Buy
+   * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  `Cost: 25 Credits`, `Cost: 3 Credits on Devnet`  Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)  (You are able to try on the `Free` plan as well, until you run out of credits.)
+   * @param {module:model/String} network The network ID
+   * @param {module:model/String} exchange The NFT exchange to interact with
    * @param {String} mintAddress The mint address of the NFT you want to buy
    * @param {Object} opts Optional parameters
-   * @param {module:model/SolSeaBuyRequest} opts.solSeaBuyRequest 
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SolSeaBuyResponse} and HTTP response
+   * @param {module:model/BuyRequest} opts.buyRequest 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BuyResponse} and HTTP response
    */
 
 
   _createClass(SolanaNFTMarketplacesApi, [{
-    key: "solanaBuyNFTFromSolSeaWithHttpInfo",
-    value: function solanaBuyNFTFromSolSeaWithHttpInfo(network, mintAddress, opts) {
+    key: "solanaBuyNFTWithHttpInfo",
+    value: function solanaBuyNFTWithHttpInfo(network, exchange, mintAddress, opts) {
       opts = opts || {};
-      var postBody = opts['solSeaBuyRequest']; // verify the required parameter 'network' is set
+      var postBody = opts['buyRequest']; // verify the required parameter 'network' is set
 
       if (network === undefined || network === null) {
-        throw new Error("Missing the required parameter 'network' when calling solanaBuyNFTFromSolSea");
+        throw new Error("Missing the required parameter 'network' when calling solanaBuyNFT");
+      } // verify the required parameter 'exchange' is set
+
+
+      if (exchange === undefined || exchange === null) {
+        throw new Error("Missing the required parameter 'exchange' when calling solanaBuyNFT");
       } // verify the required parameter 'mintAddress' is set
 
 
       if (mintAddress === undefined || mintAddress === null) {
-        throw new Error("Missing the required parameter 'mintAddress' when calling solanaBuyNFTFromSolSea");
+        throw new Error("Missing the required parameter 'mintAddress' when calling solanaBuyNFT");
       }
 
       var pathParams = {
         'network': network,
+        'exchange': exchange,
         'mint_address': mintAddress
       };
       var queryParams = {};
@@ -83,53 +90,61 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
       var authNames = ['APIKeyID', 'APISecretKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _SolSeaBuyResponse["default"];
-      return this.apiClient.callApi('/solana/nft/marketplaces/solsea/buy/{network}/{mint_address}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _BuyResponse["default"];
+      return this.apiClient.callApi('/solana/nft/marketplaces/{exchange}/buy/{network}/{mint_address}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
-     * Buy from SolSea
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  Buy an NFT from SolSea.  **We are not responsible for any SOL or NFT lost.**  `Cost: 50 Credits`, Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * Buy
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  `Cost: 25 Credits`, `Cost: 3 Credits on Devnet`  Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)  (You are able to try on the `Free` plan as well, until you run out of credits.)
+     * @param {module:model/String} network The network ID
+     * @param {module:model/String} exchange The NFT exchange to interact with
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @param {Object} opts Optional parameters
-     * @param {module:model/SolSeaBuyRequest} opts.solSeaBuyRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SolSeaBuyResponse}
+     * @param {module:model/BuyRequest} opts.buyRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BuyResponse}
      */
 
   }, {
-    key: "solanaBuyNFTFromSolSea",
-    value: function solanaBuyNFTFromSolSea(network, mintAddress, opts) {
-      return this.solanaBuyNFTFromSolSeaWithHttpInfo(network, mintAddress, opts).then(function (response_and_data) {
+    key: "solanaBuyNFT",
+    value: function solanaBuyNFT(network, exchange, mintAddress, opts) {
+      return this.solanaBuyNFTWithHttpInfo(network, exchange, mintAddress, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
     /**
-     * Delist from SolSea
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  Delist an NFT from SolSea.  **We are not responsible for any SOL or NFT lost.**  `Cost: 8 Credits`, Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * Delist
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/delist-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Delist an NFT from a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  `Cost: 8 Credits`, `Cost: 3 Credits on Devnet`  Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)  (You are able to try on the `Free` plan as well, until you run out of credits.)
+     * @param {module:model/String} network The network ID
+     * @param {module:model/String} exchange The NFT exchange to interact with
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @param {Object} opts Optional parameters
-     * @param {module:model/SolSeaDelistRequest} opts.solSeaDelistRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SolSeaDelistResponse} and HTTP response
+     * @param {module:model/DelistRequest} opts.delistRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DelistResponse} and HTTP response
      */
 
   }, {
-    key: "solanaDelistNFTFromSolSeaWithHttpInfo",
-    value: function solanaDelistNFTFromSolSeaWithHttpInfo(network, mintAddress, opts) {
+    key: "solanaDelistNFTWithHttpInfo",
+    value: function solanaDelistNFTWithHttpInfo(network, exchange, mintAddress, opts) {
       opts = opts || {};
-      var postBody = opts['solSeaDelistRequest']; // verify the required parameter 'network' is set
+      var postBody = opts['delistRequest']; // verify the required parameter 'network' is set
 
       if (network === undefined || network === null) {
-        throw new Error("Missing the required parameter 'network' when calling solanaDelistNFTFromSolSea");
+        throw new Error("Missing the required parameter 'network' when calling solanaDelistNFT");
+      } // verify the required parameter 'exchange' is set
+
+
+      if (exchange === undefined || exchange === null) {
+        throw new Error("Missing the required parameter 'exchange' when calling solanaDelistNFT");
       } // verify the required parameter 'mintAddress' is set
 
 
       if (mintAddress === undefined || mintAddress === null) {
-        throw new Error("Missing the required parameter 'mintAddress' when calling solanaDelistNFTFromSolSea");
+        throw new Error("Missing the required parameter 'mintAddress' when calling solanaDelistNFT");
       }
 
       var pathParams = {
         'network': network,
+        'exchange': exchange,
         'mint_address': mintAddress
       };
       var queryParams = {};
@@ -138,30 +153,31 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
       var authNames = ['APIKeyID', 'APISecretKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _SolSeaDelistResponse["default"];
-      return this.apiClient.callApi('/solana/nft/marketplaces/solsea/delist/{network}/{mint_address}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _DelistResponse["default"];
+      return this.apiClient.callApi('/solana/nft/marketplaces/{exchange}/delist/{network}/{mint_address}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
-     * Delist from SolSea
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  Delist an NFT from SolSea.  **We are not responsible for any SOL or NFT lost.**  `Cost: 8 Credits`, Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * Delist
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/delist-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Delist an NFT from a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  `Cost: 8 Credits`, `Cost: 3 Credits on Devnet`  Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)  (You are able to try on the `Free` plan as well, until you run out of credits.)
+     * @param {module:model/String} network The network ID
+     * @param {module:model/String} exchange The NFT exchange to interact with
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @param {Object} opts Optional parameters
-     * @param {module:model/SolSeaDelistRequest} opts.solSeaDelistRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SolSeaDelistResponse}
+     * @param {module:model/DelistRequest} opts.delistRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DelistResponse}
      */
 
   }, {
-    key: "solanaDelistNFTFromSolSea",
-    value: function solanaDelistNFTFromSolSea(network, mintAddress, opts) {
-      return this.solanaDelistNFTFromSolSeaWithHttpInfo(network, mintAddress, opts).then(function (response_and_data) {
+    key: "solanaDelistNFT",
+    value: function solanaDelistNFT(network, exchange, mintAddress, opts) {
+      return this.solanaDelistNFTWithHttpInfo(network, exchange, mintAddress, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
     /**
      * Get NFT Listing
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea  `Cost: 3 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/get-nft-listing\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden  `Cost: 1 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/String} network The network ID
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetNFTListingResponse} and HTTP response
      */
@@ -195,8 +211,8 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
     }
     /**
      * Get NFT Listing
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea  `Cost: 3 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/get-nft-listing\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden  `Cost: 1 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/String} network The network ID
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetNFTListingResponse}
      */
@@ -209,32 +225,39 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
       });
     }
     /**
-     * List on SolSea
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  List NFT on SolSea.  **We are not responsible for any SOL or NFT lost.**  `Cost: 12 Credits`, Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * List
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/list-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.  List an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  `Cost: 12 Credits`, `Cost: 3 Credits on Devnet`  Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)  (You are able to try on the `Free` plan as well, until you run out of credits.)
+     * @param {module:model/String} network The network ID
+     * @param {module:model/String} exchange The NFT exchange to interact with
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @param {Object} opts Optional parameters
-     * @param {module:model/SolSeaListRequest} opts.solSeaListRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SolSeaListResponse} and HTTP response
+     * @param {module:model/ListRequest} opts.listRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListResponse} and HTTP response
      */
 
   }, {
-    key: "solanaListNFTOnSolSeaWithHttpInfo",
-    value: function solanaListNFTOnSolSeaWithHttpInfo(network, mintAddress, opts) {
+    key: "solanaListNFTWithHttpInfo",
+    value: function solanaListNFTWithHttpInfo(network, exchange, mintAddress, opts) {
       opts = opts || {};
-      var postBody = opts['solSeaListRequest']; // verify the required parameter 'network' is set
+      var postBody = opts['listRequest']; // verify the required parameter 'network' is set
 
       if (network === undefined || network === null) {
-        throw new Error("Missing the required parameter 'network' when calling solanaListNFTOnSolSea");
+        throw new Error("Missing the required parameter 'network' when calling solanaListNFT");
+      } // verify the required parameter 'exchange' is set
+
+
+      if (exchange === undefined || exchange === null) {
+        throw new Error("Missing the required parameter 'exchange' when calling solanaListNFT");
       } // verify the required parameter 'mintAddress' is set
 
 
       if (mintAddress === undefined || mintAddress === null) {
-        throw new Error("Missing the required parameter 'mintAddress' when calling solanaListNFTOnSolSea");
+        throw new Error("Missing the required parameter 'mintAddress' when calling solanaListNFT");
       }
 
       var pathParams = {
         'network': network,
+        'exchange': exchange,
         'mint_address': mintAddress
       };
       var queryParams = {};
@@ -243,23 +266,24 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
       var authNames = ['APIKeyID', 'APISecretKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _SolSeaListResponse["default"];
-      return this.apiClient.callApi('/solana/nft/marketplaces/solsea/list/{network}/{mint_address}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      var returnType = _ListResponse["default"];
+      return this.apiClient.callApi('/solana/nft/marketplaces/{exchange}/list/{network}/{mint_address}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
-     * List on SolSea
-     * <a href=\"\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.  List NFT on SolSea.  **We are not responsible for any SOL or NFT lost.**  `Cost: 12 Credits`, Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {String} network The network ID (devnet, mainnet-beta)
+     * List
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/list-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.  List an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  `Cost: 12 Credits`, `Cost: 3 Credits on Devnet`  Limited to $29/mo plans and above. (<a href=\"#section/Pricing\">See Pricing</a>)  (You are able to try on the `Free` plan as well, until you run out of credits.)
+     * @param {module:model/String} network The network ID
+     * @param {module:model/String} exchange The NFT exchange to interact with
      * @param {String} mintAddress The mint address of the NFT you want to buy
      * @param {Object} opts Optional parameters
-     * @param {module:model/SolSeaListRequest} opts.solSeaListRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SolSeaListResponse}
+     * @param {module:model/ListRequest} opts.listRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListResponse}
      */
 
   }, {
-    key: "solanaListNFTOnSolSea",
-    value: function solanaListNFTOnSolSea(network, mintAddress, opts) {
-      return this.solanaListNFTOnSolSeaWithHttpInfo(network, mintAddress, opts).then(function (response_and_data) {
+    key: "solanaListNFT",
+    value: function solanaListNFT(network, exchange, mintAddress, opts) {
+      return this.solanaListNFTWithHttpInfo(network, exchange, mintAddress, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }
