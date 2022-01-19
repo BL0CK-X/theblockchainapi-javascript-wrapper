@@ -4,20 +4,20 @@ All URIs are relative to *https://api.blockchainapi.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**solanaBuyNFTFromSolSea**](SolanaNFTMarketplacesApi.md#solanaBuyNFTFromSolSea) | **POST** /solana/nft/marketplaces/solsea/buy/{network}/{mint_address} | Buy from SolSea
-[**solanaDelistNFTFromSolSea**](SolanaNFTMarketplacesApi.md#solanaDelistNFTFromSolSea) | **POST** /solana/nft/marketplaces/solsea/delist/{network}/{mint_address} | Delist from SolSea
+[**solanaBuyNFT**](SolanaNFTMarketplacesApi.md#solanaBuyNFT) | **POST** /solana/nft/marketplaces/{exchange}/buy/{network}/{mint_address} | Buy
+[**solanaDelistNFT**](SolanaNFTMarketplacesApi.md#solanaDelistNFT) | **POST** /solana/nft/marketplaces/{exchange}/delist/{network}/{mint_address} | Delist
 [**solanaGetNFTListing**](SolanaNFTMarketplacesApi.md#solanaGetNFTListing) | **GET** /solana/nft/marketplaces/listing/{network}/{mint_address} | Get NFT Listing
-[**solanaListNFTOnSolSea**](SolanaNFTMarketplacesApi.md#solanaListNFTOnSolSea) | **POST** /solana/nft/marketplaces/solsea/list/{network}/{mint_address} | List on SolSea
+[**solanaListNFT**](SolanaNFTMarketplacesApi.md#solanaListNFT) | **POST** /solana/nft/marketplaces/{exchange}/list/{network}/{mint_address} | List
 
 
 
-## solanaBuyNFTFromSolSea
+## solanaBuyNFT
 
-> SolSeaBuyResponse solanaBuyNFTFromSolSea(network, mintAddress, opts)
+> BuyResponse solanaBuyNFT(network, exchange, mintAddress, opts)
 
-Buy from SolSea
+Buy
 
-&lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  Buy an NFT from SolSea.  **We are not responsible for any SOL or NFT lost.**  &#x60;Cost: 50 Credits&#x60;, Limited to $29/mo plans and above. (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  &#x60;Cost: 25 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60;  Limited to $29/mo plans and above. (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)  (You are able to try on the &#x60;Free&#x60; plan as well, until you run out of credits.)
 
 ### Example
 
@@ -36,12 +36,13 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
-let network = devnet; // String | The network ID (devnet, mainnet-beta)
+let network = devnet; // String | The network ID
+let exchange = solsea; // String | The NFT exchange to interact with
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 let opts = {
-  'solSeaBuyRequest': new theblockchainapi.SolSeaBuyRequest() // SolSeaBuyRequest | 
+  'buyRequest': new theblockchainapi.BuyRequest() // BuyRequest | 
 };
-apiInstance.solanaBuyNFTFromSolSea(network, mintAddress, opts).then((data) => {
+apiInstance.solanaBuyNFT(network, exchange, mintAddress, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -54,13 +55,14 @@ apiInstance.solanaBuyNFTFromSolSea(network, mintAddress, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | **String**| The network ID (devnet, mainnet-beta) | 
+ **network** | **String**| The network ID | 
+ **exchange** | **String**| The NFT exchange to interact with | 
  **mintAddress** | **String**| The mint address of the NFT you want to buy | 
- **solSeaBuyRequest** | [**SolSeaBuyRequest**](SolSeaBuyRequest.md)|  | [optional] 
+ **buyRequest** | [**BuyRequest**](BuyRequest.md)|  | [optional] 
 
 ### Return type
 
-[**SolSeaBuyResponse**](SolSeaBuyResponse.md)
+[**BuyResponse**](BuyResponse.md)
 
 ### Authorization
 
@@ -72,13 +74,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## solanaDelistNFTFromSolSea
+## solanaDelistNFT
 
-> SolSeaDelistResponse solanaDelistNFTFromSolSea(network, mintAddress, opts)
+> DelistResponse solanaDelistNFT(network, exchange, mintAddress, opts)
 
-Delist from SolSea
+Delist
 
-&lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  Delist an NFT from SolSea.  **We are not responsible for any SOL or NFT lost.**  &#x60;Cost: 8 Credits&#x60;, Limited to $29/mo plans and above. (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/delist-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Delist an NFT from a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  &#x60;Cost: 8 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60;  Limited to $29/mo plans and above. (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)  (You are able to try on the &#x60;Free&#x60; plan as well, until you run out of credits.)
 
 ### Example
 
@@ -97,12 +99,13 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
-let network = devnet; // String | The network ID (devnet, mainnet-beta)
+let network = devnet; // String | The network ID
+let exchange = solsea; // String | The NFT exchange to interact with
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 let opts = {
-  'solSeaDelistRequest': new theblockchainapi.SolSeaDelistRequest() // SolSeaDelistRequest | 
+  'delistRequest': new theblockchainapi.DelistRequest() // DelistRequest | 
 };
-apiInstance.solanaDelistNFTFromSolSea(network, mintAddress, opts).then((data) => {
+apiInstance.solanaDelistNFT(network, exchange, mintAddress, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -115,13 +118,14 @@ apiInstance.solanaDelistNFTFromSolSea(network, mintAddress, opts).then((data) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | **String**| The network ID (devnet, mainnet-beta) | 
+ **network** | **String**| The network ID | 
+ **exchange** | **String**| The NFT exchange to interact with | 
  **mintAddress** | **String**| The mint address of the NFT you want to buy | 
- **solSeaDelistRequest** | [**SolSeaDelistRequest**](SolSeaDelistRequest.md)|  | [optional] 
+ **delistRequest** | [**DelistRequest**](DelistRequest.md)|  | [optional] 
 
 ### Return type
 
-[**SolSeaDelistResponse**](SolSeaDelistResponse.md)
+[**DelistResponse**](DelistResponse.md)
 
 ### Authorization
 
@@ -139,7 +143,7 @@ Name | Type | Description  | Notes
 
 Get NFT Listing
 
-&lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea  &#x60;Cost: 3 Credits&#x60;, (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/get-nft-listing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden  &#x60;Cost: 1 Credits&#x60;, (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
 
 ### Example
 
@@ -158,7 +162,7 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
-let network = devnet; // String | The network ID (devnet, mainnet-beta)
+let network = devnet; // String | The network ID
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 apiInstance.solanaGetNFTListing(network, mintAddress).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -173,7 +177,7 @@ apiInstance.solanaGetNFTListing(network, mintAddress).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | **String**| The network ID (devnet, mainnet-beta) | 
+ **network** | **String**| The network ID | 
  **mintAddress** | **String**| The mint address of the NFT you want to buy | 
 
 ### Return type
@@ -190,13 +194,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## solanaListNFTOnSolSea
+## solanaListNFT
 
-> SolSeaListResponse solanaListNFTOnSolSea(network, mintAddress, opts)
+> ListResponse solanaListNFT(network, exchange, mintAddress, opts)
 
-List on SolSea
+List
 
-&lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  List NFT on SolSea.  **We are not responsible for any SOL or NFT lost.**  &#x60;Cost: 12 Credits&#x60;, Limited to $29/mo plans and above. (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/list-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  List an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  **We are not responsible for any SOL or NFT lost.**  &#x60;Cost: 12 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60;  Limited to $29/mo plans and above. (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)  (You are able to try on the &#x60;Free&#x60; plan as well, until you run out of credits.)
 
 ### Example
 
@@ -215,12 +219,13 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
-let network = devnet; // String | The network ID (devnet, mainnet-beta)
+let network = devnet; // String | The network ID
+let exchange = solsea; // String | The NFT exchange to interact with
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 let opts = {
-  'solSeaListRequest': new theblockchainapi.SolSeaListRequest() // SolSeaListRequest | 
+  'listRequest': new theblockchainapi.ListRequest() // ListRequest | 
 };
-apiInstance.solanaListNFTOnSolSea(network, mintAddress, opts).then((data) => {
+apiInstance.solanaListNFT(network, exchange, mintAddress, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -233,13 +238,14 @@ apiInstance.solanaListNFTOnSolSea(network, mintAddress, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | **String**| The network ID (devnet, mainnet-beta) | 
+ **network** | **String**| The network ID | 
+ **exchange** | **String**| The NFT exchange to interact with | 
  **mintAddress** | **String**| The mint address of the NFT you want to buy | 
- **solSeaListRequest** | [**SolSeaListRequest**](SolSeaListRequest.md)|  | [optional] 
+ **listRequest** | [**ListRequest**](ListRequest.md)|  | [optional] 
 
 ### Return type
 
-[**SolSeaListResponse**](SolSeaListResponse.md)
+[**ListResponse**](ListResponse.md)
 
 ### Authorization
 

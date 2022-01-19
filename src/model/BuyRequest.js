@@ -15,20 +15,20 @@ import ApiClient from '../ApiClient';
 import Wallet from './Wallet';
 
 /**
- * The SolSeaListRequest model module.
- * @module model/SolSeaListRequest
+ * The BuyRequest model module.
+ * @module model/BuyRequest
  * @version 1.0.9
  */
-class SolSeaListRequest {
+class BuyRequest {
     /**
-     * Constructs a new <code>SolSeaListRequest</code>.
-     * @alias module:model/SolSeaListRequest
+     * Constructs a new <code>BuyRequest</code>.
+     * @alias module:model/BuyRequest
      * @param wallet {module:model/Wallet} 
-     * @param nftPrice {Number}  The number of lamports you are expecting to sell the NFT for.  There are 1e9 (1 billion) Lamports in a SOL.    Min price: 1   Max price: 18446744073709551615 
+     * @param nftPrice {Number} The number of lamports you are expecting to purchase the NFT for. We check the price of the NFT before  purchasing it to ensure that it matches your expectation. There are 1e9 (1 billion) Lamports in a SOL. 
      */
     constructor(wallet, nftPrice) { 
         
-        SolSeaListRequest.initialize(this, wallet, nftPrice);
+        BuyRequest.initialize(this, wallet, nftPrice);
     }
 
     /**
@@ -42,15 +42,15 @@ class SolSeaListRequest {
     }
 
     /**
-     * Constructs a <code>SolSeaListRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BuyRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SolSeaListRequest} obj Optional instance to populate.
-     * @return {module:model/SolSeaListRequest} The populated <code>SolSeaListRequest</code> instance.
+     * @param {module:model/BuyRequest} obj Optional instance to populate.
+     * @return {module:model/BuyRequest} The populated <code>BuyRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SolSeaListRequest();
+            obj = obj || new BuyRequest();
 
             if (data.hasOwnProperty('wallet')) {
                 obj['wallet'] = Wallet.constructFromObject(data['wallet']);
@@ -68,18 +68,18 @@ class SolSeaListRequest {
 /**
  * @member {module:model/Wallet} wallet
  */
-SolSeaListRequest.prototype['wallet'] = undefined;
+BuyRequest.prototype['wallet'] = undefined;
 
 /**
- *  The number of lamports you are expecting to sell the NFT for.  There are 1e9 (1 billion) Lamports in a SOL.    Min price: 1   Max price: 18446744073709551615 
+ * The number of lamports you are expecting to purchase the NFT for. We check the price of the NFT before  purchasing it to ensure that it matches your expectation. There are 1e9 (1 billion) Lamports in a SOL. 
  * @member {Number} nft_price
  */
-SolSeaListRequest.prototype['nft_price'] = undefined;
+BuyRequest.prototype['nft_price'] = undefined;
 
 
 
 
 
 
-export default SolSeaListRequest;
+export default BuyRequest;
 

@@ -12,23 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import Wallet from './Wallet';
 
 /**
- * The SolSeaBuyRequest model module.
- * @module model/SolSeaBuyRequest
+ * The BuyResponse model module.
+ * @module model/BuyResponse
  * @version 1.0.9
  */
-class SolSeaBuyRequest {
+class BuyResponse {
     /**
-     * Constructs a new <code>SolSeaBuyRequest</code>.
-     * @alias module:model/SolSeaBuyRequest
-     * @param wallet {module:model/Wallet} 
-     * @param nftPrice {Number} The number of lamports you are expecting to purchase the NFT for. We check the price of the NFT before  purchasing it to ensure that it matches your expectation. There are 1e9 (1 billion) Lamports in a SOL. 
+     * Constructs a new <code>BuyResponse</code>.
+     * @alias module:model/BuyResponse
      */
-    constructor(wallet, nftPrice) { 
+    constructor() { 
         
-        SolSeaBuyRequest.initialize(this, wallet, nftPrice);
+        BuyResponse.initialize(this);
     }
 
     /**
@@ -36,27 +33,22 @@ class SolSeaBuyRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, wallet, nftPrice) { 
-        obj['wallet'] = wallet;
-        obj['nft_price'] = nftPrice;
+    static initialize(obj) { 
     }
 
     /**
-     * Constructs a <code>SolSeaBuyRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BuyResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SolSeaBuyRequest} obj Optional instance to populate.
-     * @return {module:model/SolSeaBuyRequest} The populated <code>SolSeaBuyRequest</code> instance.
+     * @param {module:model/BuyResponse} obj Optional instance to populate.
+     * @return {module:model/BuyResponse} The populated <code>BuyResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SolSeaBuyRequest();
+            obj = obj || new BuyResponse();
 
-            if (data.hasOwnProperty('wallet')) {
-                obj['wallet'] = Wallet.constructFromObject(data['wallet']);
-            }
-            if (data.hasOwnProperty('nft_price')) {
-                obj['nft_price'] = ApiClient.convertToType(data['nft_price'], 'Number');
+            if (data.hasOwnProperty('transaction_signature')) {
+                obj['transaction_signature'] = ApiClient.convertToType(data['transaction_signature'], 'String');
             }
         }
         return obj;
@@ -66,20 +58,15 @@ class SolSeaBuyRequest {
 }
 
 /**
- * @member {module:model/Wallet} wallet
+ * The signature of the `buy` transaction 
+ * @member {String} transaction_signature
  */
-SolSeaBuyRequest.prototype['wallet'] = undefined;
-
-/**
- * The number of lamports you are expecting to purchase the NFT for. We check the price of the NFT before  purchasing it to ensure that it matches your expectation. There are 1e9 (1 billion) Lamports in a SOL. 
- * @member {Number} nft_price
- */
-SolSeaBuyRequest.prototype['nft_price'] = undefined;
+BuyResponse.prototype['transaction_signature'] = undefined;
 
 
 
 
 
 
-export default SolSeaBuyRequest;
+export default BuyResponse;
 

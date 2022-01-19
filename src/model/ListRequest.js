@@ -12,20 +12,23 @@
  */
 
 import ApiClient from '../ApiClient';
+import Wallet from './Wallet';
 
 /**
- * The SolSeaListResponse model module.
- * @module model/SolSeaListResponse
+ * The ListRequest model module.
+ * @module model/ListRequest
  * @version 1.0.9
  */
-class SolSeaListResponse {
+class ListRequest {
     /**
-     * Constructs a new <code>SolSeaListResponse</code>.
-     * @alias module:model/SolSeaListResponse
+     * Constructs a new <code>ListRequest</code>.
+     * @alias module:model/ListRequest
+     * @param wallet {module:model/Wallet} 
+     * @param nftPrice {Number}  The number of lamports you are expecting to sell the NFT for.  There are 1e9 (1 billion) Lamports in a SOL.    Min price: 1   Max price: 18446744073709551615 
      */
-    constructor() { 
+    constructor(wallet, nftPrice) { 
         
-        SolSeaListResponse.initialize(this);
+        ListRequest.initialize(this, wallet, nftPrice);
     }
 
     /**
@@ -33,22 +36,27 @@ class SolSeaListResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, wallet, nftPrice) { 
+        obj['wallet'] = wallet;
+        obj['nft_price'] = nftPrice;
     }
 
     /**
-     * Constructs a <code>SolSeaListResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ListRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SolSeaListResponse} obj Optional instance to populate.
-     * @return {module:model/SolSeaListResponse} The populated <code>SolSeaListResponse</code> instance.
+     * @param {module:model/ListRequest} obj Optional instance to populate.
+     * @return {module:model/ListRequest} The populated <code>ListRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SolSeaListResponse();
+            obj = obj || new ListRequest();
 
-            if (data.hasOwnProperty('transaction_signature')) {
-                obj['transaction_signature'] = ApiClient.convertToType(data['transaction_signature'], 'String');
+            if (data.hasOwnProperty('wallet')) {
+                obj['wallet'] = Wallet.constructFromObject(data['wallet']);
+            }
+            if (data.hasOwnProperty('nft_price')) {
+                obj['nft_price'] = ApiClient.convertToType(data['nft_price'], 'Number');
             }
         }
         return obj;
@@ -58,15 +66,20 @@ class SolSeaListResponse {
 }
 
 /**
- * The signature of the `list` transaction 
- * @member {String} transaction_signature
+ * @member {module:model/Wallet} wallet
  */
-SolSeaListResponse.prototype['transaction_signature'] = undefined;
+ListRequest.prototype['wallet'] = undefined;
+
+/**
+ *  The number of lamports you are expecting to sell the NFT for.  There are 1e9 (1 billion) Lamports in a SOL.    Min price: 1   Max price: 18446744073709551615 
+ * @member {Number} nft_price
+ */
+ListRequest.prototype['nft_price'] = undefined;
 
 
 
 
 
 
-export default SolSeaListResponse;
+export default ListRequest;
 

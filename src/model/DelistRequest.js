@@ -12,20 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
+import Wallet from './Wallet';
 
 /**
- * The SolSeaBuyResponse model module.
- * @module model/SolSeaBuyResponse
+ * The DelistRequest model module.
+ * @module model/DelistRequest
  * @version 1.0.9
  */
-class SolSeaBuyResponse {
+class DelistRequest {
     /**
-     * Constructs a new <code>SolSeaBuyResponse</code>.
-     * @alias module:model/SolSeaBuyResponse
+     * Constructs a new <code>DelistRequest</code>.
+     * @alias module:model/DelistRequest
+     * @param wallet {module:model/Wallet} 
      */
-    constructor() { 
+    constructor(wallet) { 
         
-        SolSeaBuyResponse.initialize(this);
+        DelistRequest.initialize(this, wallet);
     }
 
     /**
@@ -33,22 +35,23 @@ class SolSeaBuyResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, wallet) { 
+        obj['wallet'] = wallet;
     }
 
     /**
-     * Constructs a <code>SolSeaBuyResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DelistRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SolSeaBuyResponse} obj Optional instance to populate.
-     * @return {module:model/SolSeaBuyResponse} The populated <code>SolSeaBuyResponse</code> instance.
+     * @param {module:model/DelistRequest} obj Optional instance to populate.
+     * @return {module:model/DelistRequest} The populated <code>DelistRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SolSeaBuyResponse();
+            obj = obj || new DelistRequest();
 
-            if (data.hasOwnProperty('transaction_signature')) {
-                obj['transaction_signature'] = ApiClient.convertToType(data['transaction_signature'], 'String');
+            if (data.hasOwnProperty('wallet')) {
+                obj['wallet'] = Wallet.constructFromObject(data['wallet']);
             }
         }
         return obj;
@@ -58,15 +61,14 @@ class SolSeaBuyResponse {
 }
 
 /**
- * The signature of the `buy` transaction 
- * @member {String} transaction_signature
+ * @member {module:model/Wallet} wallet
  */
-SolSeaBuyResponse.prototype['transaction_signature'] = undefined;
+DelistRequest.prototype['wallet'] = undefined;
 
 
 
 
 
 
-export default SolSeaBuyResponse;
+export default DelistRequest;
 

@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SolSeaDelistResponse model module.
- * @module model/SolSeaDelistResponse
+ * The ListResponse model module.
+ * @module model/ListResponse
  * @version 1.0.9
  */
-class SolSeaDelistResponse {
+class ListResponse {
     /**
-     * Constructs a new <code>SolSeaDelistResponse</code>.
-     * @alias module:model/SolSeaDelistResponse
+     * Constructs a new <code>ListResponse</code>.
+     * @alias module:model/ListResponse
      */
     constructor() { 
         
-        SolSeaDelistResponse.initialize(this);
+        ListResponse.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class SolSeaDelistResponse {
     }
 
     /**
-     * Constructs a <code>SolSeaDelistResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ListResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SolSeaDelistResponse} obj Optional instance to populate.
-     * @return {module:model/SolSeaDelistResponse} The populated <code>SolSeaDelistResponse</code> instance.
+     * @param {module:model/ListResponse} obj Optional instance to populate.
+     * @return {module:model/ListResponse} The populated <code>ListResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SolSeaDelistResponse();
+            obj = obj || new ListResponse();
 
             if (data.hasOwnProperty('transaction_signature')) {
                 obj['transaction_signature'] = ApiClient.convertToType(data['transaction_signature'], 'String');
@@ -58,15 +58,15 @@ class SolSeaDelistResponse {
 }
 
 /**
- * The signature of the `delist` transaction 
+ * The signature of the `list` transaction 
  * @member {String} transaction_signature
  */
-SolSeaDelistResponse.prototype['transaction_signature'] = undefined;
+ListResponse.prototype['transaction_signature'] = undefined;
 
 
 
 
 
 
-export default SolSeaDelistResponse;
+export default ListResponse;
 
