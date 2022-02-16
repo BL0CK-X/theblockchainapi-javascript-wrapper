@@ -41,6 +41,9 @@ docs/MintNFTErrorResponse.md
 docs/MintNFTRequest.md
 docs/MintNFTResponse.md
 docs/NFT.md
+docs/NFTAnalyticsRequest.md
+docs/NFTAnalyticsResponse.md
+docs/NFTAnalyticsResponseTransactionHistory.md
 docs/NFTData.md
 docs/NFTMintErrorResponse.md
 docs/NFTMintFee.md
@@ -48,6 +51,7 @@ docs/NFTMintRequest.md
 docs/NFTOwnerResponse.md
 docs/NFTSearchRequest.md
 docs/NFTSearchResponse.md
+docs/NFTTransaction.md
 docs/PrivateKey.md
 docs/PublicKey.md
 docs/SecretPhrase.md
@@ -63,6 +67,7 @@ docs/Transaction.md
 docs/TransactionResult.md
 docs/TransferRequest.md
 docs/TransferResponse.md
+docs/TransferResponseCompiled.md
 docs/UploadFileRequest.md
 docs/Wallet.md
 git_push.sh
@@ -116,6 +121,9 @@ src/model/MintNFTErrorResponse.js
 src/model/MintNFTRequest.js
 src/model/MintNFTResponse.js
 src/model/NFT.js
+src/model/NFTAnalyticsRequest.js
+src/model/NFTAnalyticsResponse.js
+src/model/NFTAnalyticsResponseTransactionHistory.js
 src/model/NFTData.js
 src/model/NFTMintErrorResponse.js
 src/model/NFTMintFee.js
@@ -123,6 +131,7 @@ src/model/NFTMintRequest.js
 src/model/NFTOwnerResponse.js
 src/model/NFTSearchRequest.js
 src/model/NFTSearchResponse.js
+src/model/NFTTransaction.js
 src/model/PrivateKey.js
 src/model/PublicKey.js
 src/model/SecretPhrase.js
@@ -131,5 +140,11 @@ src/model/Transaction.js
 src/model/TransactionResult.js
 src/model/TransferRequest.js
 src/model/TransferResponse.js
+src/model/TransferResponseCompiled.js
 src/model/UploadFileRequest.js
 src/model/Wallet.js
+test/model/NFTAnalyticsRequest.spec.js
+test/model/NFTAnalyticsResponse.spec.js
+test/model/NFTAnalyticsResponseTransactionHistory.spec.js
+test/model/NFTTransaction.spec.js
+test/model/TransferResponseCompiled.spec.js
