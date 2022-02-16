@@ -37,7 +37,7 @@ var SolanaTransactionApi = /*#__PURE__*/function () {
   }
   /**
    * Get the details of a transaction made on Solana
-   * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on Solana.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+   * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on Solana.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
    * @param {String} network The network ID (devnet, mainnet-beta)
    * @param {String} txSignature The transaction signature of the transaction
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Transaction} and HTTP response
@@ -73,7 +73,7 @@ var SolanaTransactionApi = /*#__PURE__*/function () {
     }
     /**
      * Get the details of a transaction made on Solana
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on Solana.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on Solana.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {String} network The network ID (devnet, mainnet-beta)
      * @param {String} txSignature The transaction signature of the transaction
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Transaction}

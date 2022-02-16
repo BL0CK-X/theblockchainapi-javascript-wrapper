@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _FeePayerWallet = _interopRequireDefault(require("./FeePayerWallet"));
+
 var _Wallet = _interopRequireDefault(require("./Wallet"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -27,12 +29,11 @@ var TransferRequest = /*#__PURE__*/function () {
    * Constructs a new <code>TransferRequest</code>.
    * @alias module:model/TransferRequest
    * @param recipientAddress {String} The public key address of the recipient to whom you want to send a token or NFT
-   * @param wallet {module:model/Wallet} 
    */
-  function TransferRequest(recipientAddress, wallet) {
+  function TransferRequest(recipientAddress) {
     _classCallCheck(this, TransferRequest);
 
-    TransferRequest.initialize(this, recipientAddress, wallet);
+    TransferRequest.initialize(this, recipientAddress);
   }
   /**
    * Initializes the fields of this object.
@@ -43,9 +44,8 @@ var TransferRequest = /*#__PURE__*/function () {
 
   _createClass(TransferRequest, null, [{
     key: "initialize",
-    value: function initialize(obj, recipientAddress, wallet) {
+    value: function initialize(obj, recipientAddress) {
       obj['recipient_address'] = recipientAddress;
-      obj['wallet'] = wallet;
     }
     /**
      * Constructs a <code>TransferRequest</code> from a plain JavaScript object, optionally creating a new instance.
@@ -79,6 +79,18 @@ var TransferRequest = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('amount')) {
           obj['amount'] = _ApiClient["default"].convertToType(data['amount'], 'String');
+        }
+
+        if (data.hasOwnProperty('return_compiled_transaction')) {
+          obj['return_compiled_transaction'] = _ApiClient["default"].convertToType(data['return_compiled_transaction'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('sender_public_key')) {
+          obj['sender_public_key'] = _ApiClient["default"].convertToType(data['sender_public_key'], 'String');
+        }
+
+        if (data.hasOwnProperty('fee_payer_wallet')) {
+          obj['fee_payer_wallet'] = _FeePayerWallet["default"].constructFromObject(data['fee_payer_wallet']);
         }
       }
 
@@ -119,6 +131,25 @@ TransferRequest.prototype['network'] = 'devnet';
  */
 
 TransferRequest.prototype['amount'] = '1';
+/**
+ * If `false`, we sign and submit the transaction (`wallet` is required in this case; do not provide a value for `sender_public_key`).  If `true`, we compile the transaction (either `wallet` or `sender_public_key` is required in this case; do not provide both). 
+ * @member {Boolean} return_compiled_transaction
+ * @default false
+ */
+
+TransferRequest.prototype['return_compiled_transaction'] = false;
+/**
+ * To understand the purpose of `sender_public_key` first note the following: There are two ways you can complete a transfer transaction: (1) we complete it for you with your `wallet` information or (2) we return the raw instruction data that you can sign and submit yourself (no private keys required). When you provide your `wallet` authentication, we are able to determine your wallet's public key, which is the sender public key of the transaction. When you are not providing your `wallet` as authentication, we still need the `sender_public_key` to be able to return the compiled transaction. Thus, you provide `sender_public_key` only if you are not providing `wallet` authentication information and you are returning a compiled transaction. You will receive an error if you provide both `wallet` and `sender_public_key`. You will receive an error if you provide neither `wallet` nor `sender_public_key`. 
+ * @member {String} sender_public_key
+ * @default 'null'
+ */
+
+TransferRequest.prototype['sender_public_key'] = 'null';
+/**
+ * @member {module:model/FeePayerWallet} fee_payer_wallet
+ */
+
+TransferRequest.prototype['fee_payer_wallet'] = undefined;
 /**
  * Allowed values for the <code>network</code> property.
  * @enum {String}

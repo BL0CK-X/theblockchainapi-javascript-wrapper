@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import OneOfSecretRecoveryPhrasePrivateKeyB58PrivateKey from './OneOfSecretRecoveryPhrasePrivateKeyB58PrivateKey';
+import FeePayerWallet from './FeePayerWallet';
 import Wallet from './Wallet';
 
 /**
@@ -73,7 +73,7 @@ class TransferRequest {
                 obj['sender_public_key'] = ApiClient.convertToType(data['sender_public_key'], 'String');
             }
             if (data.hasOwnProperty('fee_payer_wallet')) {
-                obj['fee_payer_wallet'] = ApiClient.convertToType(data['fee_payer_wallet'], OneOfSecretRecoveryPhrasePrivateKeyB58PrivateKey);
+                obj['fee_payer_wallet'] = FeePayerWallet.constructFromObject(data['fee_payer_wallet']);
             }
         }
         return obj;
@@ -113,22 +113,21 @@ TransferRequest.prototype['network'] = 'devnet';
 TransferRequest.prototype['amount'] = '1';
 
 /**
- * Whether or not 
+ * If `false`, we sign and submit the transaction (`wallet` is required in this case; do not provide a value for `sender_public_key`).  If `true`, we compile the transaction (either `wallet` or `sender_public_key` is required in this case; do not provide both). 
  * @member {Boolean} return_compiled_transaction
  * @default false
  */
 TransferRequest.prototype['return_compiled_transaction'] = false;
 
 /**
- * The purpose of `sender_public_key` is You will receive an error if you provide both `wallet` and `sender_public_key`. 
+ * To understand the purpose of `sender_public_key` first note the following: There are two ways you can complete a transfer transaction: (1) we complete it for you with your `wallet` information or (2) we return the raw instruction data that you can sign and submit yourself (no private keys required). When you provide your `wallet` authentication, we are able to determine your wallet's public key, which is the sender public key of the transaction. When you are not providing your `wallet` as authentication, we still need the `sender_public_key` to be able to return the compiled transaction. Thus, you provide `sender_public_key` only if you are not providing `wallet` authentication information and you are returning a compiled transaction. You will receive an error if you provide both `wallet` and `sender_public_key`. You will receive an error if you provide neither `wallet` nor `sender_public_key`. 
  * @member {String} sender_public_key
  * @default 'null'
  */
 TransferRequest.prototype['sender_public_key'] = 'null';
 
 /**
- * If you do NOT provide a wallet here, the fee payer of the transaction will be the `wallet` you provide or the `sender_public_key`.        If you do provide a wallet, then the `fee_payer_wallet` will pay the fees of the transaction and any costs associated with creating a new associated token account (only if necessary; approx. 0.002 SOL when necessary). A new account is necessary if you are sending an NFT or SPL token to a user that has not received the same NFT or one of the SPL tokens before (thus, a new associated token account is needed).     
- * @member {module:model/OneOfSecretRecoveryPhrasePrivateKeyB58PrivateKey} fee_payer_wallet
+ * @member {module:model/FeePayerWallet} fee_payer_wallet
  */
 TransferRequest.prototype['fee_payer_wallet'] = undefined;
 

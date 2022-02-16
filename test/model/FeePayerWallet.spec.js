@@ -11,66 +11,79 @@
  *
  */
 
-import ApiClient from '../ApiClient';
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.theblockchainapi);
+  }
+}(this, function(expect, theblockchainapi) {
+  'use strict';
 
-/**
- * The CreateTestCandyMachineResponse model module.
- * @module model/CreateTestCandyMachineResponse
- * @version 1.0.9
- */
-class CreateTestCandyMachineResponse {
-    /**
-     * Constructs a new <code>CreateTestCandyMachineResponse</code>.
-     * @alias module:model/CreateTestCandyMachineResponse
-     * @param candyMachineId {String} The ID of the candy machine created
-     */
-    constructor(candyMachineId) { 
-        
-        CreateTestCandyMachineResponse.initialize(this, candyMachineId);
-    }
+  var instance;
 
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj, candyMachineId) { 
-        obj['candy_machine_id'] = candyMachineId;
-    }
+  beforeEach(function() {
+    instance = new theblockchainapi.FeePayerWallet();
+  });
 
-    /**
-     * Constructs a <code>CreateTestCandyMachineResponse</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CreateTestCandyMachineResponse} obj Optional instance to populate.
-     * @return {module:model/CreateTestCandyMachineResponse} The populated <code>CreateTestCandyMachineResponse</code> instance.
-     */
-    static constructFromObject(data, obj) {
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
-        if (data) {
-            obj = obj || new CreateTestCandyMachineResponse();
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-            if (data.hasOwnProperty('candy_machine_id')) {
-                obj['candy_machine_id'] = ApiClient.convertToType(data['candy_machine_id'], 'String');
-            }
-        }
-        return obj;
-    }
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
+  describe('FeePayerWallet', function() {
+    it('should create an instance of FeePayerWallet', function() {
+      // uncomment below and update the code to test FeePayerWallet
+      //var instance = new theblockchainapi.FeePayerWallet();
+      //expect(instance).to.be.a(theblockchainapi.FeePayerWallet);
+    });
 
-}
+    it('should have the property secretRecoveryPhrase (base name: "secret_recovery_phrase")', function() {
+      // uncomment below and update the code to test the property secretRecoveryPhrase
+      //var instance = new theblockchainapi.FeePayerWallet();
+      //expect(instance).to.be();
+    });
 
-/**
- * The ID of the candy machine created
- * @member {String} candy_machine_id
- */
-CreateTestCandyMachineResponse.prototype['candy_machine_id'] = undefined;
+    it('should have the property derivationPath (base name: "derivation_path")', function() {
+      // uncomment below and update the code to test the property derivationPath
+      //var instance = new theblockchainapi.FeePayerWallet();
+      //expect(instance).to.be();
+    });
 
+    it('should have the property passphrase (base name: "passphrase")', function() {
+      // uncomment below and update the code to test the property passphrase
+      //var instance = new theblockchainapi.FeePayerWallet();
+      //expect(instance).to.be();
+    });
 
+    it('should have the property privateKey (base name: "private_key")', function() {
+      // uncomment below and update the code to test the property privateKey
+      //var instance = new theblockchainapi.FeePayerWallet();
+      //expect(instance).to.be();
+    });
 
+    it('should have the property b58PrivateKey (base name: "b58_private_key")', function() {
+      // uncomment below and update the code to test the property b58PrivateKey
+      //var instance = new theblockchainapi.FeePayerWallet();
+      //expect(instance).to.be();
+    });
 
+  });
 
-
-export default CreateTestCandyMachineResponse;
-
+}));

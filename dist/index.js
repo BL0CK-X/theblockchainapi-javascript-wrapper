@@ -111,6 +111,12 @@ Object.defineProperty(exports, "DelistResponse", {
     return _DelistResponse["default"];
   }
 });
+Object.defineProperty(exports, "FeePayerWallet", {
+  enumerable: true,
+  get: function get() {
+    return _FeePayerWallet["default"];
+  }
+});
 Object.defineProperty(exports, "FileApi", {
   enumerable: true,
   get: function get() {
@@ -243,6 +249,24 @@ Object.defineProperty(exports, "NFT", {
     return _NFT["default"];
   }
 });
+Object.defineProperty(exports, "NFTAnalyticsRequest", {
+  enumerable: true,
+  get: function get() {
+    return _NFTAnalyticsRequest["default"];
+  }
+});
+Object.defineProperty(exports, "NFTAnalyticsResponse", {
+  enumerable: true,
+  get: function get() {
+    return _NFTAnalyticsResponse["default"];
+  }
+});
+Object.defineProperty(exports, "NFTAnalyticsResponseTransactionHistory", {
+  enumerable: true,
+  get: function get() {
+    return _NFTAnalyticsResponseTransactionHistory["default"];
+  }
+});
 Object.defineProperty(exports, "NFTData", {
   enumerable: true,
   get: function get() {
@@ -283,6 +307,12 @@ Object.defineProperty(exports, "NFTSearchResponse", {
   enumerable: true,
   get: function get() {
     return _NFTSearchResponse["default"];
+  }
+});
+Object.defineProperty(exports, "NFTTransaction", {
+  enumerable: true,
+  get: function get() {
+    return _NFTTransaction["default"];
   }
 });
 Object.defineProperty(exports, "PrivateKey", {
@@ -375,6 +405,12 @@ Object.defineProperty(exports, "TransferResponse", {
     return _TransferResponse["default"];
   }
 });
+Object.defineProperty(exports, "TransferResponseCompiled", {
+  enumerable: true,
+  get: function get() {
+    return _TransferResponseCompiled["default"];
+  }
+});
 Object.defineProperty(exports, "UploadFileRequest", {
   enumerable: true,
   get: function get() {
@@ -424,6 +460,8 @@ var _DelistRequest = _interopRequireDefault(require("./model/DelistRequest"));
 
 var _DelistResponse = _interopRequireDefault(require("./model/DelistResponse"));
 
+var _FeePayerWallet = _interopRequireDefault(require("./model/FeePayerWallet"));
+
 var _GeneratePrivateKey = _interopRequireDefault(require("./model/GeneratePrivateKey"));
 
 var _GetAllNFTsResponse = _interopRequireDefault(require("./model/GetAllNFTsResponse"));
@@ -466,6 +504,12 @@ var _MintNFTResponse = _interopRequireDefault(require("./model/MintNFTResponse")
 
 var _NFT = _interopRequireDefault(require("./model/NFT"));
 
+var _NFTAnalyticsRequest = _interopRequireDefault(require("./model/NFTAnalyticsRequest"));
+
+var _NFTAnalyticsResponse = _interopRequireDefault(require("./model/NFTAnalyticsResponse"));
+
+var _NFTAnalyticsResponseTransactionHistory = _interopRequireDefault(require("./model/NFTAnalyticsResponseTransactionHistory"));
+
 var _NFTData = _interopRequireDefault(require("./model/NFTData"));
 
 var _NFTMintErrorResponse = _interopRequireDefault(require("./model/NFTMintErrorResponse"));
@@ -479,6 +523,8 @@ var _NFTOwnerResponse = _interopRequireDefault(require("./model/NFTOwnerResponse
 var _NFTSearchRequest = _interopRequireDefault(require("./model/NFTSearchRequest"));
 
 var _NFTSearchResponse = _interopRequireDefault(require("./model/NFTSearchResponse"));
+
+var _NFTTransaction = _interopRequireDefault(require("./model/NFTTransaction"));
 
 var _PrivateKey = _interopRequireDefault(require("./model/PrivateKey"));
 
@@ -495,6 +541,8 @@ var _TransactionResult = _interopRequireDefault(require("./model/TransactionResu
 var _TransferRequest = _interopRequireDefault(require("./model/TransferRequest"));
 
 var _TransferResponse = _interopRequireDefault(require("./model/TransferResponse"));
+
+var _TransferResponseCompiled = _interopRequireDefault(require("./model/TransferResponseCompiled"));
 
 var _UploadFileRequest = _interopRequireDefault(require("./model/UploadFileRequest"));
 

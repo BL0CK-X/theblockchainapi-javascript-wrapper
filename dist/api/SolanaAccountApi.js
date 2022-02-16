@@ -41,7 +41,7 @@ var SolanaAccountApi = /*#__PURE__*/function () {
   }
   /**
    * Get the details of an account on Solana
-   * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-account\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of an account on Solana. Learn more about accounts <a href=\"https://docs.solana.com/developing/programming-model/accounts\" target=\"_blank\">here</a>.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+   * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-account\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of an account on Solana. Learn more about accounts <a href=\"https://docs.solana.com/developing/programming-model/accounts\" target=\"_blank\">here</a>.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
    * @param {String} network The network ID (devnet, mainnet-beta)
    * @param {String} publicKey The public key of the account
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Account} and HTTP response
@@ -77,7 +77,7 @@ var SolanaAccountApi = /*#__PURE__*/function () {
     }
     /**
      * Get the details of an account on Solana
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-account\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of an account on Solana. Learn more about accounts <a href=\"https://docs.solana.com/developing/programming-model/accounts\" target=\"_blank\">here</a>.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-account\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of an account on Solana. Learn more about accounts <a href=\"https://docs.solana.com/developing/programming-model/accounts\" target=\"_blank\">here</a>.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {String} network The network ID (devnet, mainnet-beta)
      * @param {String} publicKey The public key of the account
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Account}
@@ -142,7 +142,7 @@ var SolanaAccountApi = /*#__PURE__*/function () {
     }
     /**
      * Get if account is NFT
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-is-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Determine whether or not a public key is an NFT `mint address`  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-is-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Determine whether or not a public key is an NFT `mint address`  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {String} network The network ID (devnet, mainnet-beta)
      * @param {String} publicKey The public key of the account
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountIsNFT} and HTTP response
@@ -177,7 +177,7 @@ var SolanaAccountApi = /*#__PURE__*/function () {
     }
     /**
      * Get if account is NFT
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-is-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Determine whether or not a public key is an NFT `mint address`  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-account/get-is-nft\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Determine whether or not a public key is an NFT `mint address`  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {String} network The network ID (devnet, mainnet-beta)
      * @param {String} publicKey The public key of the account
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountIsNFT}

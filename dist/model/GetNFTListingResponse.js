@@ -73,6 +73,10 @@ var GetNFTListingResponse = /*#__PURE__*/function () {
         if (data.hasOwnProperty('price')) {
           obj['price'] = _ApiClient["default"].convertToType(data['price'], 'Number');
         }
+
+        if (data.hasOwnProperty('seller')) {
+          obj['seller'] = _ApiClient["default"].convertToType(data['seller'], 'String');
+        }
       }
 
       return obj;
@@ -112,6 +116,12 @@ GetNFTListingResponse.prototype['mint_address'] = undefined;
  */
 
 GetNFTListingResponse.prototype['price'] = undefined;
+/**
+ * The public key of the seller
+ * @member {String} seller
+ */
+
+GetNFTListingResponse.prototype['seller'] = undefined;
 /**
  * Allowed values for the <code>exchange</code> property.
  * @enum {String}

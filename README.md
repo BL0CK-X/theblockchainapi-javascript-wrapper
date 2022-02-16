@@ -295,6 +295,7 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.CreateTestCandyMachineResponse](docs/CreateTestCandyMachineResponse.md)
  - [theblockchainapi.DelistRequest](docs/DelistRequest.md)
  - [theblockchainapi.DelistResponse](docs/DelistResponse.md)
+ - [theblockchainapi.FeePayerWallet](docs/FeePayerWallet.md)
  - [theblockchainapi.GeneratePrivateKey](docs/GeneratePrivateKey.md)
  - [theblockchainapi.GetAllNFTsResponse](docs/GetAllNFTsResponse.md)
  - [theblockchainapi.GetAllNFTsResponseMintedNfts](docs/GetAllNFTsResponseMintedNfts.md)

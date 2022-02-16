@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _NFT = _interopRequireDefault(require("./NFT"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57,6 +59,10 @@ var ListNFTsResponse = /*#__PURE__*/function () {
         if (data.hasOwnProperty('nfts_owned')) {
           obj['nfts_owned'] = _ApiClient["default"].convertToType(data['nfts_owned'], ['String']);
         }
+
+        if (data.hasOwnProperty('nfts_metadata')) {
+          obj['nfts_metadata'] = _ApiClient["default"].convertToType(data['nfts_metadata'], [_NFT["default"]]);
+        }
       }
 
       return obj;
@@ -72,5 +78,11 @@ var ListNFTsResponse = /*#__PURE__*/function () {
 
 
 ListNFTsResponse.prototype['nfts_owned'] = undefined;
+/**
+ * A list of the dictionaries, where each dictionary is an NFT's metadata
+ * @member {Array.<module:model/NFT>} nfts_metadata
+ */
+
+ListNFTsResponse.prototype['nfts_metadata'] = undefined;
 var _default = ListNFTsResponse;
 exports["default"] = _default;
