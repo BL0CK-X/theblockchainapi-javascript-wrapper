@@ -30,6 +30,7 @@ import CreateTestCandyMachineRequest from './model/CreateTestCandyMachineRequest
 import CreateTestCandyMachineResponse from './model/CreateTestCandyMachineResponse';
 import DelistRequest from './model/DelistRequest';
 import DelistResponse from './model/DelistResponse';
+import DoubleTransferResponse from './model/DoubleTransferResponse';
 import FeePayerWallet from './model/FeePayerWallet';
 import GeneratePrivateKey from './model/GeneratePrivateKey';
 import GetAllNFTsResponse from './model/GetAllNFTsResponse';
@@ -223,6 +224,12 @@ export {
      * @property {module:model/DelistResponse}
      */
     DelistResponse,
+
+    /**
+     * The DoubleTransferResponse model constructor.
+     * @property {module:model/DoubleTransferResponse}
+     */
+    DoubleTransferResponse,
 
     /**
      * The FeePayerWallet model constructor.

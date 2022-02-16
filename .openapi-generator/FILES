@@ -19,6 +19,7 @@ docs/CreateTestCandyMachineRequest.md
 docs/CreateTestCandyMachineResponse.md
 docs/DelistRequest.md
 docs/DelistResponse.md
+docs/DoubleTransferResponse.md
 docs/FeePayerWallet.md
 docs/FileApi.md
 docs/GeneratePrivateKey.md
@@ -101,6 +102,7 @@ src/model/CreateTestCandyMachineRequest.js
 src/model/CreateTestCandyMachineResponse.js
 src/model/DelistRequest.js
 src/model/DelistResponse.js
+src/model/DoubleTransferResponse.js
 src/model/FeePayerWallet.js
 src/model/GeneratePrivateKey.js
 src/model/GetAllNFTsResponse.js
@@ -145,4 +147,4 @@ src/model/TransferResponse.js
 src/model/TransferResponseCompiled.js
 src/model/UploadFileRequest.js
 src/model/Wallet.js
-test/model/FeePayerWallet.spec.js
+test/model/DoubleTransferResponse.spec.js

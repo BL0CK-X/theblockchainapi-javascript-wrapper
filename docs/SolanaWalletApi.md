@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 ## solanaTransfer
 
-> OneOfTransferResponseTransferResponseCompiled solanaTransfer(opts)
+> DoubleTransferResponse solanaTransfer(opts)
 
 Transfer SOL, a token, or an NFT to another address
 
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OneOfTransferResponseTransferResponseCompiled**](OneOfTransferResponseTransferResponseCompiled.md)
+[**DoubleTransferResponse**](DoubleTransferResponse.md)
 
 ### Authorization
 
