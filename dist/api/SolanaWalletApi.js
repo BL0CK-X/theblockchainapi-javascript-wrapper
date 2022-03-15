@@ -9,15 +9,25 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _ATAResponse = _interopRequireDefault(require("../model/ATAResponse"));
 
+var _AirdropRequest = _interopRequireDefault(require("../model/AirdropRequest"));
+
+var _BalanceRequest = _interopRequireDefault(require("../model/BalanceRequest"));
+
 var _BalanceResponse = _interopRequireDefault(require("../model/BalanceResponse"));
 
+var _DoubleTransferResponse = _interopRequireDefault(require("../model/DoubleTransferResponse"));
+
 var _GeneratePrivateKey = _interopRequireDefault(require("../model/GeneratePrivateKey"));
+
+var _GetPublicKeyRequest = _interopRequireDefault(require("../model/GetPublicKeyRequest"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("../model/ListNFTsResponse"));
 
 var _PublicKey = _interopRequireDefault(require("../model/PublicKey"));
 
 var _SecretPhrase = _interopRequireDefault(require("../model/SecretPhrase"));
+
+var _TransferRequest = _interopRequireDefault(require("../model/TransferRequest"));
 
 var _TransferResponse = _interopRequireDefault(require("../model/TransferResponse"));
 
@@ -435,7 +445,7 @@ var SolanaWalletApi = /*#__PURE__*/function () {
      * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/transfer-sol\" target=\"_blank\">See transfer SOL example (Python, JavaScript)</a>.  <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/transfer-nft\" target=\"_blank\">See transfer NFT example (can also be used for SPL token) (Python, JavaScript)</a>.  This is a powerful function. It might be slightly confusing because there are several optional parameters, so take some time to review it. This function can send SOL, send an SPL token, or send an NFT. You can set the fee payer of the transaction; you can sign and submit the transaction for confirmation; and you can select to simply return the compiled transaction so that you can submit it to the user for signing (e.g., via Phantom; no private keys required in this case).  Transfer SOL, a token or an NFT to another address. If you're transferring an NFT, supply the `mint` (the address of the mint) for the `token_address`.  SENDER: Note that the wallet information is used to authorize the sending of the tokens and identifies the source of the tokens. If `return_compiled_transaction = false`, we sign and submit the transaction (`wallet` is required in this case; do not provide a value for `sender_public_key`). If `return_compiled_transaction = true`, we compile the transaction (one of `wallet` or `sender_public_key` is required in this case; do not provide both).  RECIPIENT: `recipient_address` identifies the receiver. This is entirely separate from the information used for the SENDER above. So, in this API call, there are two wallets involved, but only one (namely, the SENDER) is needed to authorize the transaction.  FEE_PAYER: The fee payer of the transaction defaults to `wallet` (or `sender_public_key`). To set a different fee payer, provide a value for `fee_payer_wallet`.  If you're transfering a token, supply the token address found on the explorer (e.g., see `SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt` for <a href=\"https://explorer.solana.com/address/SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt\" target=\"_blank\">Serum Token</a>) for the `token_address`. If you're transferring SOL, do not supply a value for `token_address`.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {Object} opts Optional parameters
      * @param {module:model/TransferRequest} opts.transferRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OneOfTransferResponseTransferResponseCompiled} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DoubleTransferResponse} and HTTP response
      */
 
   }, {
@@ -450,7 +460,7 @@ var SolanaWalletApi = /*#__PURE__*/function () {
       var authNames = ['APIKeyID', 'APISecretKey'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = OneOfTransferResponseTransferResponseCompiled;
+      var returnType = _DoubleTransferResponse["default"];
       return this.apiClient.callApi('/solana/wallet/transfer', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -458,7 +468,7 @@ var SolanaWalletApi = /*#__PURE__*/function () {
      * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/transfer-sol\" target=\"_blank\">See transfer SOL example (Python, JavaScript)</a>.  <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/transfer-nft\" target=\"_blank\">See transfer NFT example (can also be used for SPL token) (Python, JavaScript)</a>.  This is a powerful function. It might be slightly confusing because there are several optional parameters, so take some time to review it. This function can send SOL, send an SPL token, or send an NFT. You can set the fee payer of the transaction; you can sign and submit the transaction for confirmation; and you can select to simply return the compiled transaction so that you can submit it to the user for signing (e.g., via Phantom; no private keys required in this case).  Transfer SOL, a token or an NFT to another address. If you're transferring an NFT, supply the `mint` (the address of the mint) for the `token_address`.  SENDER: Note that the wallet information is used to authorize the sending of the tokens and identifies the source of the tokens. If `return_compiled_transaction = false`, we sign and submit the transaction (`wallet` is required in this case; do not provide a value for `sender_public_key`). If `return_compiled_transaction = true`, we compile the transaction (one of `wallet` or `sender_public_key` is required in this case; do not provide both).  RECIPIENT: `recipient_address` identifies the receiver. This is entirely separate from the information used for the SENDER above. So, in this API call, there are two wallets involved, but only one (namely, the SENDER) is needed to authorize the transaction.  FEE_PAYER: The fee payer of the transaction defaults to `wallet` (or `sender_public_key`). To set a different fee payer, provide a value for `fee_payer_wallet`.  If you're transfering a token, supply the token address found on the explorer (e.g., see `SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt` for <a href=\"https://explorer.solana.com/address/SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt\" target=\"_blank\">Serum Token</a>) for the `token_address`. If you're transferring SOL, do not supply a value for `token_address`.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {Object} opts Optional parameters
      * @param {module:model/TransferRequest} opts.transferRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OneOfTransferResponseTransferResponseCompiled}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DoubleTransferResponse}
      */
 
   }, {

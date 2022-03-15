@@ -20,6 +20,9 @@ docs/CreateTestCandyMachineResponse.md
 docs/DelistRequest.md
 docs/DelistResponse.md
 docs/DoubleTransferResponse.md
+docs/Endpoint.md
+docs/EndpointApi.md
+docs/EndpointReference.md
 docs/FeePayerWallet.md
 docs/FileApi.md
 docs/GeneratePrivateKey.md
@@ -36,6 +39,7 @@ docs/GetFileResponse.md
 docs/GetNFTListingResponse.md
 docs/GetPublicKeyRequest.md
 docs/GetSPLTokenResponse.md
+docs/Group.md
 docs/ListNFTsResponse.md
 docs/ListRequest.md
 docs/ListResponse.md
@@ -54,7 +58,12 @@ docs/NFTOwnerResponse.md
 docs/NFTSearchRequest.md
 docs/NFTSearchResponse.md
 docs/NFTTransaction.md
+docs/ParameterSpecification.md
 docs/PrivateKey.md
+docs/Project.md
+docs/ProjectApi.md
+docs/ProjectCreateRequest.md
+docs/ProjectDeploymentURL.md
 docs/PublicKey.md
 docs/SecretPhrase.md
 docs/SecretRecoveryPhrase.md
@@ -65,6 +74,7 @@ docs/SolanaNFTMarketplacesApi.md
 docs/SolanaSPLTokenApi.md
 docs/SolanaTransactionApi.md
 docs/SolanaWalletApi.md
+docs/StatItem.md
 docs/Transaction.md
 docs/TransactionResult.md
 docs/TransferRequest.md
@@ -76,7 +86,9 @@ git_push.sh
 mocha.opts
 package.json
 src/ApiClient.js
+src/api/EndpointApi.js
 src/api/FileApi.js
+src/api/ProjectApi.js
 src/api/SolanaAccountApi.js
 src/api/SolanaCandyMachineApi.js
 src/api/SolanaNFTApi.js
@@ -103,6 +115,8 @@ src/model/CreateTestCandyMachineResponse.js
 src/model/DelistRequest.js
 src/model/DelistResponse.js
 src/model/DoubleTransferResponse.js
+src/model/Endpoint.js
+src/model/EndpointReference.js
 src/model/FeePayerWallet.js
 src/model/GeneratePrivateKey.js
 src/model/GetAllNFTsResponse.js
@@ -118,6 +132,7 @@ src/model/GetFileResponse.js
 src/model/GetNFTListingResponse.js
 src/model/GetPublicKeyRequest.js
 src/model/GetSPLTokenResponse.js
+src/model/Group.js
 src/model/ListNFTsResponse.js
 src/model/ListRequest.js
 src/model/ListResponse.js
@@ -136,10 +151,15 @@ src/model/NFTOwnerResponse.js
 src/model/NFTSearchRequest.js
 src/model/NFTSearchResponse.js
 src/model/NFTTransaction.js
+src/model/ParameterSpecification.js
 src/model/PrivateKey.js
+src/model/Project.js
+src/model/ProjectCreateRequest.js
+src/model/ProjectDeploymentURL.js
 src/model/PublicKey.js
 src/model/SecretPhrase.js
 src/model/SecretRecoveryPhrase.js
+src/model/StatItem.js
 src/model/Transaction.js
 src/model/TransactionResult.js
 src/model/TransferRequest.js
@@ -147,4 +167,13 @@ src/model/TransferResponse.js
 src/model/TransferResponseCompiled.js
 src/model/UploadFileRequest.js
 src/model/Wallet.js
-test/model/DoubleTransferResponse.spec.js
+test/api/EndpointApi.spec.js
+test/api/ProjectApi.spec.js
+test/model/Endpoint.spec.js
+test/model/EndpointReference.spec.js
+test/model/Group.spec.js
+test/model/ParameterSpecification.spec.js
+test/model/Project.spec.js
+test/model/ProjectCreateRequest.spec.js
+test/model/ProjectDeploymentURL.spec.js
+test/model/StatItem.spec.js

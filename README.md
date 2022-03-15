@@ -80,7 +80,7 @@ Note: We have had a couple of individuals harrass and threaten us. These individ
 
 # Pricing
 
-<b>Each user receives 500 free credits. Each user can call endpoints that cost 0 credits up to 50 requests/min before being rate-limited. Thereafter, they can upgrade to have a higher rate limit. </b>
+<b>Each user receives 100 free credits. Each user can call endpoints that cost 0 credits up to 50 requests/min before being rate-limited.</b> Thereafter, they can upgrade to have a higher rate limit. The purpose of this is to act like a free trial -- not to function like a freemium model where one can stay on the free tier indefinitely.
 
 You can learn more about our pricing <a href=\"https://dashboard.blockchainapi.com/billing\" target=\"_blank\">here</a>. 
 
@@ -223,9 +223,12 @@ APISecretKey.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APISecretKey.apiKeyPrefix['APISecretKey'] = "Token"
 
-var api = new theblockchainapi.FileApi()
-api.uploadFile().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
+var api = new theblockchainapi.EndpointApi()
+var opts = {
+  'endpointReference': new theblockchainapi.EndpointReference() // {EndpointReference} 
+};
+api.deleteEndpoint(opts).then(function() {
+  console.log('API called successfully.');
 }, function(error) {
   console.error(error);
 });
@@ -239,7 +242,22 @@ All URIs are relative to *https://api.blockchainapi.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*theblockchainapi.EndpointApi* | [**deleteEndpoint**](docs/EndpointApi.md#deleteEndpoint) | **POST** /endpoint/delete | Delete an endpoint 
+*theblockchainapi.EndpointApi* | [**getEndpoint**](docs/EndpointApi.md#getEndpoint) | **POST** /endpoint/metadata | Get an endpoint&#39;s metadata 
+*theblockchainapi.EndpointApi* | [**listEndpoints**](docs/EndpointApi.md#listEndpoints) | **GET** /endpoint/list | List all endpoints 
+*theblockchainapi.EndpointApi* | [**setEndpoint**](docs/EndpointApi.md#setEndpoint) | **POST** /endpoint | Create / update an endpoint 
 *theblockchainapi.FileApi* | [**uploadFile**](docs/FileApi.md#uploadFile) | **POST** /file | Upload a file
+*theblockchainapi.ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /project | Create a project 
+*theblockchainapi.ProjectApi* | [**createProjectVersion**](docs/ProjectApi.md#createProjectVersion) | **POST** /project/{project_id}/{version} | Create a new project version 
+*theblockchainapi.ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /project/{project_id} | Delete a project 
+*theblockchainapi.ProjectApi* | [**deleteProjectVersion**](docs/ProjectApi.md#deleteProjectVersion) | **DELETE** /project/{project_id}/{version} | Delete a project version 
+*theblockchainapi.ProjectApi* | [**getProject**](docs/ProjectApi.md#getProject) | **GET** /project/{project_id} | Get a project&#39;s metadata 
+*theblockchainapi.ProjectApi* | [**getProjectDeploymentStatus**](docs/ProjectApi.md#getProjectDeploymentStatus) | **POST** /project/{project_id}/deploy/status | Get deployment status 
+*theblockchainapi.ProjectApi* | [**getProjectDeploymentURL**](docs/ProjectApi.md#getProjectDeploymentURL) | **POST** /project/{project_id}/deploy/url | Get the deployment URL 
+*theblockchainapi.ProjectApi* | [**getProjectStats**](docs/ProjectApi.md#getProjectStats) | **GET** /project/{project_id}/stats | Get a project&#39;s stats 
+*theblockchainapi.ProjectApi* | [**listProjects**](docs/ProjectApi.md#listProjects) | **GET** /project/list | List projects 
+*theblockchainapi.ProjectApi* | [**updateProject**](docs/ProjectApi.md#updateProject) | **POST** /project/{project_id} | Update a project 
+*theblockchainapi.ProjectApi* | [**updateProjectDocumentation**](docs/ProjectApi.md#updateProjectDocumentation) | **POST** /project/{project_id}/{version}/documentation | Update the project&#39;s documentation 
 *theblockchainapi.SolanaAccountApi* | [**solanaGetAccount**](docs/SolanaAccountApi.md#solanaGetAccount) | **GET** /solana/account/{network}/{public_key} | Get the details of an account on Solana
 *theblockchainapi.SolanaAccountApi* | [**solanaGetAccountIsCandyMachine**](docs/SolanaAccountApi.md#solanaGetAccountIsCandyMachine) | **GET** /solana/account/{network}/{public_key}/is_candy_machine | Get if account is candy machine
 *theblockchainapi.SolanaAccountApi* | [**solanaGetAccountIsNFT**](docs/SolanaAccountApi.md#solanaGetAccountIsNFT) | **GET** /solana/account/{network}/{public_key}/is_nft | Get if account is NFT
@@ -273,6 +291,7 @@ Class | Method | HTTP request | Description
 *theblockchainapi.SolanaWalletApi* | [**solanaGetBalance**](docs/SolanaWalletApi.md#solanaGetBalance) | **POST** /solana/wallet/balance | Get wallet&#39;s balance in SOL or any SPL
 *theblockchainapi.SolanaWalletApi* | [**solanaGetNFTsBelongingToWallet**](docs/SolanaWalletApi.md#solanaGetNFTsBelongingToWallet) | **GET** /solana/wallet/{network}/{public_key}/nfts | Get address&#39;s NFTs
 *theblockchainapi.SolanaWalletApi* | [**solanaGetTokensBelongingToWallet**](docs/SolanaWalletApi.md#solanaGetTokensBelongingToWallet) | **GET** /solana/wallet/{network}/{public_key}/tokens | Get address&#39;s tokens and respective balances
+*theblockchainapi.SolanaWalletApi* | [**solanaGetWalletTransactions**](docs/SolanaWalletApi.md#solanaGetWalletTransactions) | **GET** /solana/wallet/{network}/{public_key}/transactions | Get address&#39;s associated transaction signatures
 *theblockchainapi.SolanaWalletApi* | [**solanaTransfer**](docs/SolanaWalletApi.md#solanaTransfer) | **POST** /solana/wallet/transfer | Transfer SOL, a token, or an NFT to another address
 
 
@@ -296,6 +315,8 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.DelistRequest](docs/DelistRequest.md)
  - [theblockchainapi.DelistResponse](docs/DelistResponse.md)
  - [theblockchainapi.DoubleTransferResponse](docs/DoubleTransferResponse.md)
+ - [theblockchainapi.Endpoint](docs/Endpoint.md)
+ - [theblockchainapi.EndpointReference](docs/EndpointReference.md)
  - [theblockchainapi.FeePayerWallet](docs/FeePayerWallet.md)
  - [theblockchainapi.GeneratePrivateKey](docs/GeneratePrivateKey.md)
  - [theblockchainapi.GetAllNFTsResponse](docs/GetAllNFTsResponse.md)
@@ -311,6 +332,7 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.GetNFTListingResponse](docs/GetNFTListingResponse.md)
  - [theblockchainapi.GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [theblockchainapi.GetSPLTokenResponse](docs/GetSPLTokenResponse.md)
+ - [theblockchainapi.Group](docs/Group.md)
  - [theblockchainapi.ListNFTsResponse](docs/ListNFTsResponse.md)
  - [theblockchainapi.ListRequest](docs/ListRequest.md)
  - [theblockchainapi.ListResponse](docs/ListResponse.md)
@@ -329,10 +351,15 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.NFTSearchRequest](docs/NFTSearchRequest.md)
  - [theblockchainapi.NFTSearchResponse](docs/NFTSearchResponse.md)
  - [theblockchainapi.NFTTransaction](docs/NFTTransaction.md)
+ - [theblockchainapi.ParameterSpecification](docs/ParameterSpecification.md)
  - [theblockchainapi.PrivateKey](docs/PrivateKey.md)
+ - [theblockchainapi.Project](docs/Project.md)
+ - [theblockchainapi.ProjectCreateRequest](docs/ProjectCreateRequest.md)
+ - [theblockchainapi.ProjectDeploymentURL](docs/ProjectDeploymentURL.md)
  - [theblockchainapi.PublicKey](docs/PublicKey.md)
  - [theblockchainapi.SecretPhrase](docs/SecretPhrase.md)
  - [theblockchainapi.SecretRecoveryPhrase](docs/SecretRecoveryPhrase.md)
+ - [theblockchainapi.StatItem](docs/StatItem.md)
  - [theblockchainapi.Transaction](docs/Transaction.md)
  - [theblockchainapi.TransactionResult](docs/TransactionResult.md)
  - [theblockchainapi.TransferRequest](docs/TransferRequest.md)

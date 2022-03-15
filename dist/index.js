@@ -111,6 +111,12 @@ Object.defineProperty(exports, "DelistResponse", {
     return _DelistResponse["default"];
   }
 });
+Object.defineProperty(exports, "DoubleTransferResponse", {
+  enumerable: true,
+  get: function get() {
+    return _DoubleTransferResponse["default"];
+  }
+});
 Object.defineProperty(exports, "FeePayerWallet", {
   enumerable: true,
   get: function get() {
@@ -459,6 +465,8 @@ var _CreateTestCandyMachineResponse = _interopRequireDefault(require("./model/Cr
 var _DelistRequest = _interopRequireDefault(require("./model/DelistRequest"));
 
 var _DelistResponse = _interopRequireDefault(require("./model/DelistResponse"));
+
+var _DoubleTransferResponse = _interopRequireDefault(require("./model/DoubleTransferResponse"));
 
 var _FeePayerWallet = _interopRequireDefault(require("./model/FeePayerWallet"));
 
