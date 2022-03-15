@@ -56,15 +56,17 @@ var NFTAnalyticsResponseTransactionHistory = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       try {
         data = JSON.parse(data);
-      } catch (_unused) {} // if (data) {
-      //     obj = obj || new NFTAnalyticsResponseTransactionHistory();
-      //     if (data.hasOwnProperty('mint_address')) {
-      //         obj['mint_address'] = ApiClient.convertToType(data['mint_address'], [NFTTransaction]);
-      //     }
-      // }
+      } catch (_unused) {}
 
+      if (data) {
+        obj = obj || new NFTAnalyticsResponseTransactionHistory();
 
-      return data;
+        if (data.hasOwnProperty('mint_address')) {
+          obj['mint_address'] = _ApiClient["default"].convertToType(data['mint_address'], [_NFTTransaction["default"]]);
+        }
+      }
+
+      return obj;
     }
   }]);
 
