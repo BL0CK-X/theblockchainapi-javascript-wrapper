@@ -40,6 +40,7 @@ docs/GetNFTListingResponse.md
 docs/GetPublicKeyRequest.md
 docs/GetSPLTokenResponse.md
 docs/Group.md
+docs/InlineObject.md
 docs/ListNFTsResponse.md
 docs/ListRequest.md
 docs/ListResponse.md
@@ -133,6 +134,7 @@ src/model/GetNFTListingResponse.js
 src/model/GetPublicKeyRequest.js
 src/model/GetSPLTokenResponse.js
 src/model/Group.js
+src/model/InlineObject.js
 src/model/ListNFTsResponse.js
 src/model/ListRequest.js
 src/model/ListResponse.js
@@ -167,13 +169,3 @@ src/model/TransferResponse.js
 src/model/TransferResponseCompiled.js
 src/model/UploadFileRequest.js
 src/model/Wallet.js
-test/api/EndpointApi.spec.js
-test/api/ProjectApi.spec.js
-test/model/Endpoint.spec.js
-test/model/EndpointReference.spec.js
-test/model/Group.spec.js
-test/model/ParameterSpecification.spec.js
-test/model/Project.spec.js
-test/model/ProjectCreateRequest.spec.js
-test/model/ProjectDeploymentURL.spec.js
-test/model/StatItem.spec.js

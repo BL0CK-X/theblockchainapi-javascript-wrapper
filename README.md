@@ -333,6 +333,7 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [theblockchainapi.GetSPLTokenResponse](docs/GetSPLTokenResponse.md)
  - [theblockchainapi.Group](docs/Group.md)
+ - [theblockchainapi.InlineObject](docs/InlineObject.md)
  - [theblockchainapi.ListNFTsResponse](docs/ListNFTsResponse.md)
  - [theblockchainapi.ListRequest](docs/ListRequest.md)
  - [theblockchainapi.ListResponse](docs/ListResponse.md)

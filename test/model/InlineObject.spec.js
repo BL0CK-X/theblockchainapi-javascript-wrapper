@@ -11,65 +11,55 @@
  *
  */
 
-import ApiClient from '../ApiClient';
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.theblockchainapi);
+  }
+}(this, function(expect, theblockchainapi) {
+  'use strict';
 
-/**
- * The MintNFTResponse model module.
- * @module model/MintNFTResponse
- * @version 1.0.9
- */
-class MintNFTResponse {
-    /**
-     * Constructs a new <code>MintNFTResponse</code>.
-     * @alias module:model/MintNFTResponse
-     */
-    constructor() { 
-        
-        MintNFTResponse.initialize(this);
-    }
+  var instance;
 
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
-    }
+  beforeEach(function() {
+    instance = new theblockchainapi.InlineObject();
+  });
 
-    /**
-     * Constructs a <code>MintNFTResponse</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MintNFTResponse} obj Optional instance to populate.
-     * @return {module:model/MintNFTResponse} The populated <code>MintNFTResponse</code> instance.
-     */
-    static constructFromObject(data, obj) {
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
-        if (data) {
-            obj = obj || new MintNFTResponse();
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
-            if (data.hasOwnProperty('transaction_signature')) {
-                obj['transaction_signature'] = ApiClient.convertToType(data['transaction_signature'], 'String');
-            }
-        }
-        return obj;
-    }
+  describe('InlineObject', function() {
+    it('should create an instance of InlineObject', function() {
+      // uncomment below and update the code to test InlineObject
+      //var instance = new theblockchainapi.InlineObject();
+      //expect(instance).to.be.a(theblockchainapi.InlineObject);
+    });
 
+    it('should have the property platform (base name: "platform")', function() {
+      // uncomment below and update the code to test the property platform
+      //var instance = new theblockchainapi.InlineObject();
+      //expect(instance).to.be();
+    });
 
-}
+  });
 
-/**
- * The signature of the transaction. Just because this is returned does not mean it was successful.  To determine if the mint was successful, use this Gist: https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d 
- * @member {String} transaction_signature
- */
-MintNFTResponse.prototype['transaction_signature'] = undefined;
-
-
-
-
-
-
-export default MintNFTResponse;
-
+}));

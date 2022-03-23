@@ -49,6 +49,7 @@ import GetNFTListingResponse from './model/GetNFTListingResponse';
 import GetPublicKeyRequest from './model/GetPublicKeyRequest';
 import GetSPLTokenResponse from './model/GetSPLTokenResponse';
 import Group from './model/Group';
+import InlineObject from './model/InlineObject';
 import ListNFTsResponse from './model/ListNFTsResponse';
 import ListRequest from './model/ListRequest';
 import ListResponse from './model/ListResponse';
@@ -348,6 +349,12 @@ export {
      * @property {module:model/Group}
      */
     Group,
+
+    /**
+     * The InlineObject model constructor.
+     * @property {module:model/InlineObject}
+     */
+    InlineObject,
 
     /**
      * The ListNFTsResponse model constructor.

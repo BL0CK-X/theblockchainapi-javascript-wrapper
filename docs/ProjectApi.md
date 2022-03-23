@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## createProjectVersion
 
-> Project createProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+> Project createProjectVersion(projectId, version)
 
 Create a new project version 
 
@@ -100,9 +100,9 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-let UNKNOWN_PARAMETER_NAME2 = 2; //  | The version of the project.
-apiInstance.createProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2).then((data) => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+let version = 2; // String | The version of the project.
+apiInstance.createProjectVersion(projectId, version).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -115,8 +115,8 @@ apiInstance.createProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)| The version of the project. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
+ **version** | **String**| The version of the project. | 
 
 ### Return type
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ## deleteProject
 
-> deleteProject(UNKNOWN_PARAMETER_NAME)
+> deleteProject(projectId)
 
 Delete a project 
 
@@ -157,8 +157,8 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-apiInstance.deleteProject(UNKNOWN_PARAMETER_NAME).then(() => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+apiInstance.deleteProject(projectId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -171,7 +171,7 @@ apiInstance.deleteProject(UNKNOWN_PARAMETER_NAME).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
 
 ### Return type
 
@@ -189,7 +189,7 @@ null (empty response body)
 
 ## deleteProjectVersion
 
-> Project deleteProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+> Project deleteProjectVersion(projectId, version)
 
 Delete a project version 
 
@@ -212,9 +212,9 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-let UNKNOWN_PARAMETER_NAME2 = 2; //  | The version of the project.
-apiInstance.deleteProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2).then((data) => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+let version = 2; // String | The version of the project.
+apiInstance.deleteProjectVersion(projectId, version).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -227,8 +227,8 @@ apiInstance.deleteProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)| The version of the project. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
+ **version** | **String**| The version of the project. | 
 
 ### Return type
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ## getProject
 
-> Project getProject(UNKNOWN_PARAMETER_NAME)
+> Project getProject(projectId)
 
 Get a project&#39;s metadata 
 
@@ -269,8 +269,8 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-apiInstance.getProject(UNKNOWN_PARAMETER_NAME).then((data) => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+apiInstance.getProject(projectId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -283,7 +283,7 @@ apiInstance.getProject(UNKNOWN_PARAMETER_NAME).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
 
 ### Return type
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ## getProjectDeploymentStatus
 
-> Object getProjectDeploymentStatus(UNKNOWN_PARAMETER_NAME)
+> Object getProjectDeploymentStatus(projectId)
 
 Get deployment status 
 
@@ -324,8 +324,8 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-apiInstance.getProjectDeploymentStatus(UNKNOWN_PARAMETER_NAME).then((data) => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+apiInstance.getProjectDeploymentStatus(projectId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -338,7 +338,7 @@ apiInstance.getProjectDeploymentStatus(UNKNOWN_PARAMETER_NAME).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
 
 ### Return type
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ## getProjectDeploymentURL
 
-> ProjectDeploymentURL getProjectDeploymentURL(UNKNOWN_PARAMETER_NAME, opts)
+> ProjectDeploymentURL getProjectDeploymentURL(projectId, opts)
 
 Get the deployment URL 
 
@@ -379,11 +379,11 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
 let opts = {
-  'UNKNOWN_BASE_TYPE': new theblockchainapi.UNKNOWN_BASE_TYPE() // UNKNOWN_BASE_TYPE | 
+  'inlineObject': new theblockchainapi.InlineObject() // InlineObject | 
 };
-apiInstance.getProjectDeploymentURL(UNKNOWN_PARAMETER_NAME, opts).then((data) => {
+apiInstance.getProjectDeploymentURL(projectId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -396,8 +396,8 @@ apiInstance.getProjectDeploymentURL(UNKNOWN_PARAMETER_NAME, opts).then((data) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
- **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
+ **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional] 
 
 ### Return type
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 ## getProjectStats
 
-> [StatItem] getProjectStats(UNKNOWN_PARAMETER_NAME)
+> [StatItem] getProjectStats(projectId)
 
 Get a project&#39;s stats 
 
@@ -438,8 +438,8 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-apiInstance.getProjectStats(UNKNOWN_PARAMETER_NAME).then((data) => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+apiInstance.getProjectStats(projectId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -452,7 +452,7 @@ apiInstance.getProjectStats(UNKNOWN_PARAMETER_NAME).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
 
 ### Return type
 
@@ -521,7 +521,7 @@ This endpoint does not need any parameter.
 
 ## updateProject
 
-> Project updateProject(UNKNOWN_PARAMETER_NAME, opts)
+> Project updateProject(projectId, opts)
 
 Update a project 
 
@@ -544,11 +544,11 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
 let opts = {
   'projectCreateRequest': new theblockchainapi.ProjectCreateRequest() // ProjectCreateRequest | 
 };
-apiInstance.updateProject(UNKNOWN_PARAMETER_NAME, opts).then((data) => {
+apiInstance.updateProject(projectId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -561,7 +561,7 @@ apiInstance.updateProject(UNKNOWN_PARAMETER_NAME, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
  **projectCreateRequest** | [**ProjectCreateRequest**](ProjectCreateRequest.md)|  | [optional] 
 
 ### Return type
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ## updateProjectDocumentation
 
-> Project updateProjectDocumentation(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+> Project updateProjectDocumentation(projectId, version)
 
 Update the project&#39;s documentation 
 
@@ -603,9 +603,9 @@ APISecretKey.apiKey = 'YOUR API KEY';
 //APISecretKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new theblockchainapi.ProjectApi();
-let UNKNOWN_PARAMETER_NAME = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; //  | The ID of the project. Created and returned when a project is created.
-let UNKNOWN_PARAMETER_NAME2 = 2; //  | The version of the project.
-apiInstance.updateProjectDocumentation(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2).then((data) => {
+let projectId = L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC; // String | The ID of the project. Created and returned when a project is created.
+let version = 2; // String | The version of the project.
+apiInstance.updateProjectDocumentation(projectId, version).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -618,8 +618,8 @@ apiInstance.updateProjectDocumentation(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. | 
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)| The version of the project. | 
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. | 
+ **version** | **String**| The version of the project. | 
 
 ### Return type
 

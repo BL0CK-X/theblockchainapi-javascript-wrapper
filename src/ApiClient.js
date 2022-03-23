@@ -65,7 +65,7 @@ class ApiClient {
          * @default 120000
          */
         this.timeout = 120000;
-        
+
         /**
          * If set to false an additional timestamp parameter is added to all API GET calls to
          * prevent browser caching

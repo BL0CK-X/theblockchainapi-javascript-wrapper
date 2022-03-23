@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The MintNFTResponse model module.
- * @module model/MintNFTResponse
+ * The InlineObject model module.
+ * @module model/InlineObject
  * @version 1.0.9
  */
-class MintNFTResponse {
+class InlineObject {
     /**
-     * Constructs a new <code>MintNFTResponse</code>.
-     * @alias module:model/MintNFTResponse
+     * Constructs a new <code>InlineObject</code>.
+     * @alias module:model/InlineObject
      */
     constructor() { 
         
-        MintNFTResponse.initialize(this);
+        InlineObject.initialize(this);
     }
 
     /**
@@ -37,21 +37,18 @@ class MintNFTResponse {
     }
 
     /**
-     * Constructs a <code>MintNFTResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MintNFTResponse} obj Optional instance to populate.
-     * @return {module:model/MintNFTResponse} The populated <code>MintNFTResponse</code> instance.
+     * @param {module:model/InlineObject} obj Optional instance to populate.
+     * @return {module:model/InlineObject} The populated <code>InlineObject</code> instance.
      */
     static constructFromObject(data, obj) {
-
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
         if (data) {
-            obj = obj || new MintNFTResponse();
+            obj = obj || new InlineObject();
 
-            if (data.hasOwnProperty('transaction_signature')) {
-                obj['transaction_signature'] = ApiClient.convertToType(data['transaction_signature'], 'String');
+            if (data.hasOwnProperty('platform')) {
+                obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
             }
         }
         return obj;
@@ -61,15 +58,42 @@ class MintNFTResponse {
 }
 
 /**
- * The signature of the transaction. Just because this is returned does not mean it was successful.  To determine if the mint was successful, use this Gist: https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d 
- * @member {String} transaction_signature
+ * The platform for which the binary was compiled. Note that Darwin = Mac.
+ * @member {module:model/InlineObject.PlatformEnum} platform
  */
-MintNFTResponse.prototype['transaction_signature'] = undefined;
+InlineObject.prototype['platform'] = undefined;
 
 
 
 
 
+/**
+ * Allowed values for the <code>platform</code> property.
+ * @enum {String}
+ * @readonly
+ */
+InlineObject['PlatformEnum'] = {
 
-export default MintNFTResponse;
+    /**
+     * value: "Darwin"
+     * @const
+     */
+    "Darwin": "Darwin",
+
+    /**
+     * value: "Linux"
+     * @const
+     */
+    "Linux": "Linux",
+
+    /**
+     * value: "Windows"
+     * @const
+     */
+    "Windows": "Windows"
+};
+
+
+
+export default InlineObject;
 

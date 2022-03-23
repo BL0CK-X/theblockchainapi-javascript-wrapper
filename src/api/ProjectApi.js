@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineObject from '../model/InlineObject';
 import Project from '../model/Project';
 import ProjectCreateRequest from '../model/ProjectCreateRequest';
 import ProjectDeploymentURL from '../model/ProjectDeploymentURL';
 import StatItem from '../model/StatItem';
-import UNKNOWN_BASE_TYPE from '../model/UNKNOWN_BASE_TYPE';
 
 /**
 * Project service.
@@ -88,24 +88,24 @@ export default class ProjectApi {
     /**
      * Create a new project version 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Create a new version for the project. The version must be higher than all existing versions. This will duplicate the existing project's latest version and auto-deploy it. To update these endpoints, simply redeploy on this project's versions.  When a project is first created, it uses the default \"0.0.1\" version.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME2 The version of the project.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
+     * @param {String} version The version of the project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    createProjectVersionWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2) {
+    createProjectVersionWithHttpInfo(projectId, version) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling createProjectVersion");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling createProjectVersion");
       }
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME2' is set
-      if (UNKNOWN_PARAMETER_NAME2 === undefined || UNKNOWN_PARAMETER_NAME2 === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME2' when calling createProjectVersion");
+      // verify the required parameter 'version' is set
+      if (version === undefined || version === null) {
+        throw new Error("Missing the required parameter 'version' when calling createProjectVersion");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME,
-        'version': UNKNOWN_PARAMETER_NAME2
+        'project_id': projectId,
+        'version': version
       };
       let queryParams = {
       };
@@ -128,12 +128,12 @@ export default class ProjectApi {
     /**
      * Create a new project version 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Create a new version for the project. The version must be higher than all existing versions. This will duplicate the existing project's latest version and auto-deploy it. To update these endpoints, simply redeploy on this project's versions.  When a project is first created, it uses the default \"0.0.1\" version.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME2 The version of the project.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
+     * @param {String} version The version of the project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    createProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2) {
-      return this.createProjectVersionWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+    createProjectVersion(projectId, version) {
+      return this.createProjectVersionWithHttpInfo(projectId, version)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -143,18 +143,18 @@ export default class ProjectApi {
     /**
      * Delete a project 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Deletes a project. This will remove the mini-API entirely from our system.   `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME) {
+    deleteProjectWithHttpInfo(projectId) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling deleteProject");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling deleteProject");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME
+        'project_id': projectId
       };
       let queryParams = {
       };
@@ -177,11 +177,11 @@ export default class ProjectApi {
     /**
      * Delete a project 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Deletes a project. This will remove the mini-API entirely from our system.   `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteProject(UNKNOWN_PARAMETER_NAME) {
-      return this.deleteProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME)
+    deleteProject(projectId) {
+      return this.deleteProjectWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -191,24 +191,24 @@ export default class ProjectApi {
     /**
      * Delete a project version 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Delete a version for the project. There must always be at least one version deployed, so you cannot delete the last remaining version of the project. This will auto-deploy the project and update its documentation, if necessary.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME2 The version of the project.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
+     * @param {String} version The version of the project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    deleteProjectVersionWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2) {
+    deleteProjectVersionWithHttpInfo(projectId, version) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling deleteProjectVersion");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling deleteProjectVersion");
       }
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME2' is set
-      if (UNKNOWN_PARAMETER_NAME2 === undefined || UNKNOWN_PARAMETER_NAME2 === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME2' when calling deleteProjectVersion");
+      // verify the required parameter 'version' is set
+      if (version === undefined || version === null) {
+        throw new Error("Missing the required parameter 'version' when calling deleteProjectVersion");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME,
-        'version': UNKNOWN_PARAMETER_NAME2
+        'project_id': projectId,
+        'version': version
       };
       let queryParams = {
       };
@@ -231,12 +231,12 @@ export default class ProjectApi {
     /**
      * Delete a project version 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Delete a version for the project. There must always be at least one version deployed, so you cannot delete the last remaining version of the project. This will auto-deploy the project and update its documentation, if necessary.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME2 The version of the project.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
+     * @param {String} version The version of the project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    deleteProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2) {
-      return this.deleteProjectVersionWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+    deleteProjectVersion(projectId, version) {
+      return this.deleteProjectVersionWithHttpInfo(projectId, version)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -246,18 +246,18 @@ export default class ProjectApi {
     /**
      * Get a project's metadata 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Update your project's metadata. None of these parameters are required. Just provide the parameters that you would like to update.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    getProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME) {
+    getProjectWithHttpInfo(projectId) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProject");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling getProject");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME
+        'project_id': projectId
       };
       let queryParams = {
       };
@@ -280,11 +280,11 @@ export default class ProjectApi {
     /**
      * Get a project's metadata 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Update your project's metadata. None of these parameters are required. Just provide the parameters that you would like to update.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    getProject(UNKNOWN_PARAMETER_NAME) {
-      return this.getProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME)
+    getProject(projectId) {
+      return this.getProjectWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -294,18 +294,18 @@ export default class ProjectApi {
     /**
      * Get deployment status 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Get the deployment status for the project after uploading the binary. Will be: `DEPLOYED` or NOT `DEPLOYED`.  After it is `DEPLOYED`, you can then make requests to your API.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    getProjectDeploymentStatusWithHttpInfo(UNKNOWN_PARAMETER_NAME) {
+    getProjectDeploymentStatusWithHttpInfo(projectId) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProjectDeploymentStatus");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling getProjectDeploymentStatus");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME
+        'project_id': projectId
       };
       let queryParams = {
       };
@@ -328,11 +328,11 @@ export default class ProjectApi {
     /**
      * Get deployment status 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Get the deployment status for the project after uploading the binary. Will be: `DEPLOYED` or NOT `DEPLOYED`.  After it is `DEPLOYED`, you can then make requests to your API.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    getProjectDeploymentStatus(UNKNOWN_PARAMETER_NAME) {
-      return this.getProjectDeploymentStatusWithHttpInfo(UNKNOWN_PARAMETER_NAME)
+    getProjectDeploymentStatus(projectId) {
+      return this.getProjectDeploymentStatusWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -342,21 +342,21 @@ export default class ProjectApi {
     /**
      * Get the deployment URL 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Get the deployment URL for the project.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @param {Object} opts Optional parameters
-     * @param {module:model/UNKNOWN_BASE_TYPE} opts.UNKNOWN_BASE_TYPE 
+     * @param {module:model/InlineObject} opts.inlineObject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectDeploymentURL} and HTTP response
      */
-    getProjectDeploymentURLWithHttpInfo(UNKNOWN_PARAMETER_NAME, opts) {
+    getProjectDeploymentURLWithHttpInfo(projectId, opts) {
       opts = opts || {};
-      let postBody = opts['UNKNOWN_BASE_TYPE'];
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProjectDeploymentURL");
+      let postBody = opts['inlineObject'];
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling getProjectDeploymentURL");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME
+        'project_id': projectId
       };
       let queryParams = {
       };
@@ -379,13 +379,13 @@ export default class ProjectApi {
     /**
      * Get the deployment URL 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Get the deployment URL for the project.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @param {Object} opts Optional parameters
-     * @param {module:model/UNKNOWN_BASE_TYPE} opts.UNKNOWN_BASE_TYPE 
+     * @param {module:model/InlineObject} opts.inlineObject 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectDeploymentURL}
      */
-    getProjectDeploymentURL(UNKNOWN_PARAMETER_NAME, opts) {
-      return this.getProjectDeploymentURLWithHttpInfo(UNKNOWN_PARAMETER_NAME, opts)
+    getProjectDeploymentURL(projectId, opts) {
+      return this.getProjectDeploymentURLWithHttpInfo(projectId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -395,18 +395,18 @@ export default class ProjectApi {
     /**
      * Get a project's stats 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Get the usage stats for your mini-API.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/StatItem>} and HTTP response
      */
-    getProjectStatsWithHttpInfo(UNKNOWN_PARAMETER_NAME) {
+    getProjectStatsWithHttpInfo(projectId) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProjectStats");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling getProjectStats");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME
+        'project_id': projectId
       };
       let queryParams = {
       };
@@ -429,11 +429,11 @@ export default class ProjectApi {
     /**
      * Get a project's stats 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Get the usage stats for your mini-API.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/StatItem>}
      */
-    getProjectStats(UNKNOWN_PARAMETER_NAME) {
-      return this.getProjectStatsWithHttpInfo(UNKNOWN_PARAMETER_NAME)
+    getProjectStats(projectId) {
+      return this.getProjectStatsWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -484,21 +484,21 @@ export default class ProjectApi {
     /**
      * Update a project 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Update your project's metadata. None of these parameters are required. Just provide the parameters that you would like to update.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @param {Object} opts Optional parameters
      * @param {module:model/ProjectCreateRequest} opts.projectCreateRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    updateProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME, opts) {
+    updateProjectWithHttpInfo(projectId, opts) {
       opts = opts || {};
       let postBody = opts['projectCreateRequest'];
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling updateProject");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling updateProject");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME
+        'project_id': projectId
       };
       let queryParams = {
       };
@@ -521,13 +521,13 @@ export default class ProjectApi {
     /**
      * Update a project 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Update your project's metadata. None of these parameters are required. Just provide the parameters that you would like to update.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
      * @param {Object} opts Optional parameters
      * @param {module:model/ProjectCreateRequest} opts.projectCreateRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    updateProject(UNKNOWN_PARAMETER_NAME, opts) {
-      return this.updateProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME, opts)
+    updateProject(projectId, opts) {
+      return this.updateProjectWithHttpInfo(projectId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -537,24 +537,24 @@ export default class ProjectApi {
     /**
      * Update the project's documentation 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Update your project's documentation.   Your project's documentation can only represent *one* version of your API.  Thus, when you call this, the `current_documentation_version` attribute of your project is set to the version supplied in the call.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME2 The version of the project.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
+     * @param {String} version The version of the project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    updateProjectDocumentationWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2) {
+    updateProjectDocumentationWithHttpInfo(projectId, version) {
       let postBody = null;
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-      if (UNKNOWN_PARAMETER_NAME === undefined || UNKNOWN_PARAMETER_NAME === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling updateProjectDocumentation");
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling updateProjectDocumentation");
       }
-      // verify the required parameter 'UNKNOWN_PARAMETER_NAME2' is set
-      if (UNKNOWN_PARAMETER_NAME2 === undefined || UNKNOWN_PARAMETER_NAME2 === null) {
-        throw new Error("Missing the required parameter 'UNKNOWN_PARAMETER_NAME2' when calling updateProjectDocumentation");
+      // verify the required parameter 'version' is set
+      if (version === undefined || version === null) {
+        throw new Error("Missing the required parameter 'version' when calling updateProjectDocumentation");
       }
 
       let pathParams = {
-        'project_id': UNKNOWN_PARAMETER_NAME,
-        'version': UNKNOWN_PARAMETER_NAME2
+        'project_id': projectId,
+        'version': version
       };
       let queryParams = {
       };
@@ -577,12 +577,12 @@ export default class ProjectApi {
     /**
      * Update the project's documentation 
      * A complete example and walkthrough of the program can be found <a href=\"https://github.com/BL0CK-X/api-developer-program\" target=\"_blank\">here</a>.  Update your project's documentation.   Your project's documentation can only represent *one* version of your API.  Thus, when you call this, the `current_documentation_version` attribute of your project is set to the version supplied in the call.  `Cost: 0 Credit` (Free) (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created.
-     * @param {module:model/null} UNKNOWN_PARAMETER_NAME2 The version of the project.
+     * @param {String} projectId The ID of the project. Created and returned when a project is created.
+     * @param {String} version The version of the project.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    updateProjectDocumentation(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2) {
-      return this.updateProjectDocumentationWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+    updateProjectDocumentation(projectId, version) {
+      return this.updateProjectDocumentationWithHttpInfo(projectId, version)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

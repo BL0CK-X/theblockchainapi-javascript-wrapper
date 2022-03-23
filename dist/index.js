@@ -237,6 +237,12 @@ Object.defineProperty(exports, "Group", {
     return _Group["default"];
   }
 });
+Object.defineProperty(exports, "InlineObject", {
+  enumerable: true,
+  get: function get() {
+    return _InlineObject["default"];
+  }
+});
 Object.defineProperty(exports, "ListNFTsResponse", {
   enumerable: true,
   get: function get() {
@@ -563,6 +569,8 @@ var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyR
 var _GetSPLTokenResponse = _interopRequireDefault(require("./model/GetSPLTokenResponse"));
 
 var _Group = _interopRequireDefault(require("./model/Group"));
+
+var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
 
