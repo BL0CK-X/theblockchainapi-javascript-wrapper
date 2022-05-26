@@ -20,7 +20,10 @@ import AccountIsCandyMachine from './model/AccountIsCandyMachine';
 import AccountIsNFT from './model/AccountIsNFT';
 import AccountValue from './model/AccountValue';
 import AirdropRequest from './model/AirdropRequest';
+import AvalancheCChainPublicAddress from './model/AvalancheCChainPublicAddress';
+import AvalancheXPChainPublicAddress from './model/AvalancheXPChainPublicAddress';
 import B58PrivateKey from './model/B58PrivateKey';
+import BSCPublicAddress from './model/BSCPublicAddress';
 import BalanceRequest from './model/BalanceRequest';
 import BalanceResponse from './model/BalanceResponse';
 import BuyRequest from './model/BuyRequest';
@@ -33,8 +36,27 @@ import DelistResponse from './model/DelistResponse';
 import DoubleTransferResponse from './model/DoubleTransferResponse';
 import Endpoint from './model/Endpoint';
 import EndpointReference from './model/EndpointReference';
+import EthereumPublicAddress from './model/EthereumPublicAddress';
+import EthereumTransaction from './model/EthereumTransaction';
+import EthereumTransactionCompiledResponse from './model/EthereumTransactionCompiledResponse';
+import EthereumTransactionMadeResponse from './model/EthereumTransactionMadeResponse';
 import FeePayerWallet from './model/FeePayerWallet';
+import GeneralAirdropRequest from './model/GeneralAirdropRequest';
+import GeneralB58PrivateKey from './model/GeneralB58PrivateKey';
+import GeneralBalanceRequest from './model/GeneralBalanceRequest';
+import GeneralBalanceResponse from './model/GeneralBalanceResponse';
+import GeneralFeePayerWallet from './model/GeneralFeePayerWallet';
+import GeneralGeneratePrivateKeyResponse from './model/GeneralGeneratePrivateKeyResponse';
+import GeneralPrivateKey from './model/GeneralPrivateKey';
+import GeneralSecretPhrase from './model/GeneralSecretPhrase';
+import GeneralSecretRecoveryPhrase from './model/GeneralSecretRecoveryPhrase';
+import GeneralTransaction from './model/GeneralTransaction';
+import GeneralTransactionMadeResponse from './model/GeneralTransactionMadeResponse';
+import GeneralTransactionResponse from './model/GeneralTransactionResponse';
+import GeneralTransferRequest from './model/GeneralTransferRequest';
+import GeneralWallet from './model/GeneralWallet';
 import GeneratePrivateKey from './model/GeneratePrivateKey';
+import GenerateSeedPhraseRequest from './model/GenerateSeedPhraseRequest';
 import GetAllNFTsResponse from './model/GetAllNFTsResponse';
 import GetAllNFTsResponseMintedNfts from './model/GetAllNFTsResponseMintedNfts';
 import GetAllNFTsResponseUnmintedNfts from './model/GetAllNFTsResponseUnmintedNfts';
@@ -44,11 +66,11 @@ import GetCandyMetadataErrorResponse from './model/GetCandyMetadataErrorResponse
 import GetCandyMetadataRequest from './model/GetCandyMetadataRequest';
 import GetCandyMetadataResponse from './model/GetCandyMetadataResponse';
 import GetCandyMetadataResponseCreators from './model/GetCandyMetadataResponseCreators';
-import GetFileResponse from './model/GetFileResponse';
 import GetNFTListingResponse from './model/GetNFTListingResponse';
 import GetPublicKeyRequest from './model/GetPublicKeyRequest';
 import GetSPLTokenResponse from './model/GetSPLTokenResponse';
 import Group from './model/Group';
+import HexPrivateKey from './model/HexPrivateKey';
 import InlineObject from './model/InlineObject';
 import ListNFTsResponse from './model/ListNFTsResponse';
 import ListRequest from './model/ListRequest';
@@ -60,6 +82,7 @@ import NFT from './model/NFT';
 import NFTAnalyticsRequest from './model/NFTAnalyticsRequest';
 import NFTAnalyticsResponse from './model/NFTAnalyticsResponse';
 import NFTAnalyticsResponseTransactionHistory from './model/NFTAnalyticsResponseTransactionHistory';
+import NFTCollection from './model/NFTCollection';
 import NFTData from './model/NFTData';
 import NFTMintErrorResponse from './model/NFTMintErrorResponse';
 import NFTMintFee from './model/NFTMintFee';
@@ -68,6 +91,7 @@ import NFTOwnerResponse from './model/NFTOwnerResponse';
 import NFTSearchRequest from './model/NFTSearchRequest';
 import NFTSearchResponse from './model/NFTSearchResponse';
 import NFTTransaction from './model/NFTTransaction';
+import NearPublicKey from './model/NearPublicKey';
 import ParameterSpecification from './model/ParameterSpecification';
 import PrivateKey from './model/PrivateKey';
 import Project from './model/Project';
@@ -76,16 +100,20 @@ import ProjectDeploymentURL from './model/ProjectDeploymentURL';
 import PublicKey from './model/PublicKey';
 import SecretPhrase from './model/SecretPhrase';
 import SecretRecoveryPhrase from './model/SecretRecoveryPhrase';
+import SolanaPublicKey from './model/SolanaPublicKey';
+import SolanaTransaction from './model/SolanaTransaction';
+import SolanaTransactionCompiledResponse from './model/SolanaTransactionCompiledResponse';
+import SolanaTransactionMadeResponse from './model/SolanaTransactionMadeResponse';
 import StatItem from './model/StatItem';
+import SupplyWalletRequest from './model/SupplyWalletRequest';
 import Transaction from './model/Transaction';
 import TransactionResult from './model/TransactionResult';
 import TransferRequest from './model/TransferRequest';
 import TransferResponse from './model/TransferResponse';
 import TransferResponseCompiled from './model/TransferResponseCompiled';
-import UploadFileRequest from './model/UploadFileRequest';
 import Wallet from './model/Wallet';
+import WalletIdentifiers from './model/WalletIdentifiers';
 import EndpointApi from './api/EndpointApi';
-import FileApi from './api/FileApi';
 import ProjectApi from './api/ProjectApi';
 import SolanaAccountApi from './api/SolanaAccountApi';
 import SolanaCandyMachineApi from './api/SolanaCandyMachineApi';
@@ -94,6 +122,8 @@ import SolanaNFTMarketplacesApi from './api/SolanaNFTMarketplacesApi';
 import SolanaSPLTokenApi from './api/SolanaSPLTokenApi';
 import SolanaTransactionApi from './api/SolanaTransactionApi';
 import SolanaWalletApi from './api/SolanaWalletApi';
+import TransactionApi from './api/TransactionApi';
+import WalletApi from './api/WalletApi';
 
 
 /**
@@ -177,10 +207,28 @@ export {
     AirdropRequest,
 
     /**
+     * The AvalancheCChainPublicAddress model constructor.
+     * @property {module:model/AvalancheCChainPublicAddress}
+     */
+    AvalancheCChainPublicAddress,
+
+    /**
+     * The AvalancheXPChainPublicAddress model constructor.
+     * @property {module:model/AvalancheXPChainPublicAddress}
+     */
+    AvalancheXPChainPublicAddress,
+
+    /**
      * The B58PrivateKey model constructor.
      * @property {module:model/B58PrivateKey}
      */
     B58PrivateKey,
+
+    /**
+     * The BSCPublicAddress model constructor.
+     * @property {module:model/BSCPublicAddress}
+     */
+    BSCPublicAddress,
 
     /**
      * The BalanceRequest model constructor.
@@ -255,16 +303,130 @@ export {
     EndpointReference,
 
     /**
+     * The EthereumPublicAddress model constructor.
+     * @property {module:model/EthereumPublicAddress}
+     */
+    EthereumPublicAddress,
+
+    /**
+     * The EthereumTransaction model constructor.
+     * @property {module:model/EthereumTransaction}
+     */
+    EthereumTransaction,
+
+    /**
+     * The EthereumTransactionCompiledResponse model constructor.
+     * @property {module:model/EthereumTransactionCompiledResponse}
+     */
+    EthereumTransactionCompiledResponse,
+
+    /**
+     * The EthereumTransactionMadeResponse model constructor.
+     * @property {module:model/EthereumTransactionMadeResponse}
+     */
+    EthereumTransactionMadeResponse,
+
+    /**
      * The FeePayerWallet model constructor.
      * @property {module:model/FeePayerWallet}
      */
     FeePayerWallet,
 
     /**
+     * The GeneralAirdropRequest model constructor.
+     * @property {module:model/GeneralAirdropRequest}
+     */
+    GeneralAirdropRequest,
+
+    /**
+     * The GeneralB58PrivateKey model constructor.
+     * @property {module:model/GeneralB58PrivateKey}
+     */
+    GeneralB58PrivateKey,
+
+    /**
+     * The GeneralBalanceRequest model constructor.
+     * @property {module:model/GeneralBalanceRequest}
+     */
+    GeneralBalanceRequest,
+
+    /**
+     * The GeneralBalanceResponse model constructor.
+     * @property {module:model/GeneralBalanceResponse}
+     */
+    GeneralBalanceResponse,
+
+    /**
+     * The GeneralFeePayerWallet model constructor.
+     * @property {module:model/GeneralFeePayerWallet}
+     */
+    GeneralFeePayerWallet,
+
+    /**
+     * The GeneralGeneratePrivateKeyResponse model constructor.
+     * @property {module:model/GeneralGeneratePrivateKeyResponse}
+     */
+    GeneralGeneratePrivateKeyResponse,
+
+    /**
+     * The GeneralPrivateKey model constructor.
+     * @property {module:model/GeneralPrivateKey}
+     */
+    GeneralPrivateKey,
+
+    /**
+     * The GeneralSecretPhrase model constructor.
+     * @property {module:model/GeneralSecretPhrase}
+     */
+    GeneralSecretPhrase,
+
+    /**
+     * The GeneralSecretRecoveryPhrase model constructor.
+     * @property {module:model/GeneralSecretRecoveryPhrase}
+     */
+    GeneralSecretRecoveryPhrase,
+
+    /**
+     * The GeneralTransaction model constructor.
+     * @property {module:model/GeneralTransaction}
+     */
+    GeneralTransaction,
+
+    /**
+     * The GeneralTransactionMadeResponse model constructor.
+     * @property {module:model/GeneralTransactionMadeResponse}
+     */
+    GeneralTransactionMadeResponse,
+
+    /**
+     * The GeneralTransactionResponse model constructor.
+     * @property {module:model/GeneralTransactionResponse}
+     */
+    GeneralTransactionResponse,
+
+    /**
+     * The GeneralTransferRequest model constructor.
+     * @property {module:model/GeneralTransferRequest}
+     */
+    GeneralTransferRequest,
+
+    /**
+     * The GeneralWallet model constructor.
+     * @property {module:model/GeneralWallet}
+     */
+    GeneralWallet,
+
+    /**
      * The GeneratePrivateKey model constructor.
      * @property {module:model/GeneratePrivateKey}
      */
     GeneratePrivateKey,
+
+    /**
+     * The GenerateSeedPhraseRequest model constructor.
+     * @property {module:model/GenerateSeedPhraseRequest}
+     */
+    GenerateSeedPhraseRequest,
 
     /**
      * The GetAllNFTsResponse model constructor.
@@ -321,12 +483,6 @@ export {
     GetCandyMetadataResponseCreators,
 
     /**
-     * The GetFileResponse model constructor.
-     * @property {module:model/GetFileResponse}
-     */
-    GetFileResponse,
-
-    /**
      * The GetNFTListingResponse model constructor.
      * @property {module:model/GetNFTListingResponse}
      */
@@ -349,6 +505,12 @@ export {
      * @property {module:model/Group}
      */
     Group,
+
+    /**
+     * The HexPrivateKey model constructor.
+     * @property {module:model/HexPrivateKey}
+     */
+    HexPrivateKey,
 
     /**
      * The InlineObject model constructor.
@@ -417,6 +579,12 @@ export {
     NFTAnalyticsResponseTransactionHistory,
 
     /**
+     * The NFTCollection model constructor.
+     * @property {module:model/NFTCollection}
+     */
+    NFTCollection,
+
+    /**
      * The NFTData model constructor.
      * @property {module:model/NFTData}
      */
@@ -463,6 +631,12 @@ export {
      * @property {module:model/NFTTransaction}
      */
     NFTTransaction,
+
+    /**
+     * The NearPublicKey model constructor.
+     * @property {module:model/NearPublicKey}
+     */
+    NearPublicKey,
 
     /**
      * The ParameterSpecification model constructor.
@@ -513,10 +687,40 @@ export {
     SecretRecoveryPhrase,
 
     /**
+     * The SolanaPublicKey model constructor.
+     * @property {module:model/SolanaPublicKey}
+     */
+    SolanaPublicKey,
+
+    /**
+     * The SolanaTransaction model constructor.
+     * @property {module:model/SolanaTransaction}
+     */
+    SolanaTransaction,
+
+    /**
+     * The SolanaTransactionCompiledResponse model constructor.
+     * @property {module:model/SolanaTransactionCompiledResponse}
+     */
+    SolanaTransactionCompiledResponse,
+
+    /**
+     * The SolanaTransactionMadeResponse model constructor.
+     * @property {module:model/SolanaTransactionMadeResponse}
+     */
+    SolanaTransactionMadeResponse,
+
+    /**
      * The StatItem model constructor.
      * @property {module:model/StatItem}
      */
     StatItem,
+
+    /**
+     * The SupplyWalletRequest model constructor.
+     * @property {module:model/SupplyWalletRequest}
+     */
+    SupplyWalletRequest,
 
     /**
      * The Transaction model constructor.
@@ -549,28 +753,22 @@ export {
     TransferResponseCompiled,
 
     /**
-     * The UploadFileRequest model constructor.
-     * @property {module:model/UploadFileRequest}
-     */
-    UploadFileRequest,
-
-    /**
      * The Wallet model constructor.
      * @property {module:model/Wallet}
      */
     Wallet,
 
     /**
+     * The WalletIdentifiers model constructor.
+     * @property {module:model/WalletIdentifiers}
+     */
+    WalletIdentifiers,
+
+    /**
     * The EndpointApi service constructor.
     * @property {module:api/EndpointApi}
     */
     EndpointApi,
-
-    /**
-    * The FileApi service constructor.
-    * @property {module:api/FileApi}
-    */
-    FileApi,
 
     /**
     * The ProjectApi service constructor.
@@ -618,5 +816,17 @@ export {
     * The SolanaWalletApi service constructor.
     * @property {module:api/SolanaWalletApi}
     */
-    SolanaWalletApi
+    SolanaWalletApi,
+
+    /**
+    * The TransactionApi service constructor.
+    * @property {module:api/TransactionApi}
+    */
+    TransactionApi,
+
+    /**
+    * The WalletApi service constructor.
+    * @property {module:api/WalletApi}
+    */
+    WalletApi
 };

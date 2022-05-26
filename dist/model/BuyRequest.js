@@ -65,6 +65,14 @@ var BuyRequest = /*#__PURE__*/function () {
           obj['wallet'] = _Wallet["default"].constructFromObject(data['wallet']);
         }
 
+        if (data.hasOwnProperty('skip_checks')) {
+          obj['skip_checks'] = _ApiClient["default"].convertToType(data['skip_checks'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('seller_public_key')) {
+          obj['seller_public_key'] = _ApiClient["default"].convertToType(data['seller_public_key'], 'String');
+        }
+
         if (data.hasOwnProperty('nft_price')) {
           obj['nft_price'] = _ApiClient["default"].convertToType(data['nft_price'], 'Number');
         }
@@ -82,6 +90,20 @@ var BuyRequest = /*#__PURE__*/function () {
 
 
 BuyRequest.prototype['wallet'] = undefined;
+/**
+ * Whether or not to skip the provided checks (e.g., Is this NFT not listed? Is this NFT listed for a different price than you set?) and proceed with the transaction. 
+ * @member {Boolean} skip_checks
+ * @default false
+ */
+
+BuyRequest.prototype['skip_checks'] = false;
+/**
+ * The public key of the seller. Only required if providing `skip_checks`. Otherwise, don't provide it. 
+ * @member {String} seller_public_key
+ * @default 'null'
+ */
+
+BuyRequest.prototype['seller_public_key'] = 'null';
 /**
  * The number of lamports you are expecting to purchase the NFT for. We check the price of the NFT before  purchasing it to ensure that it matches your expectation. There are 1e9 (1 billion) Lamports in a SOL. 
  * @member {Number} nft_price

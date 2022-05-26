@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import NFTCollection from './NFTCollection';
 import NFTData from './NFTData';
 
 /**
@@ -45,9 +46,6 @@ class NFT {
      * @return {module:model/NFT} The populated <code>NFT</code> instance.
      */
     static constructFromObject(data, obj) {
-
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
         if (data) {
             obj = obj || new NFT();
 
@@ -74,6 +72,21 @@ class NFT {
             }
             if (data.hasOwnProperty('explorer_url')) {
                 obj['explorer_url'] = ApiClient.convertToType(data['explorer_url'], 'String');
+            }
+            if (data.hasOwnProperty('metadata_account')) {
+                obj['metadata_account'] = ApiClient.convertToType(data['metadata_account'], 'String');
+            }
+            if (data.hasOwnProperty('edition_nonce')) {
+                obj['edition_nonce'] = ApiClient.convertToType(data['edition_nonce'], 'Number');
+            }
+            if (data.hasOwnProperty('token_standard')) {
+                obj['token_standard'] = ApiClient.convertToType(data['token_standard'], 'Number');
+            }
+            if (data.hasOwnProperty('collection')) {
+                obj['collection'] = NFTCollection.constructFromObject(data['collection']);
+            }
+            if (data.hasOwnProperty('uses')) {
+                obj['uses'] = ApiClient.convertToType(data['uses'], 'Number');
             }
         }
         return obj;
@@ -123,6 +136,32 @@ NFT.prototype['mint_secret_recovery_phrase'] = undefined;
  * @member {String} explorer_url
  */
 NFT.prototype['explorer_url'] = undefined;
+
+/**
+ * The metadata account of the NFT 
+ * @member {String} metadata_account
+ */
+NFT.prototype['metadata_account'] = undefined;
+
+/**
+ * @member {Number} edition_nonce
+ */
+NFT.prototype['edition_nonce'] = undefined;
+
+/**
+ * @member {Number} token_standard
+ */
+NFT.prototype['token_standard'] = undefined;
+
+/**
+ * @member {module:model/NFTCollection} collection
+ */
+NFT.prototype['collection'] = undefined;
+
+/**
+ * @member {Number} uses
+ */
+NFT.prototype['uses'] = undefined;
 
 
 

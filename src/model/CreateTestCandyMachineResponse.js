@@ -46,9 +46,6 @@ class CreateTestCandyMachineResponse {
      * @return {module:model/CreateTestCandyMachineResponse} The populated <code>CreateTestCandyMachineResponse</code> instance.
      */
     static constructFromObject(data, obj) {
-
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
         if (data) {
             obj = obj || new CreateTestCandyMachineResponse();
 

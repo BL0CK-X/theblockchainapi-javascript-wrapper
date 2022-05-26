@@ -62,9 +62,9 @@ class ApiClient {
         /**
          * The default HTTP timeout for all API calls.
          * @type {Number}
-         * @default 120000
+         * @default 60000
          */
-        this.timeout = 120000;
+        this.timeout = 60000;
 
         /**
          * If set to false an additional timestamp parameter is added to all API GET calls to

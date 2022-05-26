@@ -46,9 +46,6 @@ class NFTAnalyticsResponseTransactionHistory {
      * @return {module:model/NFTAnalyticsResponseTransactionHistory} The populated <code>NFTAnalyticsResponseTransactionHistory</code> instance.
      */
     static constructFromObject(data, obj) {
-
-        try { data = JSON.parse(data); } catch (_unused) { }
-        
         if (data) {
             obj = obj || new NFTAnalyticsResponseTransactionHistory();
 

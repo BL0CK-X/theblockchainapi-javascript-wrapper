@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _NFTCollection = _interopRequireDefault(require("./NFTCollection"));
+
 var _NFTData = _interopRequireDefault(require("./NFTData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -53,10 +55,6 @@ var NFT = /*#__PURE__*/function () {
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
-      try {
-        data = JSON.parse(data);
-      } catch (_unused) {}
-
       if (data) {
         obj = obj || new NFT();
 
@@ -90,6 +88,26 @@ var NFT = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('explorer_url')) {
           obj['explorer_url'] = _ApiClient["default"].convertToType(data['explorer_url'], 'String');
+        }
+
+        if (data.hasOwnProperty('metadata_account')) {
+          obj['metadata_account'] = _ApiClient["default"].convertToType(data['metadata_account'], 'String');
+        }
+
+        if (data.hasOwnProperty('edition_nonce')) {
+          obj['edition_nonce'] = _ApiClient["default"].convertToType(data['edition_nonce'], 'Number');
+        }
+
+        if (data.hasOwnProperty('token_standard')) {
+          obj['token_standard'] = _ApiClient["default"].convertToType(data['token_standard'], 'Number');
+        }
+
+        if (data.hasOwnProperty('collection')) {
+          obj['collection'] = _NFTCollection["default"].constructFromObject(data['collection']);
+        }
+
+        if (data.hasOwnProperty('uses')) {
+          obj['uses'] = _ApiClient["default"].convertToType(data['uses'], 'Number');
         }
       }
 
@@ -142,5 +160,31 @@ NFT.prototype['mint_secret_recovery_phrase'] = undefined;
  */
 
 NFT.prototype['explorer_url'] = undefined;
+/**
+ * The metadata account of the NFT 
+ * @member {String} metadata_account
+ */
+
+NFT.prototype['metadata_account'] = undefined;
+/**
+ * @member {Number} edition_nonce
+ */
+
+NFT.prototype['edition_nonce'] = undefined;
+/**
+ * @member {Number} token_standard
+ */
+
+NFT.prototype['token_standard'] = undefined;
+/**
+ * @member {module:model/NFTCollection} collection
+ */
+
+NFT.prototype['collection'] = undefined;
+/**
+ * @member {Number} uses
+ */
+
+NFT.prototype['uses'] = undefined;
 var _default = NFT;
 exports["default"] = _default;

@@ -51,10 +51,28 @@ Object.defineProperty(exports, "ApiClient", {
     return _ApiClient["default"];
   }
 });
+Object.defineProperty(exports, "AvalancheCChainPublicAddress", {
+  enumerable: true,
+  get: function get() {
+    return _AvalancheCChainPublicAddress["default"];
+  }
+});
+Object.defineProperty(exports, "AvalancheXPChainPublicAddress", {
+  enumerable: true,
+  get: function get() {
+    return _AvalancheXPChainPublicAddress["default"];
+  }
+});
 Object.defineProperty(exports, "B58PrivateKey", {
   enumerable: true,
   get: function get() {
     return _B58PrivateKey["default"];
+  }
+});
+Object.defineProperty(exports, "BSCPublicAddress", {
+  enumerable: true,
+  get: function get() {
+    return _BSCPublicAddress["default"];
   }
 });
 Object.defineProperty(exports, "BalanceRequest", {
@@ -135,22 +153,130 @@ Object.defineProperty(exports, "EndpointReference", {
     return _EndpointReference["default"];
   }
 });
+Object.defineProperty(exports, "EthereumPublicAddress", {
+  enumerable: true,
+  get: function get() {
+    return _EthereumPublicAddress["default"];
+  }
+});
+Object.defineProperty(exports, "EthereumTransaction", {
+  enumerable: true,
+  get: function get() {
+    return _EthereumTransaction["default"];
+  }
+});
+Object.defineProperty(exports, "EthereumTransactionCompiledResponse", {
+  enumerable: true,
+  get: function get() {
+    return _EthereumTransactionCompiledResponse["default"];
+  }
+});
+Object.defineProperty(exports, "EthereumTransactionMadeResponse", {
+  enumerable: true,
+  get: function get() {
+    return _EthereumTransactionMadeResponse["default"];
+  }
+});
 Object.defineProperty(exports, "FeePayerWallet", {
   enumerable: true,
   get: function get() {
     return _FeePayerWallet["default"];
   }
 });
-Object.defineProperty(exports, "FileApi", {
+Object.defineProperty(exports, "GeneralAirdropRequest", {
   enumerable: true,
   get: function get() {
-    return _FileApi["default"];
+    return _GeneralAirdropRequest["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralB58PrivateKey", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralB58PrivateKey["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralBalanceRequest", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralBalanceRequest["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralBalanceResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralBalanceResponse["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralFeePayerWallet", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralFeePayerWallet["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralGeneratePrivateKeyResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralGeneratePrivateKeyResponse["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralPrivateKey", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralPrivateKey["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralSecretPhrase", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralSecretPhrase["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralSecretRecoveryPhrase", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralSecretRecoveryPhrase["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralTransaction", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralTransaction["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralTransactionMadeResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralTransactionMadeResponse["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralTransactionResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralTransactionResponse["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralTransferRequest", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralTransferRequest["default"];
+  }
+});
+Object.defineProperty(exports, "GeneralWallet", {
+  enumerable: true,
+  get: function get() {
+    return _GeneralWallet["default"];
   }
 });
 Object.defineProperty(exports, "GeneratePrivateKey", {
   enumerable: true,
   get: function get() {
     return _GeneratePrivateKey["default"];
+  }
+});
+Object.defineProperty(exports, "GenerateSeedPhraseRequest", {
+  enumerable: true,
+  get: function get() {
+    return _GenerateSeedPhraseRequest["default"];
   }
 });
 Object.defineProperty(exports, "GetAllNFTsResponse", {
@@ -207,12 +333,6 @@ Object.defineProperty(exports, "GetCandyMetadataResponseCreators", {
     return _GetCandyMetadataResponseCreators["default"];
   }
 });
-Object.defineProperty(exports, "GetFileResponse", {
-  enumerable: true,
-  get: function get() {
-    return _GetFileResponse["default"];
-  }
-});
 Object.defineProperty(exports, "GetNFTListingResponse", {
   enumerable: true,
   get: function get() {
@@ -235,6 +355,12 @@ Object.defineProperty(exports, "Group", {
   enumerable: true,
   get: function get() {
     return _Group["default"];
+  }
+});
+Object.defineProperty(exports, "HexPrivateKey", {
+  enumerable: true,
+  get: function get() {
+    return _HexPrivateKey["default"];
   }
 });
 Object.defineProperty(exports, "InlineObject", {
@@ -303,6 +429,12 @@ Object.defineProperty(exports, "NFTAnalyticsResponseTransactionHistory", {
     return _NFTAnalyticsResponseTransactionHistory["default"];
   }
 });
+Object.defineProperty(exports, "NFTCollection", {
+  enumerable: true,
+  get: function get() {
+    return _NFTCollection["default"];
+  }
+});
 Object.defineProperty(exports, "NFTData", {
   enumerable: true,
   get: function get() {
@@ -349,6 +481,12 @@ Object.defineProperty(exports, "NFTTransaction", {
   enumerable: true,
   get: function get() {
     return _NFTTransaction["default"];
+  }
+});
+Object.defineProperty(exports, "NearPublicKey", {
+  enumerable: true,
+  get: function get() {
+    return _NearPublicKey["default"];
   }
 });
 Object.defineProperty(exports, "ParameterSpecification", {
@@ -429,16 +567,40 @@ Object.defineProperty(exports, "SolanaNFTMarketplacesApi", {
     return _SolanaNFTMarketplacesApi["default"];
   }
 });
+Object.defineProperty(exports, "SolanaPublicKey", {
+  enumerable: true,
+  get: function get() {
+    return _SolanaPublicKey["default"];
+  }
+});
 Object.defineProperty(exports, "SolanaSPLTokenApi", {
   enumerable: true,
   get: function get() {
     return _SolanaSPLTokenApi["default"];
   }
 });
+Object.defineProperty(exports, "SolanaTransaction", {
+  enumerable: true,
+  get: function get() {
+    return _SolanaTransaction["default"];
+  }
+});
 Object.defineProperty(exports, "SolanaTransactionApi", {
   enumerable: true,
   get: function get() {
     return _SolanaTransactionApi["default"];
+  }
+});
+Object.defineProperty(exports, "SolanaTransactionCompiledResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SolanaTransactionCompiledResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SolanaTransactionMadeResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SolanaTransactionMadeResponse["default"];
   }
 });
 Object.defineProperty(exports, "SolanaWalletApi", {
@@ -453,10 +615,22 @@ Object.defineProperty(exports, "StatItem", {
     return _StatItem["default"];
   }
 });
+Object.defineProperty(exports, "SupplyWalletRequest", {
+  enumerable: true,
+  get: function get() {
+    return _SupplyWalletRequest["default"];
+  }
+});
 Object.defineProperty(exports, "Transaction", {
   enumerable: true,
   get: function get() {
     return _Transaction["default"];
+  }
+});
+Object.defineProperty(exports, "TransactionApi", {
+  enumerable: true,
+  get: function get() {
+    return _TransactionApi["default"];
   }
 });
 Object.defineProperty(exports, "TransactionResult", {
@@ -483,16 +657,22 @@ Object.defineProperty(exports, "TransferResponseCompiled", {
     return _TransferResponseCompiled["default"];
   }
 });
-Object.defineProperty(exports, "UploadFileRequest", {
-  enumerable: true,
-  get: function get() {
-    return _UploadFileRequest["default"];
-  }
-});
 Object.defineProperty(exports, "Wallet", {
   enumerable: true,
   get: function get() {
     return _Wallet["default"];
+  }
+});
+Object.defineProperty(exports, "WalletApi", {
+  enumerable: true,
+  get: function get() {
+    return _WalletApi["default"];
+  }
+});
+Object.defineProperty(exports, "WalletIdentifiers", {
+  enumerable: true,
+  get: function get() {
+    return _WalletIdentifiers["default"];
   }
 });
 
@@ -512,7 +692,13 @@ var _AccountValue = _interopRequireDefault(require("./model/AccountValue"));
 
 var _AirdropRequest = _interopRequireDefault(require("./model/AirdropRequest"));
 
+var _AvalancheCChainPublicAddress = _interopRequireDefault(require("./model/AvalancheCChainPublicAddress"));
+
+var _AvalancheXPChainPublicAddress = _interopRequireDefault(require("./model/AvalancheXPChainPublicAddress"));
+
 var _B58PrivateKey = _interopRequireDefault(require("./model/B58PrivateKey"));
+
+var _BSCPublicAddress = _interopRequireDefault(require("./model/BSCPublicAddress"));
 
 var _BalanceRequest = _interopRequireDefault(require("./model/BalanceRequest"));
 
@@ -538,9 +724,47 @@ var _Endpoint = _interopRequireDefault(require("./model/Endpoint"));
 
 var _EndpointReference = _interopRequireDefault(require("./model/EndpointReference"));
 
+var _EthereumPublicAddress = _interopRequireDefault(require("./model/EthereumPublicAddress"));
+
+var _EthereumTransaction = _interopRequireDefault(require("./model/EthereumTransaction"));
+
+var _EthereumTransactionCompiledResponse = _interopRequireDefault(require("./model/EthereumTransactionCompiledResponse"));
+
+var _EthereumTransactionMadeResponse = _interopRequireDefault(require("./model/EthereumTransactionMadeResponse"));
+
 var _FeePayerWallet = _interopRequireDefault(require("./model/FeePayerWallet"));
 
+var _GeneralAirdropRequest = _interopRequireDefault(require("./model/GeneralAirdropRequest"));
+
+var _GeneralB58PrivateKey = _interopRequireDefault(require("./model/GeneralB58PrivateKey"));
+
+var _GeneralBalanceRequest = _interopRequireDefault(require("./model/GeneralBalanceRequest"));
+
+var _GeneralBalanceResponse = _interopRequireDefault(require("./model/GeneralBalanceResponse"));
+
+var _GeneralFeePayerWallet = _interopRequireDefault(require("./model/GeneralFeePayerWallet"));
+
+var _GeneralGeneratePrivateKeyResponse = _interopRequireDefault(require("./model/GeneralGeneratePrivateKeyResponse"));
+
+var _GeneralPrivateKey = _interopRequireDefault(require("./model/GeneralPrivateKey"));
+
+var _GeneralSecretPhrase = _interopRequireDefault(require("./model/GeneralSecretPhrase"));
+
+var _GeneralSecretRecoveryPhrase = _interopRequireDefault(require("./model/GeneralSecretRecoveryPhrase"));
+
+var _GeneralTransaction = _interopRequireDefault(require("./model/GeneralTransaction"));
+
+var _GeneralTransactionMadeResponse = _interopRequireDefault(require("./model/GeneralTransactionMadeResponse"));
+
+var _GeneralTransactionResponse = _interopRequireDefault(require("./model/GeneralTransactionResponse"));
+
+var _GeneralTransferRequest = _interopRequireDefault(require("./model/GeneralTransferRequest"));
+
+var _GeneralWallet = _interopRequireDefault(require("./model/GeneralWallet"));
+
 var _GeneratePrivateKey = _interopRequireDefault(require("./model/GeneratePrivateKey"));
+
+var _GenerateSeedPhraseRequest = _interopRequireDefault(require("./model/GenerateSeedPhraseRequest"));
 
 var _GetAllNFTsResponse = _interopRequireDefault(require("./model/GetAllNFTsResponse"));
 
@@ -560,8 +784,6 @@ var _GetCandyMetadataResponse = _interopRequireDefault(require("./model/GetCandy
 
 var _GetCandyMetadataResponseCreators = _interopRequireDefault(require("./model/GetCandyMetadataResponseCreators"));
 
-var _GetFileResponse = _interopRequireDefault(require("./model/GetFileResponse"));
-
 var _GetNFTListingResponse = _interopRequireDefault(require("./model/GetNFTListingResponse"));
 
 var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyRequest"));
@@ -569,6 +791,8 @@ var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyR
 var _GetSPLTokenResponse = _interopRequireDefault(require("./model/GetSPLTokenResponse"));
 
 var _Group = _interopRequireDefault(require("./model/Group"));
+
+var _HexPrivateKey = _interopRequireDefault(require("./model/HexPrivateKey"));
 
 var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
 
@@ -592,6 +816,8 @@ var _NFTAnalyticsResponse = _interopRequireDefault(require("./model/NFTAnalytics
 
 var _NFTAnalyticsResponseTransactionHistory = _interopRequireDefault(require("./model/NFTAnalyticsResponseTransactionHistory"));
 
+var _NFTCollection = _interopRequireDefault(require("./model/NFTCollection"));
+
 var _NFTData = _interopRequireDefault(require("./model/NFTData"));
 
 var _NFTMintErrorResponse = _interopRequireDefault(require("./model/NFTMintErrorResponse"));
@@ -607,6 +833,8 @@ var _NFTSearchRequest = _interopRequireDefault(require("./model/NFTSearchRequest
 var _NFTSearchResponse = _interopRequireDefault(require("./model/NFTSearchResponse"));
 
 var _NFTTransaction = _interopRequireDefault(require("./model/NFTTransaction"));
+
+var _NearPublicKey = _interopRequireDefault(require("./model/NearPublicKey"));
 
 var _ParameterSpecification = _interopRequireDefault(require("./model/ParameterSpecification"));
 
@@ -624,7 +852,17 @@ var _SecretPhrase = _interopRequireDefault(require("./model/SecretPhrase"));
 
 var _SecretRecoveryPhrase = _interopRequireDefault(require("./model/SecretRecoveryPhrase"));
 
+var _SolanaPublicKey = _interopRequireDefault(require("./model/SolanaPublicKey"));
+
+var _SolanaTransaction = _interopRequireDefault(require("./model/SolanaTransaction"));
+
+var _SolanaTransactionCompiledResponse = _interopRequireDefault(require("./model/SolanaTransactionCompiledResponse"));
+
+var _SolanaTransactionMadeResponse = _interopRequireDefault(require("./model/SolanaTransactionMadeResponse"));
+
 var _StatItem = _interopRequireDefault(require("./model/StatItem"));
+
+var _SupplyWalletRequest = _interopRequireDefault(require("./model/SupplyWalletRequest"));
 
 var _Transaction = _interopRequireDefault(require("./model/Transaction"));
 
@@ -636,13 +874,11 @@ var _TransferResponse = _interopRequireDefault(require("./model/TransferResponse
 
 var _TransferResponseCompiled = _interopRequireDefault(require("./model/TransferResponseCompiled"));
 
-var _UploadFileRequest = _interopRequireDefault(require("./model/UploadFileRequest"));
-
 var _Wallet = _interopRequireDefault(require("./model/Wallet"));
 
-var _EndpointApi = _interopRequireDefault(require("./api/EndpointApi"));
+var _WalletIdentifiers = _interopRequireDefault(require("./model/WalletIdentifiers"));
 
-var _FileApi = _interopRequireDefault(require("./api/FileApi"));
+var _EndpointApi = _interopRequireDefault(require("./api/EndpointApi"));
 
 var _ProjectApi = _interopRequireDefault(require("./api/ProjectApi"));
 
@@ -659,5 +895,9 @@ var _SolanaSPLTokenApi = _interopRequireDefault(require("./api/SolanaSPLTokenApi
 var _SolanaTransactionApi = _interopRequireDefault(require("./api/SolanaTransactionApi"));
 
 var _SolanaWalletApi = _interopRequireDefault(require("./api/SolanaWalletApi"));
+
+var _TransactionApi = _interopRequireDefault(require("./api/TransactionApi"));
+
+var _WalletApi = _interopRequireDefault(require("./api/WalletApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

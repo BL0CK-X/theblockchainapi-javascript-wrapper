@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Buy
 
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Edennpm  &#x60;Cost: 25 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  &#x60;Cost: 25 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
 
 ### Example
 
@@ -40,7 +40,7 @@ APISecretKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
 let network = devnet; // String | The network ID
-let exchange = solsea; // String | The NFT exchange to interact with
+let exchange = magic-eden; // String | The NFT exchange to interact with
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 let opts = {
   'buyRequest': new theblockchainapi.BuyRequest() // BuyRequest | 
@@ -103,7 +103,7 @@ APISecretKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
 let network = devnet; // String | The network ID
-let exchange = solsea; // String | The NFT exchange to interact with
+let exchange = magic-eden; // String | The NFT exchange to interact with
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 let opts = {
   'delistRequest': new theblockchainapi.DelistRequest() // DelistRequest | 
@@ -382,7 +382,7 @@ APISecretKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new theblockchainapi.SolanaNFTMarketplacesApi();
 let network = devnet; // String | The network ID
-let exchange = solsea; // String | The NFT exchange to interact with
+let exchange = magic-eden; // String | The NFT exchange to interact with
 let mintAddress = 7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr; // String | The mint address of the NFT you want to buy
 let opts = {
   'listRequest': new theblockchainapi.ListRequest() // ListRequest | 
