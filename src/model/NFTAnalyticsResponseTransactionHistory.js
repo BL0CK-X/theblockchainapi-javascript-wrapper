@@ -46,14 +46,10 @@ class NFTAnalyticsResponseTransactionHistory {
      * @return {module:model/NFTAnalyticsResponseTransactionHistory} The populated <code>NFTAnalyticsResponseTransactionHistory</code> instance.
      */
     static constructFromObject(data, obj) {
-        if (data) {
-            obj = obj || new NFTAnalyticsResponseTransactionHistory();
 
-            if (data.hasOwnProperty('mint_address')) {
-                obj['mint_address'] = ApiClient.convertToType(data['mint_address'], [NFTTransaction]);
-            }
-        }
-        return obj;
+        try { data = JSON.parse(data); } catch (_unused) { }
+        
+        return data;
     }
 
 

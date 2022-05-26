@@ -44,6 +44,9 @@ class MintNFTResponse {
      * @return {module:model/MintNFTResponse} The populated <code>MintNFTResponse</code> instance.
      */
     static constructFromObject(data, obj) {
+
+        try { data = JSON.parse(data); } catch (_unused) { }
+        
         if (data) {
             obj = obj || new MintNFTResponse();
 
