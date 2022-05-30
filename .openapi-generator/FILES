@@ -231,8 +231,3 @@ src/model/TransferResponse.js
 src/model/TransferResponseCompiled.js
 src/model/Wallet.js
 src/model/WalletIdentifiers.js
-test/api/NameServiceApi.spec.js
-test/api/TokenApi.spec.js
-test/model/InputBlockchainIdentifier.spec.js
-test/model/InputName.spec.js
-test/model/TokenMetadataResponse.spec.js
