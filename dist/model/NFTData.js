@@ -51,6 +51,10 @@ var NFTData = /*#__PURE__*/function () {
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
+      try {
+        data = JSON.parse(data);
+      } catch (_unused) {}
+
       if (data) {
         obj = obj || new NFTData();
 

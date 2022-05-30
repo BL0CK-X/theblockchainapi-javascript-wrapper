@@ -131,7 +131,7 @@ export default class TokenApi {
       let accepts = ['application/json'];
       let returnType = [TokenMetadataResponse];
       return this.apiClient.callApi(
-        '/{blockchain}/{network}/all_tokens', 'POST',
+        '/{blockchain}/{network}/all_tokens', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );

@@ -44,6 +44,9 @@ class NFTData {
      * @return {module:model/NFTData} The populated <code>NFTData</code> instance.
      */
     static constructFromObject(data, obj) {
+
+        try { data = JSON.parse(data); } catch (_unused) { }
+        
         if (data) {
             obj = obj || new NFTData();
 

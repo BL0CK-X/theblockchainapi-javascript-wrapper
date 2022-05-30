@@ -98,7 +98,6 @@ var NameServiceApi = /*#__PURE__*/function () {
      * <a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.      Get the name from a blockchain identifier.  e.g., Input `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` and output `vitalik.eth`  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {module:model/String} blockchain The blockchain you want to use 
      * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-     * @param {module:model/String} blockchainIdentifier The identifier of the token (e.g., `mint_address` on `Solana` or `token_address` on `Ethereum`) 
      * @param {Object} opts Optional parameters
      * @param {module:model/InputBlockchainIdentifier} opts.inputBlockchainIdentifier 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InputName} and HTTP response
@@ -106,7 +105,7 @@ var NameServiceApi = /*#__PURE__*/function () {
 
   }, {
     key: "getNameForBlockchainIdentifierWithHttpInfo",
-    value: function getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, blockchainIdentifier, opts) {
+    value: function getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, opts) {
       opts = opts || {};
       var postBody = opts['inputBlockchainIdentifier']; // verify the required parameter 'blockchain' is set
 
@@ -117,17 +116,11 @@ var NameServiceApi = /*#__PURE__*/function () {
 
       if (network === undefined || network === null) {
         throw new Error("Missing the required parameter 'network' when calling getNameForBlockchainIdentifier");
-      } // verify the required parameter 'blockchainIdentifier' is set
-
-
-      if (blockchainIdentifier === undefined || blockchainIdentifier === null) {
-        throw new Error("Missing the required parameter 'blockchainIdentifier' when calling getNameForBlockchainIdentifier");
       }
 
       var pathParams = {
         'blockchain': blockchain,
-        'network': network,
-        'blockchain_identifier': blockchainIdentifier
+        'network': network
       };
       var queryParams = {};
       var headerParams = {};
@@ -143,7 +136,6 @@ var NameServiceApi = /*#__PURE__*/function () {
      * <a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.      Get the name from a blockchain identifier.  e.g., Input `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` and output `vitalik.eth`  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {module:model/String} blockchain The blockchain you want to use 
      * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-     * @param {module:model/String} blockchainIdentifier The identifier of the token (e.g., `mint_address` on `Solana` or `token_address` on `Ethereum`) 
      * @param {Object} opts Optional parameters
      * @param {module:model/InputBlockchainIdentifier} opts.inputBlockchainIdentifier 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InputName}
@@ -151,8 +143,8 @@ var NameServiceApi = /*#__PURE__*/function () {
 
   }, {
     key: "getNameForBlockchainIdentifier",
-    value: function getNameForBlockchainIdentifier(blockchain, network, blockchainIdentifier, opts) {
-      return this.getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, blockchainIdentifier, opts).then(function (response_and_data) {
+    value: function getNameForBlockchainIdentifier(blockchain, network, opts) {
+      return this.getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

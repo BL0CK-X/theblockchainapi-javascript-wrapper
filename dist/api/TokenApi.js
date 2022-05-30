@@ -127,7 +127,7 @@ var TokenApi = /*#__PURE__*/function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [_TokenMetadataResponse["default"]];
-      return this.apiClient.callApi('/{blockchain}/{network}/all_tokens', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+      return this.apiClient.callApi('/{blockchain}/{network}/all_tokens', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * List all tokens
