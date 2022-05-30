@@ -21,12 +21,6 @@ var _ListRequest = _interopRequireDefault(require("../model/ListRequest"));
 
 var _ListResponse = _interopRequireDefault(require("../model/ListResponse"));
 
-var _NFTAnalyticsRequest = _interopRequireDefault(require("../model/NFTAnalyticsRequest"));
-
-var _NFTAnalyticsResponse = _interopRequireDefault(require("../model/NFTAnalyticsResponse"));
-
-var _NFTTransaction = _interopRequireDefault(require("../model/NFTTransaction"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -227,110 +221,6 @@ var SolanaNFTMarketplacesApi = /*#__PURE__*/function () {
     key: "solanaGetNFTListing",
     value: function solanaGetNFTListing(network, mintAddress) {
       return this.solanaGetNFTListingWithHttpInfo(network, mintAddress).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-    /**
-     * Get NFT Analytics
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/analytics\" target=\"_blank\">See examples (Python, JavaScript)</a>.  A collection is a list of NFTs.  Any collection can thus be defined as a list of mint addresses.  This endpoint takes in a list of mint addresses (effectively, a collection), a start time (optional), and an end time (optional) and outputs the floor for that period, the volume for that period, and the transaction history for each NFT in the list (buy, list, delist, update price) for that period.  We are currently compiling a dictionary of collection names to list of mint addresses for public use. Please contribute <a href=\"https://github.com/BL0CK-X/solana-nft-collection-mint-addresses\" target=\"_blank\">here</a>.  Currently scans the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  `Cost: 15 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {Object} opts Optional parameters
-     * @param {module:model/NFTAnalyticsRequest} opts.nFTAnalyticsRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NFTAnalyticsResponse} and HTTP response
-     */
-
-  }, {
-    key: "solanaGetNFTMarketplaceAnalyticsWithHttpInfo",
-    value: function solanaGetNFTMarketplaceAnalyticsWithHttpInfo(opts) {
-      opts = opts || {};
-      var postBody = opts['nFTAnalyticsRequest'];
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['APIKeyID', 'APISecretKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _NFTAnalyticsResponse["default"];
-      return this.apiClient.callApi('/solana/nft/marketplaces/analytics', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-    /**
-     * Get NFT Analytics
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/analytics\" target=\"_blank\">See examples (Python, JavaScript)</a>.  A collection is a list of NFTs.  Any collection can thus be defined as a list of mint addresses.  This endpoint takes in a list of mint addresses (effectively, a collection), a start time (optional), and an end time (optional) and outputs the floor for that period, the volume for that period, and the transaction history for each NFT in the list (buy, list, delist, update price) for that period.  We are currently compiling a dictionary of collection names to list of mint addresses for public use. Please contribute <a href=\"https://github.com/BL0CK-X/solana-nft-collection-mint-addresses\" target=\"_blank\">here</a>.  Currently scans the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  `Cost: 15 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {Object} opts Optional parameters
-     * @param {module:model/NFTAnalyticsRequest} opts.nFTAnalyticsRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NFTAnalyticsResponse}
-     */
-
-  }, {
-    key: "solanaGetNFTMarketplaceAnalytics",
-    value: function solanaGetNFTMarketplaceAnalytics(opts) {
-      return this.solanaGetNFTMarketplaceAnalyticsWithHttpInfo(opts).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-    /**
-     * Get Marketplace Market Share
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/market-share\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  `Cost: 3 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-
-  }, {
-    key: "solanaGetNFTMarketplaceMarketShareWithHttpInfo",
-    value: function solanaGetNFTMarketplaceMarketShareWithHttpInfo() {
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['APIKeyID', 'APISecretKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-      return this.apiClient.callApi('/solana/nft/marketplaces/analytics/market_share', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-    /**
-     * Get Marketplace Market Share
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/market-share\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  `Cost: 3 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-
-  }, {
-    key: "solanaGetNFTMarketplaceMarketShare",
-    value: function solanaGetNFTMarketplaceMarketShare() {
-      return this.solanaGetNFTMarketplaceMarketShareWithHttpInfo().then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-    /**
-     * Get Recent NFT Transactions
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/recent-transactions\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get all NFT transactions across all major marketplaces in the last 30 minutes.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  `Cost: 15 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NFTTransaction>} and HTTP response
-     */
-
-  }, {
-    key: "solanaGetNFTMarketplaceRecentTransactionsWithHttpInfo",
-    value: function solanaGetNFTMarketplaceRecentTransactionsWithHttpInfo() {
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['APIKeyID', 'APISecretKey'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [_NFTTransaction["default"]];
-      return this.apiClient.callApi('/solana/nft/marketplaces/analytics/recent_transactions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-    /**
-     * Get Recent NFT Transactions
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/recent-transactions\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Get all NFT transactions across all major marketplaces in the last 30 minutes.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  `Cost: 15 Credits`, (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NFTTransaction>}
-     */
-
-  }, {
-    key: "solanaGetNFTMarketplaceRecentTransactions",
-    value: function solanaGetNFTMarketplaceRecentTransactions() {
-      return this.solanaGetNFTMarketplaceRecentTransactionsWithHttpInfo().then(function (response_and_data) {
         return response_and_data.data;
       });
     }

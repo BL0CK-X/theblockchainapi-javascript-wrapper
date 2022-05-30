@@ -13,18 +13,19 @@
 
 
 import ApiClient from "../ApiClient";
-import GeneralTransaction from '../model/GeneralTransaction';
+import InputBlockchainIdentifier from '../model/InputBlockchainIdentifier';
+import InputName from '../model/InputName';
 
 /**
-* Transaction service.
-* @module api/TransactionApi
+* NameService service.
+* @module api/NameServiceApi
 * @version 1.0.9
 */
-export default class TransactionApi {
+export default class NameServiceApi {
 
     /**
-    * Constructs a new TransactionApi. 
-    * @alias module:api/TransactionApi
+    * Constructs a new NameServiceApi. 
+    * @alias module:api/NameServiceApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -36,32 +37,29 @@ export default class TransactionApi {
 
 
     /**
-     * Get the details of a transaction made on a blockchain
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on the specified blockchain.  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * Get the identifier
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.      Get the blockchain identifier from a name.  e.g., Input `vitalik.eth` and output `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045`  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {module:model/String} blockchain The blockchain you want to use 
      * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-     * @param {String} transactionBlockchainIdentifier The transaction signature of the transaction.  Examples: - Solana: `5wHu1qwD7q5ifaN5nwdcDqNFo53GJqa7nLp2BeeEpcHCusb4GzARz4GjgzsEHMkBMgCJMGa6GSQ1VG96Exv8kt2W` - Ethereum: `0x5f36b787daa57bfe8568d69e24eae54ccb00720c6edfc826bd4a7b19c525eef4`
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GeneralTransaction} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InputName} opts.inputName 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InputBlockchainIdentifier} and HTTP response
      */
-    getTransactionWithHttpInfo(blockchain, network, transactionBlockchainIdentifier) {
-      let postBody = null;
+    getBlockchainIdentifierFromNameWithHttpInfo(blockchain, network, opts) {
+      opts = opts || {};
+      let postBody = opts['inputName'];
       // verify the required parameter 'blockchain' is set
       if (blockchain === undefined || blockchain === null) {
-        throw new Error("Missing the required parameter 'blockchain' when calling getTransaction");
+        throw new Error("Missing the required parameter 'blockchain' when calling getBlockchainIdentifierFromName");
       }
       // verify the required parameter 'network' is set
       if (network === undefined || network === null) {
-        throw new Error("Missing the required parameter 'network' when calling getTransaction");
-      }
-      // verify the required parameter 'transactionBlockchainIdentifier' is set
-      if (transactionBlockchainIdentifier === undefined || transactionBlockchainIdentifier === null) {
-        throw new Error("Missing the required parameter 'transactionBlockchainIdentifier' when calling getTransaction");
+        throw new Error("Missing the required parameter 'network' when calling getBlockchainIdentifierFromName");
       }
 
       let pathParams = {
         'blockchain': blockchain,
-        'network': network,
-        'transaction_blockchain_identifier': transactionBlockchainIdentifier
+        'network': network
       };
       let queryParams = {
       };
@@ -71,26 +69,94 @@ export default class TransactionApi {
       };
 
       let authNames = ['APIKeyID', 'APISecretKey'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = GeneralTransaction;
+      let returnType = InputBlockchainIdentifier;
       return this.apiClient.callApi(
-        '/{blockchain}/transaction/{network}/{transaction_blockchain_identifier}', 'GET',
+        '/{blockchain}/{network}/name_service/name_to_blockchain_identifier', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Get the details of a transaction made on a blockchain
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on the specified blockchain.  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * Get the identifier
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.      Get the blockchain identifier from a name.  e.g., Input `vitalik.eth` and output `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045`  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
      * @param {module:model/String} blockchain The blockchain you want to use 
      * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-     * @param {String} transactionBlockchainIdentifier The transaction signature of the transaction.  Examples: - Solana: `5wHu1qwD7q5ifaN5nwdcDqNFo53GJqa7nLp2BeeEpcHCusb4GzARz4GjgzsEHMkBMgCJMGa6GSQ1VG96Exv8kt2W` - Ethereum: `0x5f36b787daa57bfe8568d69e24eae54ccb00720c6edfc826bd4a7b19c525eef4`
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GeneralTransaction}
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InputName} opts.inputName 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InputBlockchainIdentifier}
      */
-    getTransaction(blockchain, network, transactionBlockchainIdentifier) {
-      return this.getTransactionWithHttpInfo(blockchain, network, transactionBlockchainIdentifier)
+    getBlockchainIdentifierFromName(blockchain, network, opts) {
+      return this.getBlockchainIdentifierFromNameWithHttpInfo(blockchain, network, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get the name
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.      Get the name from a blockchain identifier.  e.g., Input `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` and output `vitalik.eth`  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/String} blockchain The blockchain you want to use 
+     * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
+     * @param {module:model/String} blockchainIdentifier The identifier of the token (e.g., `mint_address` on `Solana` or `token_address` on `Ethereum`) 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InputBlockchainIdentifier} opts.inputBlockchainIdentifier 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InputName} and HTTP response
+     */
+    getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, blockchainIdentifier, opts) {
+      opts = opts || {};
+      let postBody = opts['inputBlockchainIdentifier'];
+      // verify the required parameter 'blockchain' is set
+      if (blockchain === undefined || blockchain === null) {
+        throw new Error("Missing the required parameter 'blockchain' when calling getNameForBlockchainIdentifier");
+      }
+      // verify the required parameter 'network' is set
+      if (network === undefined || network === null) {
+        throw new Error("Missing the required parameter 'network' when calling getNameForBlockchainIdentifier");
+      }
+      // verify the required parameter 'blockchainIdentifier' is set
+      if (blockchainIdentifier === undefined || blockchainIdentifier === null) {
+        throw new Error("Missing the required parameter 'blockchainIdentifier' when calling getNameForBlockchainIdentifier");
+      }
+
+      let pathParams = {
+        'blockchain': blockchain,
+        'network': network,
+        'blockchain_identifier': blockchainIdentifier
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['APIKeyID', 'APISecretKey'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InputName;
+      return this.apiClient.callApi(
+        '/{blockchain}/{network}/name_service/blockchain_identifier_to_name', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get the name
+     * <a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"_blank\">See examples (Python, JavaScript) [Coming Soon]</a>.      Get the name from a blockchain identifier.  e.g., Input `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` and output `vitalik.eth`  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/String} blockchain The blockchain you want to use 
+     * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
+     * @param {module:model/String} blockchainIdentifier The identifier of the token (e.g., `mint_address` on `Solana` or `token_address` on `Ethereum`) 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InputBlockchainIdentifier} opts.inputBlockchainIdentifier 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InputName}
+     */
+    getNameForBlockchainIdentifier(blockchain, network, blockchainIdentifier, opts) {
+      return this.getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, blockchainIdentifier, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -62,6 +62,8 @@ docs/GetSPLTokenResponse.md
 docs/Group.md
 docs/HexPrivateKey.md
 docs/InlineObject.md
+docs/InputBlockchainIdentifier.md
+docs/InputName.md
 docs/ListNFTsResponse.md
 docs/ListRequest.md
 docs/ListResponse.md
@@ -69,9 +71,6 @@ docs/MintNFTErrorResponse.md
 docs/MintNFTRequest.md
 docs/MintNFTResponse.md
 docs/NFT.md
-docs/NFTAnalyticsRequest.md
-docs/NFTAnalyticsResponse.md
-docs/NFTAnalyticsResponseTransactionHistory.md
 docs/NFTCollection.md
 docs/NFTData.md
 docs/NFTMintErrorResponse.md
@@ -80,7 +79,7 @@ docs/NFTMintRequest.md
 docs/NFTOwnerResponse.md
 docs/NFTSearchRequest.md
 docs/NFTSearchResponse.md
-docs/NFTTransaction.md
+docs/NameServiceApi.md
 docs/NearPublicKey.md
 docs/ParameterSpecification.md
 docs/PrivateKey.md
@@ -104,6 +103,8 @@ docs/SolanaTransactionMadeResponse.md
 docs/SolanaWalletApi.md
 docs/StatItem.md
 docs/SupplyWalletRequest.md
+docs/TokenApi.md
+docs/TokenMetadataResponse.md
 docs/Transaction.md
 docs/TransactionApi.md
 docs/TransactionResult.md
@@ -118,6 +119,7 @@ mocha.opts
 package.json
 src/ApiClient.js
 src/api/EndpointApi.js
+src/api/NameServiceApi.js
 src/api/ProjectApi.js
 src/api/SolanaAccountApi.js
 src/api/SolanaCandyMachineApi.js
@@ -126,6 +128,7 @@ src/api/SolanaNFTMarketplacesApi.js
 src/api/SolanaSPLTokenApi.js
 src/api/SolanaTransactionApi.js
 src/api/SolanaWalletApi.js
+src/api/TokenApi.js
 src/api/TransactionApi.js
 src/api/WalletApi.js
 src/index.js
@@ -188,6 +191,8 @@ src/model/GetSPLTokenResponse.js
 src/model/Group.js
 src/model/HexPrivateKey.js
 src/model/InlineObject.js
+src/model/InputBlockchainIdentifier.js
+src/model/InputName.js
 src/model/ListNFTsResponse.js
 src/model/ListRequest.js
 src/model/ListResponse.js
@@ -195,9 +200,6 @@ src/model/MintNFTErrorResponse.js
 src/model/MintNFTRequest.js
 src/model/MintNFTResponse.js
 src/model/NFT.js
-src/model/NFTAnalyticsRequest.js
-src/model/NFTAnalyticsResponse.js
-src/model/NFTAnalyticsResponseTransactionHistory.js
 src/model/NFTCollection.js
 src/model/NFTData.js
 src/model/NFTMintErrorResponse.js
@@ -206,7 +208,6 @@ src/model/NFTMintRequest.js
 src/model/NFTOwnerResponse.js
 src/model/NFTSearchRequest.js
 src/model/NFTSearchResponse.js
-src/model/NFTTransaction.js
 src/model/NearPublicKey.js
 src/model/ParameterSpecification.js
 src/model/PrivateKey.js
@@ -222,6 +223,7 @@ src/model/SolanaTransactionCompiledResponse.js
 src/model/SolanaTransactionMadeResponse.js
 src/model/StatItem.js
 src/model/SupplyWalletRequest.js
+src/model/TokenMetadataResponse.js
 src/model/Transaction.js
 src/model/TransactionResult.js
 src/model/TransferRequest.js
@@ -229,4 +231,8 @@ src/model/TransferResponse.js
 src/model/TransferResponseCompiled.js
 src/model/Wallet.js
 src/model/WalletIdentifiers.js
-test/model/GenerateSeedPhraseRequest.spec.js
+test/api/NameServiceApi.spec.js
+test/api/TokenApi.spec.js
+test/model/InputBlockchainIdentifier.spec.js
+test/model/InputName.spec.js
+test/model/TokenMetadataResponse.spec.js

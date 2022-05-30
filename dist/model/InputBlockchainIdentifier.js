@@ -16,19 +16,19 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
- * The MintNFTResponse model module.
- * @module model/MintNFTResponse
+ * The InputBlockchainIdentifier model module.
+ * @module model/InputBlockchainIdentifier
  * @version 1.0.9
  */
-var MintNFTResponse = /*#__PURE__*/function () {
+var InputBlockchainIdentifier = /*#__PURE__*/function () {
   /**
-   * Constructs a new <code>MintNFTResponse</code>.
-   * @alias module:model/MintNFTResponse
+   * Constructs a new <code>InputBlockchainIdentifier</code>.
+   * @alias module:model/InputBlockchainIdentifier
    */
-  function MintNFTResponse() {
-    _classCallCheck(this, MintNFTResponse);
+  function InputBlockchainIdentifier() {
+    _classCallCheck(this, InputBlockchainIdentifier);
 
-    MintNFTResponse.initialize(this);
+    InputBlockchainIdentifier.initialize(this);
   }
   /**
    * Initializes the fields of this object.
@@ -37,29 +37,25 @@ var MintNFTResponse = /*#__PURE__*/function () {
    */
 
 
-  _createClass(MintNFTResponse, null, [{
+  _createClass(InputBlockchainIdentifier, null, [{
     key: "initialize",
     value: function initialize(obj) {}
     /**
-     * Constructs a <code>MintNFTResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InputBlockchainIdentifier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MintNFTResponse} obj Optional instance to populate.
-     * @return {module:model/MintNFTResponse} The populated <code>MintNFTResponse</code> instance.
+     * @param {module:model/InputBlockchainIdentifier} obj Optional instance to populate.
+     * @return {module:model/InputBlockchainIdentifier} The populated <code>InputBlockchainIdentifier</code> instance.
      */
 
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
-      try {
-        data = JSON.parse(data);
-      } catch (_unused) {}
-
       if (data) {
-        obj = obj || new MintNFTResponse();
+        obj = obj || new InputBlockchainIdentifier();
 
-        if (data.hasOwnProperty('transaction_signature')) {
-          obj['transaction_signature'] = _ApiClient["default"].convertToType(data['transaction_signature'], 'String');
+        if (data.hasOwnProperty('blockchain_identifier')) {
+          obj['blockchain_identifier'] = _ApiClient["default"].convertToType(data['blockchain_identifier'], 'String');
         }
       }
 
@@ -67,14 +63,13 @@ var MintNFTResponse = /*#__PURE__*/function () {
     }
   }]);
 
-  return MintNFTResponse;
+  return InputBlockchainIdentifier;
 }();
 /**
- * The signature of the transaction. Just because this is returned does not mean it was successful.  To determine if the mint was successful, use this Gist: https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d 
- * @member {String} transaction_signature
+ * @member {String} blockchain_identifier
  */
 
 
-MintNFTResponse.prototype['transaction_signature'] = undefined;
-var _default = MintNFTResponse;
+InputBlockchainIdentifier.prototype['blockchain_identifier'] = undefined;
+var _default = InputBlockchainIdentifier;
 exports["default"] = _default;

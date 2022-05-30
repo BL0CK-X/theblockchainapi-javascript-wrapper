@@ -72,6 +72,8 @@ import GetSPLTokenResponse from './model/GetSPLTokenResponse';
 import Group from './model/Group';
 import HexPrivateKey from './model/HexPrivateKey';
 import InlineObject from './model/InlineObject';
+import InputBlockchainIdentifier from './model/InputBlockchainIdentifier';
+import InputName from './model/InputName';
 import ListNFTsResponse from './model/ListNFTsResponse';
 import ListRequest from './model/ListRequest';
 import ListResponse from './model/ListResponse';
@@ -79,9 +81,6 @@ import MintNFTErrorResponse from './model/MintNFTErrorResponse';
 import MintNFTRequest from './model/MintNFTRequest';
 import MintNFTResponse from './model/MintNFTResponse';
 import NFT from './model/NFT';
-import NFTAnalyticsRequest from './model/NFTAnalyticsRequest';
-import NFTAnalyticsResponse from './model/NFTAnalyticsResponse';
-import NFTAnalyticsResponseTransactionHistory from './model/NFTAnalyticsResponseTransactionHistory';
 import NFTCollection from './model/NFTCollection';
 import NFTData from './model/NFTData';
 import NFTMintErrorResponse from './model/NFTMintErrorResponse';
@@ -90,7 +89,6 @@ import NFTMintRequest from './model/NFTMintRequest';
 import NFTOwnerResponse from './model/NFTOwnerResponse';
 import NFTSearchRequest from './model/NFTSearchRequest';
 import NFTSearchResponse from './model/NFTSearchResponse';
-import NFTTransaction from './model/NFTTransaction';
 import NearPublicKey from './model/NearPublicKey';
 import ParameterSpecification from './model/ParameterSpecification';
 import PrivateKey from './model/PrivateKey';
@@ -106,6 +104,7 @@ import SolanaTransactionCompiledResponse from './model/SolanaTransactionCompiled
 import SolanaTransactionMadeResponse from './model/SolanaTransactionMadeResponse';
 import StatItem from './model/StatItem';
 import SupplyWalletRequest from './model/SupplyWalletRequest';
+import TokenMetadataResponse from './model/TokenMetadataResponse';
 import Transaction from './model/Transaction';
 import TransactionResult from './model/TransactionResult';
 import TransferRequest from './model/TransferRequest';
@@ -114,6 +113,7 @@ import TransferResponseCompiled from './model/TransferResponseCompiled';
 import Wallet from './model/Wallet';
 import WalletIdentifiers from './model/WalletIdentifiers';
 import EndpointApi from './api/EndpointApi';
+import NameServiceApi from './api/NameServiceApi';
 import ProjectApi from './api/ProjectApi';
 import SolanaAccountApi from './api/SolanaAccountApi';
 import SolanaCandyMachineApi from './api/SolanaCandyMachineApi';
@@ -122,6 +122,7 @@ import SolanaNFTMarketplacesApi from './api/SolanaNFTMarketplacesApi';
 import SolanaSPLTokenApi from './api/SolanaSPLTokenApi';
 import SolanaTransactionApi from './api/SolanaTransactionApi';
 import SolanaWalletApi from './api/SolanaWalletApi';
+import TokenApi from './api/TokenApi';
 import TransactionApi from './api/TransactionApi';
 import WalletApi from './api/WalletApi';
 
@@ -519,6 +520,18 @@ export {
     InlineObject,
 
     /**
+     * The InputBlockchainIdentifier model constructor.
+     * @property {module:model/InputBlockchainIdentifier}
+     */
+    InputBlockchainIdentifier,
+
+    /**
+     * The InputName model constructor.
+     * @property {module:model/InputName}
+     */
+    InputName,
+
+    /**
      * The ListNFTsResponse model constructor.
      * @property {module:model/ListNFTsResponse}
      */
@@ -559,24 +572,6 @@ export {
      * @property {module:model/NFT}
      */
     NFT,
-
-    /**
-     * The NFTAnalyticsRequest model constructor.
-     * @property {module:model/NFTAnalyticsRequest}
-     */
-    NFTAnalyticsRequest,
-
-    /**
-     * The NFTAnalyticsResponse model constructor.
-     * @property {module:model/NFTAnalyticsResponse}
-     */
-    NFTAnalyticsResponse,
-
-    /**
-     * The NFTAnalyticsResponseTransactionHistory model constructor.
-     * @property {module:model/NFTAnalyticsResponseTransactionHistory}
-     */
-    NFTAnalyticsResponseTransactionHistory,
 
     /**
      * The NFTCollection model constructor.
@@ -625,12 +620,6 @@ export {
      * @property {module:model/NFTSearchResponse}
      */
     NFTSearchResponse,
-
-    /**
-     * The NFTTransaction model constructor.
-     * @property {module:model/NFTTransaction}
-     */
-    NFTTransaction,
 
     /**
      * The NearPublicKey model constructor.
@@ -723,6 +712,12 @@ export {
     SupplyWalletRequest,
 
     /**
+     * The TokenMetadataResponse model constructor.
+     * @property {module:model/TokenMetadataResponse}
+     */
+    TokenMetadataResponse,
+
+    /**
      * The Transaction model constructor.
      * @property {module:model/Transaction}
      */
@@ -771,6 +766,12 @@ export {
     EndpointApi,
 
     /**
+    * The NameServiceApi service constructor.
+    * @property {module:api/NameServiceApi}
+    */
+    NameServiceApi,
+
+    /**
     * The ProjectApi service constructor.
     * @property {module:api/ProjectApi}
     */
@@ -817,6 +818,12 @@ export {
     * @property {module:api/SolanaWalletApi}
     */
     SolanaWalletApi,
+
+    /**
+    * The TokenApi service constructor.
+    * @property {module:api/TokenApi}
+    */
+    TokenApi,
 
     /**
     * The TransactionApi service constructor.

@@ -54,15 +54,11 @@ var NFTAnalyticsResponseTransactionHistory = /*#__PURE__*/function () {
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
-      if (data) {
-        obj = obj || new NFTAnalyticsResponseTransactionHistory();
+      try {
+        data = JSON.parse(data);
+      } catch (_unused) {}
 
-        if (data.hasOwnProperty('mint_address')) {
-          obj['mint_address'] = _ApiClient["default"].convertToType(data['mint_address'], [_NFTTransaction["default"]]);
-        }
-      }
-
-      return obj;
+      return data;
     }
   }]);
 

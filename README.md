@@ -246,6 +246,8 @@ Class | Method | HTTP request | Description
 *theblockchainapi.EndpointApi* | [**getEndpoint**](docs/EndpointApi.md#getEndpoint) | **POST** /endpoint/metadata | Get an endpoint&#39;s metadata 
 *theblockchainapi.EndpointApi* | [**listEndpoints**](docs/EndpointApi.md#listEndpoints) | **GET** /endpoint/list | List all endpoints 
 *theblockchainapi.EndpointApi* | [**setEndpoint**](docs/EndpointApi.md#setEndpoint) | **POST** /endpoint | Create / update an endpoint 
+*theblockchainapi.NameServiceApi* | [**getBlockchainIdentifierFromName**](docs/NameServiceApi.md#getBlockchainIdentifierFromName) | **POST** /{blockchain}/{network}/name_service/name_to_blockchain_identifier | Get the identifier
+*theblockchainapi.NameServiceApi* | [**getNameForBlockchainIdentifier**](docs/NameServiceApi.md#getNameForBlockchainIdentifier) | **POST** /{blockchain}/{network}/name_service/blockchain_identifier_to_name | Get the name
 *theblockchainapi.ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /project | Create a project 
 *theblockchainapi.ProjectApi* | [**createProjectVersion**](docs/ProjectApi.md#createProjectVersion) | **POST** /project/{project_id}/{version} | Create a new project version 
 *theblockchainapi.ProjectApi* | [**deleteProject**](docs/ProjectApi.md#deleteProject) | **DELETE** /project/{project_id} | Delete a project 
@@ -275,9 +277,6 @@ Class | Method | HTTP request | Description
 *theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaBuyNFT**](docs/SolanaNFTMarketplacesApi.md#solanaBuyNFT) | **POST** /solana/nft/marketplaces/{exchange}/buy/{network}/{mint_address} | Buy
 *theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaDelistNFT**](docs/SolanaNFTMarketplacesApi.md#solanaDelistNFT) | **POST** /solana/nft/marketplaces/{exchange}/delist/{network}/{mint_address} | Delist
 *theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaGetNFTListing**](docs/SolanaNFTMarketplacesApi.md#solanaGetNFTListing) | **GET** /solana/nft/marketplaces/listing/{network}/{mint_address} | Get NFT Listing
-*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaGetNFTMarketplaceAnalytics**](docs/SolanaNFTMarketplacesApi.md#solanaGetNFTMarketplaceAnalytics) | **POST** /solana/nft/marketplaces/analytics | Get NFT Analytics
-*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaGetNFTMarketplaceMarketShare**](docs/SolanaNFTMarketplacesApi.md#solanaGetNFTMarketplaceMarketShare) | **GET** /solana/nft/marketplaces/analytics/market_share | Get Marketplace Market Share
-*theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaGetNFTMarketplaceRecentTransactions**](docs/SolanaNFTMarketplacesApi.md#solanaGetNFTMarketplaceRecentTransactions) | **GET** /solana/nft/marketplaces/analytics/recent_transactions | Get Recent NFT Transactions
 *theblockchainapi.SolanaNFTMarketplacesApi* | [**solanaListNFT**](docs/SolanaNFTMarketplacesApi.md#solanaListNFT) | **POST** /solana/nft/marketplaces/{exchange}/list/{network}/{mint_address} | List
 *theblockchainapi.SolanaSPLTokenApi* | [**solanaGetSPLToken**](docs/SolanaSPLTokenApi.md#solanaGetSPLToken) | **GET** /solana/spl-token/{network}/{public_key} | Get SPL token metadata
 *theblockchainapi.SolanaTransactionApi* | [**solanaGetTransaction**](docs/SolanaTransactionApi.md#solanaGetTransaction) | **GET** /solana/transaction/{network}/{tx_signature} | Get the details of a transaction made on Solana
@@ -292,6 +291,8 @@ Class | Method | HTTP request | Description
 *theblockchainapi.SolanaWalletApi* | [**solanaGetTokensBelongingToWallet**](docs/SolanaWalletApi.md#solanaGetTokensBelongingToWallet) | **GET** /solana/wallet/{network}/{public_key}/tokens | Get address&#39;s tokens and respective balances
 *theblockchainapi.SolanaWalletApi* | [**solanaGetWalletTransactions**](docs/SolanaWalletApi.md#solanaGetWalletTransactions) | **GET** /solana/wallet/{network}/{public_key}/transactions | Get address&#39;s associated transaction signatures
 *theblockchainapi.SolanaWalletApi* | [**solanaTransfer**](docs/SolanaWalletApi.md#solanaTransfer) | **POST** /solana/wallet/transfer | Transfer SOL, a token, or an NFT to another address
+*theblockchainapi.TokenApi* | [**getTokenMetadata**](docs/TokenApi.md#getTokenMetadata) | **GET** /{blockchain}/{network}/token/{token_blockchain_identifier} | Get a token&#39;s metadata
+*theblockchainapi.TokenApi* | [**listAllTokens**](docs/TokenApi.md#listAllTokens) | **POST** /{blockchain}/{network}/all_tokens | List all tokens
 *theblockchainapi.TransactionApi* | [**getTransaction**](docs/TransactionApi.md#getTransaction) | **GET** /{blockchain}/transaction/{network}/{transaction_blockchain_identifier} | Get the details of a transaction made on a blockchain
 *theblockchainapi.WalletApi* | [**derivePrivateKey**](docs/WalletApi.md#derivePrivateKey) | **POST** /{blockchain}/wallet/private_key | Derive private key
 *theblockchainapi.WalletApi* | [**deriveWalletIdentifier**](docs/WalletApi.md#deriveWalletIdentifier) | **POST** /{blockchain}/wallet/identifier | Derive wallet identifier
@@ -363,6 +364,8 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.Group](docs/Group.md)
  - [theblockchainapi.HexPrivateKey](docs/HexPrivateKey.md)
  - [theblockchainapi.InlineObject](docs/InlineObject.md)
+ - [theblockchainapi.InputBlockchainIdentifier](docs/InputBlockchainIdentifier.md)
+ - [theblockchainapi.InputName](docs/InputName.md)
  - [theblockchainapi.ListNFTsResponse](docs/ListNFTsResponse.md)
  - [theblockchainapi.ListRequest](docs/ListRequest.md)
  - [theblockchainapi.ListResponse](docs/ListResponse.md)
@@ -370,9 +373,6 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.MintNFTRequest](docs/MintNFTRequest.md)
  - [theblockchainapi.MintNFTResponse](docs/MintNFTResponse.md)
  - [theblockchainapi.NFT](docs/NFT.md)
- - [theblockchainapi.NFTAnalyticsRequest](docs/NFTAnalyticsRequest.md)
- - [theblockchainapi.NFTAnalyticsResponse](docs/NFTAnalyticsResponse.md)
- - [theblockchainapi.NFTAnalyticsResponseTransactionHistory](docs/NFTAnalyticsResponseTransactionHistory.md)
  - [theblockchainapi.NFTCollection](docs/NFTCollection.md)
  - [theblockchainapi.NFTData](docs/NFTData.md)
  - [theblockchainapi.NFTMintErrorResponse](docs/NFTMintErrorResponse.md)
@@ -381,7 +381,6 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.NFTOwnerResponse](docs/NFTOwnerResponse.md)
  - [theblockchainapi.NFTSearchRequest](docs/NFTSearchRequest.md)
  - [theblockchainapi.NFTSearchResponse](docs/NFTSearchResponse.md)
- - [theblockchainapi.NFTTransaction](docs/NFTTransaction.md)
  - [theblockchainapi.NearPublicKey](docs/NearPublicKey.md)
  - [theblockchainapi.ParameterSpecification](docs/ParameterSpecification.md)
  - [theblockchainapi.PrivateKey](docs/PrivateKey.md)
@@ -397,6 +396,7 @@ Class | Method | HTTP request | Description
  - [theblockchainapi.SolanaTransactionMadeResponse](docs/SolanaTransactionMadeResponse.md)
  - [theblockchainapi.StatItem](docs/StatItem.md)
  - [theblockchainapi.SupplyWalletRequest](docs/SupplyWalletRequest.md)
+ - [theblockchainapi.TokenMetadataResponse](docs/TokenMetadataResponse.md)
  - [theblockchainapi.Transaction](docs/Transaction.md)
  - [theblockchainapi.TransactionResult](docs/TransactionResult.md)
  - [theblockchainapi.TransferRequest](docs/TransferRequest.md)

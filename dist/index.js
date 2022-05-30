@@ -369,6 +369,18 @@ Object.defineProperty(exports, "InlineObject", {
     return _InlineObject["default"];
   }
 });
+Object.defineProperty(exports, "InputBlockchainIdentifier", {
+  enumerable: true,
+  get: function get() {
+    return _InputBlockchainIdentifier["default"];
+  }
+});
+Object.defineProperty(exports, "InputName", {
+  enumerable: true,
+  get: function get() {
+    return _InputName["default"];
+  }
+});
 Object.defineProperty(exports, "ListNFTsResponse", {
   enumerable: true,
   get: function get() {
@@ -409,24 +421,6 @@ Object.defineProperty(exports, "NFT", {
   enumerable: true,
   get: function get() {
     return _NFT["default"];
-  }
-});
-Object.defineProperty(exports, "NFTAnalyticsRequest", {
-  enumerable: true,
-  get: function get() {
-    return _NFTAnalyticsRequest["default"];
-  }
-});
-Object.defineProperty(exports, "NFTAnalyticsResponse", {
-  enumerable: true,
-  get: function get() {
-    return _NFTAnalyticsResponse["default"];
-  }
-});
-Object.defineProperty(exports, "NFTAnalyticsResponseTransactionHistory", {
-  enumerable: true,
-  get: function get() {
-    return _NFTAnalyticsResponseTransactionHistory["default"];
   }
 });
 Object.defineProperty(exports, "NFTCollection", {
@@ -477,10 +471,10 @@ Object.defineProperty(exports, "NFTSearchResponse", {
     return _NFTSearchResponse["default"];
   }
 });
-Object.defineProperty(exports, "NFTTransaction", {
+Object.defineProperty(exports, "NameServiceApi", {
   enumerable: true,
   get: function get() {
-    return _NFTTransaction["default"];
+    return _NameServiceApi["default"];
   }
 });
 Object.defineProperty(exports, "NearPublicKey", {
@@ -619,6 +613,18 @@ Object.defineProperty(exports, "SupplyWalletRequest", {
   enumerable: true,
   get: function get() {
     return _SupplyWalletRequest["default"];
+  }
+});
+Object.defineProperty(exports, "TokenApi", {
+  enumerable: true,
+  get: function get() {
+    return _TokenApi["default"];
+  }
+});
+Object.defineProperty(exports, "TokenMetadataResponse", {
+  enumerable: true,
+  get: function get() {
+    return _TokenMetadataResponse["default"];
   }
 });
 Object.defineProperty(exports, "Transaction", {
@@ -796,6 +802,10 @@ var _HexPrivateKey = _interopRequireDefault(require("./model/HexPrivateKey"));
 
 var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
 
+var _InputBlockchainIdentifier = _interopRequireDefault(require("./model/InputBlockchainIdentifier"));
+
+var _InputName = _interopRequireDefault(require("./model/InputName"));
+
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
 
 var _ListRequest = _interopRequireDefault(require("./model/ListRequest"));
@@ -809,12 +819,6 @@ var _MintNFTRequest = _interopRequireDefault(require("./model/MintNFTRequest"));
 var _MintNFTResponse = _interopRequireDefault(require("./model/MintNFTResponse"));
 
 var _NFT = _interopRequireDefault(require("./model/NFT"));
-
-var _NFTAnalyticsRequest = _interopRequireDefault(require("./model/NFTAnalyticsRequest"));
-
-var _NFTAnalyticsResponse = _interopRequireDefault(require("./model/NFTAnalyticsResponse"));
-
-var _NFTAnalyticsResponseTransactionHistory = _interopRequireDefault(require("./model/NFTAnalyticsResponseTransactionHistory"));
 
 var _NFTCollection = _interopRequireDefault(require("./model/NFTCollection"));
 
@@ -831,8 +835,6 @@ var _NFTOwnerResponse = _interopRequireDefault(require("./model/NFTOwnerResponse
 var _NFTSearchRequest = _interopRequireDefault(require("./model/NFTSearchRequest"));
 
 var _NFTSearchResponse = _interopRequireDefault(require("./model/NFTSearchResponse"));
-
-var _NFTTransaction = _interopRequireDefault(require("./model/NFTTransaction"));
 
 var _NearPublicKey = _interopRequireDefault(require("./model/NearPublicKey"));
 
@@ -864,6 +866,8 @@ var _StatItem = _interopRequireDefault(require("./model/StatItem"));
 
 var _SupplyWalletRequest = _interopRequireDefault(require("./model/SupplyWalletRequest"));
 
+var _TokenMetadataResponse = _interopRequireDefault(require("./model/TokenMetadataResponse"));
+
 var _Transaction = _interopRequireDefault(require("./model/Transaction"));
 
 var _TransactionResult = _interopRequireDefault(require("./model/TransactionResult"));
@@ -880,6 +884,8 @@ var _WalletIdentifiers = _interopRequireDefault(require("./model/WalletIdentifie
 
 var _EndpointApi = _interopRequireDefault(require("./api/EndpointApi"));
 
+var _NameServiceApi = _interopRequireDefault(require("./api/NameServiceApi"));
+
 var _ProjectApi = _interopRequireDefault(require("./api/ProjectApi"));
 
 var _SolanaAccountApi = _interopRequireDefault(require("./api/SolanaAccountApi"));
@@ -895,6 +901,8 @@ var _SolanaSPLTokenApi = _interopRequireDefault(require("./api/SolanaSPLTokenApi
 var _SolanaTransactionApi = _interopRequireDefault(require("./api/SolanaTransactionApi"));
 
 var _SolanaWalletApi = _interopRequireDefault(require("./api/SolanaWalletApi"));
+
+var _TokenApi = _interopRequireDefault(require("./api/TokenApi"));
 
 var _TransactionApi = _interopRequireDefault(require("./api/TransactionApi"));
 

@@ -16,19 +16,19 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
- * The MintNFTResponse model module.
- * @module model/MintNFTResponse
+ * The InputName model module.
+ * @module model/InputName
  * @version 1.0.9
  */
-var MintNFTResponse = /*#__PURE__*/function () {
+var InputName = /*#__PURE__*/function () {
   /**
-   * Constructs a new <code>MintNFTResponse</code>.
-   * @alias module:model/MintNFTResponse
+   * Constructs a new <code>InputName</code>.
+   * @alias module:model/InputName
    */
-  function MintNFTResponse() {
-    _classCallCheck(this, MintNFTResponse);
+  function InputName() {
+    _classCallCheck(this, InputName);
 
-    MintNFTResponse.initialize(this);
+    InputName.initialize(this);
   }
   /**
    * Initializes the fields of this object.
@@ -37,29 +37,25 @@ var MintNFTResponse = /*#__PURE__*/function () {
    */
 
 
-  _createClass(MintNFTResponse, null, [{
+  _createClass(InputName, null, [{
     key: "initialize",
     value: function initialize(obj) {}
     /**
-     * Constructs a <code>MintNFTResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InputName</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MintNFTResponse} obj Optional instance to populate.
-     * @return {module:model/MintNFTResponse} The populated <code>MintNFTResponse</code> instance.
+     * @param {module:model/InputName} obj Optional instance to populate.
+     * @return {module:model/InputName} The populated <code>InputName</code> instance.
      */
 
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
-      try {
-        data = JSON.parse(data);
-      } catch (_unused) {}
-
       if (data) {
-        obj = obj || new MintNFTResponse();
+        obj = obj || new InputName();
 
-        if (data.hasOwnProperty('transaction_signature')) {
-          obj['transaction_signature'] = _ApiClient["default"].convertToType(data['transaction_signature'], 'String');
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
       }
 
@@ -67,14 +63,13 @@ var MintNFTResponse = /*#__PURE__*/function () {
     }
   }]);
 
-  return MintNFTResponse;
+  return InputName;
 }();
 /**
- * The signature of the transaction. Just because this is returned does not mean it was successful.  To determine if the mint was successful, use this Gist: https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d 
- * @member {String} transaction_signature
+ * @member {String} name
  */
 
 
-MintNFTResponse.prototype['transaction_signature'] = undefined;
-var _default = MintNFTResponse;
+InputName.prototype['name'] = undefined;
+var _default = InputName;
 exports["default"] = _default;

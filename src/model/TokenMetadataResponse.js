@@ -11,90 +11,96 @@
  *
  */
 
-
-import ApiClient from "../ApiClient";
-import GeneralTransaction from '../model/GeneralTransaction';
+import ApiClient from '../ApiClient';
 
 /**
-* Transaction service.
-* @module api/TransactionApi
-* @version 1.0.9
-*/
-export default class TransactionApi {
-
+ * The TokenMetadataResponse model module.
+ * @module model/TokenMetadataResponse
+ * @version 1.0.9
+ */
+class TokenMetadataResponse {
     /**
-    * Constructs a new TransactionApi. 
-    * @alias module:api/TransactionApi
-    * @class
-    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
-    * default to {@link module:ApiClient#instance} if unspecified.
-    */
-    constructor(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
-    }
-
-
-
-    /**
-     * Get the details of a transaction made on a blockchain
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on the specified blockchain.  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/String} blockchain The blockchain you want to use 
-     * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-     * @param {String} transactionBlockchainIdentifier The transaction signature of the transaction.  Examples: - Solana: `5wHu1qwD7q5ifaN5nwdcDqNFo53GJqa7nLp2BeeEpcHCusb4GzARz4GjgzsEHMkBMgCJMGa6GSQ1VG96Exv8kt2W` - Ethereum: `0x5f36b787daa57bfe8568d69e24eae54ccb00720c6edfc826bd4a7b19c525eef4`
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GeneralTransaction} and HTTP response
+     * Constructs a new <code>TokenMetadataResponse</code>.
+     * @alias module:model/TokenMetadataResponse
      */
-    getTransactionWithHttpInfo(blockchain, network, transactionBlockchainIdentifier) {
-      let postBody = null;
-      // verify the required parameter 'blockchain' is set
-      if (blockchain === undefined || blockchain === null) {
-        throw new Error("Missing the required parameter 'blockchain' when calling getTransaction");
-      }
-      // verify the required parameter 'network' is set
-      if (network === undefined || network === null) {
-        throw new Error("Missing the required parameter 'network' when calling getTransaction");
-      }
-      // verify the required parameter 'transactionBlockchainIdentifier' is set
-      if (transactionBlockchainIdentifier === undefined || transactionBlockchainIdentifier === null) {
-        throw new Error("Missing the required parameter 'transactionBlockchainIdentifier' when calling getTransaction");
-      }
-
-      let pathParams = {
-        'blockchain': blockchain,
-        'network': network,
-        'transaction_blockchain_identifier': transactionBlockchainIdentifier
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['APIKeyID', 'APISecretKey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = GeneralTransaction;
-      return this.apiClient.callApi(
-        '/{blockchain}/transaction/{network}/{transaction_blockchain_identifier}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
+    constructor() { 
+        
+        TokenMetadataResponse.initialize(this);
     }
 
     /**
-     * Get the details of a transaction made on a blockchain
-     * <a href=\"https://github.com/BL0CK-X/blockchain-api/tree/main/examples/transaction/get-transaction\" target=\"_blank\">See examples (Python, JavaScript)</a>.      Get the details of a transaction made on the specified blockchain.  `Cost: 0.25 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/String} blockchain The blockchain you want to use 
-     * @param {String} network The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-     * @param {String} transactionBlockchainIdentifier The transaction signature of the transaction.  Examples: - Solana: `5wHu1qwD7q5ifaN5nwdcDqNFo53GJqa7nLp2BeeEpcHCusb4GzARz4GjgzsEHMkBMgCJMGa6GSQ1VG96Exv8kt2W` - Ethereum: `0x5f36b787daa57bfe8568d69e24eae54ccb00720c6edfc826bd4a7b19c525eef4`
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GeneralTransaction}
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
      */
-    getTransaction(blockchain, network, transactionBlockchainIdentifier) {
-      return this.getTransactionWithHttpInfo(blockchain, network, transactionBlockchainIdentifier)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
+    static initialize(obj) { 
+    }
+
+    /**
+     * Constructs a <code>TokenMetadataResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TokenMetadataResponse} obj Optional instance to populate.
+     * @return {module:model/TokenMetadataResponse} The populated <code>TokenMetadataResponse</code> instance.
+     */
+    static constructFromObject(data, obj) {
+        if (data) {
+            obj = obj || new TokenMetadataResponse();
+
+            if (data.hasOwnProperty('symbol')) {
+                obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('decimals')) {
+                obj['decimals'] = ApiClient.convertToType(data['decimals'], 'Number');
+            }
+            if (data.hasOwnProperty('minter_blockchain_identifier')) {
+                obj['minter_blockchain_identifier'] = ApiClient.convertToType(data['minter_blockchain_identifier'], 'String');
+            }
+            if (data.hasOwnProperty('total_supply')) {
+                obj['total_supply'] = ApiClient.convertToType(data['total_supply'], 'String');
+            }
+        }
+        return obj;
     }
 
 
 }
+
+/**
+ * The symbol of the coin 
+ * @member {String} symbol
+ */
+TokenMetadataResponse.prototype['symbol'] = undefined;
+
+/**
+ * The name of the coin 
+ * @member {String} name
+ */
+TokenMetadataResponse.prototype['name'] = undefined;
+
+/**
+ * @member {Number} decimals
+ */
+TokenMetadataResponse.prototype['decimals'] = undefined;
+
+/**
+ * The `mint_authority` (Solana) or `master_minter` (Ethereum) 
+ * @member {String} minter_blockchain_identifier
+ */
+TokenMetadataResponse.prototype['minter_blockchain_identifier'] = undefined;
+
+/**
+ * @member {String} total_supply
+ */
+TokenMetadataResponse.prototype['total_supply'] = undefined;
+
+
+
+
+
+
+export default TokenMetadataResponse;
+
