@@ -77,10 +77,10 @@ var ApiClient = /*#__PURE__*/function () {
     /**
      * The default HTTP timeout for all API calls.
      * @type {Number}
-     * @default 120000
+     * @default 240000
      */
 
-    this.timeout = 120000;
+    this.timeout = 240000;
     /**
      * If set to false an additional timestamp parameter is added to all API GET calls to
      * prevent browser caching
