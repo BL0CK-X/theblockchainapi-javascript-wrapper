@@ -9,10 +9,6 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _CandyMachineSearchRequest = _interopRequireDefault(require("../model/CandyMachineSearchRequest"));
 
-var _CreateTestCandyMachineRequest = _interopRequireDefault(require("../model/CreateTestCandyMachineRequest"));
-
-var _CreateTestCandyMachineResponse = _interopRequireDefault(require("../model/CreateTestCandyMachineResponse"));
-
 var _GetAllNFTsResponse = _interopRequireDefault(require("../model/GetAllNFTsResponse"));
 
 var _GetCandyMetadataErrorResponse = _interopRequireDefault(require("../model/GetCandyMetadataErrorResponse"));
@@ -21,24 +17,18 @@ var _GetCandyMetadataRequest = _interopRequireDefault(require("../model/GetCandy
 
 var _GetCandyMetadataResponse = _interopRequireDefault(require("../model/GetCandyMetadataResponse"));
 
-var _MintNFTErrorResponse = _interopRequireDefault(require("../model/MintNFTErrorResponse"));
-
-var _MintNFTRequest = _interopRequireDefault(require("../model/MintNFTRequest"));
-
-var _MintNFTResponse = _interopRequireDefault(require("../model/MintNFTResponse"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * SolanaCandyMachine service.
 * @module api/SolanaCandyMachineApi
-* @version 1.0.9
+* @version 1.0.9407
 */
 var SolanaCandyMachineApi = /*#__PURE__*/function () {
   /**
@@ -54,53 +44,15 @@ var SolanaCandyMachineApi = /*#__PURE__*/function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Create a test CM
-   * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/create-test-candy-machine\" target=\"_blank\">See examples (Python, JavaScript)</a>.   Use this endpoint to create a test candy machine so that you can test your minting bot.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
-   * @param {Object} opts Optional parameters
-   * @param {module:model/CreateTestCandyMachineRequest} opts.createTestCandyMachineRequest 
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTestCandyMachineResponse} and HTTP response
+   * Get CM's NFTs  
+   * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\" target=\"_blank\"> See examples (Python, JavaScript)</a>.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  This works for `v1` and `v2` candy machines.   *However*, for `v2` only the value for `all_nfts` is provided. To determine which are minted and unminted follow this example.  You do not need to specify `v1` or `v2` for this endpoint as it will automatically determine it from the candy machine ID.  See example for how to get the list of NFT hashes <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\" target=\"_blank\">here</a>.    `Cost: 2 Credits` (<a href=\"#section/Pricing\">See Pricing</a>)
+   * @param {module:model/String} network The network ID
+   * @param {String} candyMachineId The ID of the candy machine
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetAllNFTsResponse} and HTTP response
    */
 
 
   _createClass(SolanaCandyMachineApi, [{
-    key: "solanaCreateTestCandyMachineWithHttpInfo",
-    value: function solanaCreateTestCandyMachineWithHttpInfo(opts) {
-      opts = opts || {};
-      var postBody = opts['createTestCandyMachineRequest'];
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['APIKeyID', 'APISecretKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _CreateTestCandyMachineResponse["default"];
-      return this.apiClient.callApi('/solana/nft/candy_machine', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-    /**
-     * Create a test CM
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/create-test-candy-machine\" target=\"_blank\">See examples (Python, JavaScript)</a>.   Use this endpoint to create a test candy machine so that you can test your minting bot.  `Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CreateTestCandyMachineRequest} opts.createTestCandyMachineRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTestCandyMachineResponse}
-     */
-
-  }, {
-    key: "solanaCreateTestCandyMachine",
-    value: function solanaCreateTestCandyMachine(opts) {
-      return this.solanaCreateTestCandyMachineWithHttpInfo(opts).then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-    /**
-     * Get CM's NFTs  
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\" target=\"_blank\"> See examples (Python, JavaScript)</a>.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  This works for `v1` and `v2` candy machines.   *However*, for `v2` only the value for `all_nfts` is provided. To determine which are minted and unminted follow this example.  You do not need to specify `v1` or `v2` for this endpoint as it will automatically determine it from the candy machine ID.  See example for how to get the list of NFT hashes <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\" target=\"_blank\">here</a>.    `Cost: 2 Credits` (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {module:model/String} network The network ID
-     * @param {String} candyMachineId The ID of the candy machine
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetAllNFTsResponse} and HTTP response
-     */
-
-  }, {
     key: "solanaGetAllNFTsFromCandyMachineWithHttpInfo",
     value: function solanaGetAllNFTsFromCandyMachineWithHttpInfo(network, candyMachineId) {
       var postBody = null; // verify the required parameter 'network' is set
@@ -210,44 +162,6 @@ var SolanaCandyMachineApi = /*#__PURE__*/function () {
     key: "solanaListAllCandyMachines",
     value: function solanaListAllCandyMachines() {
       return this.solanaListAllCandyMachinesWithHttpInfo().then(function (response_and_data) {
-        return response_and_data.data;
-      });
-    }
-    /**
-     * Mint from a CM
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  This only works for `v1` and `v2` candy machines, and does not work for candy machines of any other type such as Magic Eden candy machines.  In order to achieve speed, this endpoint sends the transaction without checking whether or not it confirmed. It could still fail, for example, because the candy machine ran out of available mints. You should check the status of the transaction using our <a href=\"#operation/solanaGetTransaction\">getTransaction</a> endpoint. <a href=\"https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d\" target=\"_blank\">Here's an example</a> of how to do this.  Mint transactions for candy machines that have capatcha/Civic enabled will fail. There is a gatekeeper functionality where you must manually verify through Civic and captcha in order to mint from a candy machine. In this functionality, Civic signs the transaction. Therefore, if the gatekeeper functionality is enabled, our “Mint from candy machine” endpoint will fail because it is missing a signer. If it is not enabled, then our “Mint from candy machine” endpoint will succeed. One caveat is the attribute “expireOnUse”. If this is True, then you have to solve a captcha each time. In this case, the “Mint from candy machine” endpoint will fail. If this is False, then your first verification is sufficient for further mints. In which case, after verifying manually the first time, you can use our endpoint thereafter.   You can check if the gatekeeper functionality is enabled with this <a href=\"#operation/solanaGetCandyMachineMetadata\">endpoint</a>.   `Cost: 8 Credits` (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MintNFTRequest} opts.mintNFTRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MintNFTResponse} and HTTP response
-     */
-
-  }, {
-    key: "solanaMintFromCandyMachineWithHttpInfo",
-    value: function solanaMintFromCandyMachineWithHttpInfo(opts) {
-      opts = opts || {};
-      var postBody = opts['mintNFTRequest'];
-      var pathParams = {};
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['APIKeyID', 'APISecretKey'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _MintNFTResponse["default"];
-      return this.apiClient.callApi('/solana/nft/candy_machine/mint', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
-    }
-    /**
-     * Mint from a CM
-     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\" target=\"_blank\">See examples (Python, JavaScript)</a>.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  This only works for `v1` and `v2` candy machines, and does not work for candy machines of any other type such as Magic Eden candy machines.  In order to achieve speed, this endpoint sends the transaction without checking whether or not it confirmed. It could still fail, for example, because the candy machine ran out of available mints. You should check the status of the transaction using our <a href=\"#operation/solanaGetTransaction\">getTransaction</a> endpoint. <a href=\"https://gist.github.com/joshwolff1/298e8251e43ff9b4815028683b1ca17d\" target=\"_blank\">Here's an example</a> of how to do this.  Mint transactions for candy machines that have capatcha/Civic enabled will fail. There is a gatekeeper functionality where you must manually verify through Civic and captcha in order to mint from a candy machine. In this functionality, Civic signs the transaction. Therefore, if the gatekeeper functionality is enabled, our “Mint from candy machine” endpoint will fail because it is missing a signer. If it is not enabled, then our “Mint from candy machine” endpoint will succeed. One caveat is the attribute “expireOnUse”. If this is True, then you have to solve a captcha each time. In this case, the “Mint from candy machine” endpoint will fail. If this is False, then your first verification is sufficient for further mints. In which case, after verifying manually the first time, you can use our endpoint thereafter.   You can check if the gatekeeper functionality is enabled with this <a href=\"#operation/solanaGetCandyMachineMetadata\">endpoint</a>.   `Cost: 8 Credits` (<a href=\"#section/Pricing\">See Pricing</a>)
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MintNFTRequest} opts.mintNFTRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MintNFTResponse}
-     */
-
-  }, {
-    key: "solanaMintFromCandyMachine",
-    value: function solanaMintFromCandyMachine(opts) {
-      return this.solanaMintFromCandyMachineWithHttpInfo(opts).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

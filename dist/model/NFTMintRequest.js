@@ -15,12 +15,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The NFTMintRequest model module.
  * @module model/NFTMintRequest
- * @version 1.0.9
+ * @version 1.0.9407
  */
 var NFTMintRequest = /*#__PURE__*/function () {
   /**
@@ -56,12 +56,12 @@ var NFTMintRequest = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new NFTMintRequest();
 
-        if (data.hasOwnProperty('wallet')) {
-          obj['wallet'] = _Wallet["default"].constructFromObject(data['wallet']);
+        if (data.hasOwnProperty('wait_for_confirmation')) {
+          obj['wait_for_confirmation'] = _ApiClient["default"].convertToType(data['wait_for_confirmation'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('return_compiled_transaction')) {
-          obj['return_compiled_transaction'] = _ApiClient["default"].convertToType(data['return_compiled_transaction'], 'Boolean');
+        if (data.hasOwnProperty('wallet')) {
+          obj['wallet'] = _Wallet["default"].constructFromObject(data['wallet']);
         }
 
         if (data.hasOwnProperty('name')) {
@@ -128,18 +128,18 @@ var NFTMintRequest = /*#__PURE__*/function () {
   return NFTMintRequest;
 }();
 /**
+ * Whether to wait for the NFT mint to be confirmed on the blockchain or simply be processed.  Processed means that our node has picked up the transaction request, but not that it was confirmed by the Solana cluster.   Confirmed means that the cluster voted on your transaction and approved it. To be completely sure that the NFT was minted, you can either set `wait_for_confirmation=True` (call takes 20 seconds with True; about 4 seconds for processed) or you can [get the metadata](/#tag/Solana-NFT/operation/solanaGetNFT) from the mint returned. Once it returns the NFT metadata, then the NFT should have been successfully minted. 
+ * @member {Boolean} wait_for_confirmation
+ * @default true
+ */
+
+
+NFTMintRequest.prototype['wait_for_confirmation'] = true;
+/**
  * @member {module:model/Wallet} wallet
  */
 
-
 NFTMintRequest.prototype['wallet'] = undefined;
-/**
- * If `true`, the transaction to mint the NFT will not be submitted or signed. It will be returned to you in a raw form that you can then sign with a wallet (e.g., Phantom) or code. No `wallet` authentication information is required (thus, you do you have to supply a seed phrase or private key). See a Python example [here](https://github.com/BL0CK-X/blockchain-api/blob/main/third-party-api-examples/me-buy-sell.py). If `false` (the default option), then `wallet` is required. We sign and submit the transaction for you, which uses your wallet to mint the NFT. No further action is required on your part, and the NFT is minted. Read more on security [here](#section/Security). 
- * @member {Boolean} return_compiled_transaction
- * @default false
- */
-
-NFTMintRequest.prototype['return_compiled_transaction'] = false;
 /**
  * The name of the token. Limited to 32 characters. Stored on the blockchain.
  * @member {String} name

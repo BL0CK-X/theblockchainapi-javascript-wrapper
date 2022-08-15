@@ -17,12 +17,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The NFT model module.
  * @module model/NFT
- * @version 1.0.9
+ * @version 1.0.9407
  */
 var NFT = /*#__PURE__*/function () {
   /**
@@ -61,6 +61,10 @@ var NFT = /*#__PURE__*/function () {
 
       if (data) {
         obj = obj || new NFT();
+
+        if (data.hasOwnProperty('confirmed')) {
+          obj['confirmed'] = _ApiClient["default"].convertToType(data['confirmed'], 'Boolean');
+        }
 
         if (data.hasOwnProperty('data')) {
           obj['data'] = _NFTData["default"].constructFromObject(data['data']);
@@ -122,9 +126,15 @@ var NFT = /*#__PURE__*/function () {
   return NFT;
 }();
 /**
- * @member {module:model/NFTData} data
+ * Whether or not the NFT mint was confirmed or simply submitted for processing. The status depends on your input for `wait_for_confirmation`. This only is returned when you are minting an NFT, not when searching or retrieving the metadata.
+ * @member {Boolean} confirmed
  */
 
+
+NFT.prototype['confirmed'] = undefined;
+/**
+ * @member {module:model/NFTData} data
+ */
 
 NFT.prototype['data'] = undefined;
 /**

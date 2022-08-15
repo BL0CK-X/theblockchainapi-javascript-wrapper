@@ -17,12 +17,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The TransferRequest model module.
  * @module model/TransferRequest
- * @version 1.0.9
+ * @version 1.0.9407
  */
 var TransferRequest = /*#__PURE__*/function () {
   /**
@@ -60,6 +60,10 @@ var TransferRequest = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new TransferRequest();
+
+        if (data.hasOwnProperty('wait_for_confirmation')) {
+          obj['wait_for_confirmation'] = _ApiClient["default"].convertToType(data['wait_for_confirmation'], 'Boolean');
+        }
 
         if (data.hasOwnProperty('recipient_address')) {
           obj['recipient_address'] = _ApiClient["default"].convertToType(data['recipient_address'], 'String');
@@ -101,10 +105,17 @@ var TransferRequest = /*#__PURE__*/function () {
   return TransferRequest;
 }();
 /**
+ * Whether to wait for the transaction to be confirmed on the blockchain or simply be processed.  Processed means that our node has picked up the transaction request, but not that it was confirmed by the Solana cluster.  Confirmed means that the cluster voted on your transaction and approved it. To be completely sure that the transaction succeeded, you can either set `wait_for_confirmation=True` (call takes 20 seconds with True; about 4 seconds for processed) or you can [get the transaction metadata](/#tag/Solana-Transaction/operation/solanaGetTransaction) using the signature in the response returned. Once it returns the metadata, then the transaction should have succeeded. 
+ * @member {Boolean} wait_for_confirmation
+ * @default true
+ */
+
+
+TransferRequest.prototype['wait_for_confirmation'] = true;
+/**
  * The public key address of the recipient to whom you want to send a token or NFT
  * @member {String} recipient_address
  */
-
 
 TransferRequest.prototype['recipient_address'] = undefined;
 /**

@@ -87,16 +87,70 @@ Object.defineProperty(exports, "BalanceResponse", {
     return _BalanceResponse["default"];
   }
 });
-Object.defineProperty(exports, "BuyRequest", {
+Object.defineProperty(exports, "CCPayment", {
   enumerable: true,
   get: function get() {
-    return _BuyRequest["default"];
+    return _CCPayment["default"];
   }
 });
-Object.defineProperty(exports, "BuyResponse", {
+Object.defineProperty(exports, "CCPaymentApi", {
   enumerable: true,
   get: function get() {
-    return _BuyResponse["default"];
+    return _CCPaymentApi["default"];
+  }
+});
+Object.defineProperty(exports, "CCPaymentBlockchainPaymentDetails", {
+  enumerable: true,
+  get: function get() {
+    return _CCPaymentBlockchainPaymentDetails["default"];
+  }
+});
+Object.defineProperty(exports, "CCProject", {
+  enumerable: true,
+  get: function get() {
+    return _CCProject["default"];
+  }
+});
+Object.defineProperty(exports, "CCProjectApi", {
+  enumerable: true,
+  get: function get() {
+    return _CCProjectApi["default"];
+  }
+});
+Object.defineProperty(exports, "CCProjectCreateRequest", {
+  enumerable: true,
+  get: function get() {
+    return _CCProjectCreateRequest["default"];
+  }
+});
+Object.defineProperty(exports, "CCProjectCreateRequestCustomerIdToCollect", {
+  enumerable: true,
+  get: function get() {
+    return _CCProjectCreateRequestCustomerIdToCollect["default"];
+  }
+});
+Object.defineProperty(exports, "CCProjectCreateRequestPayoutMethod", {
+  enumerable: true,
+  get: function get() {
+    return _CCProjectCreateRequestPayoutMethod["default"];
+  }
+});
+Object.defineProperty(exports, "CCWebhook", {
+  enumerable: true,
+  get: function get() {
+    return _CCWebhook["default"];
+  }
+});
+Object.defineProperty(exports, "CCWebhookApi", {
+  enumerable: true,
+  get: function get() {
+    return _CCWebhookApi["default"];
+  }
+});
+Object.defineProperty(exports, "CCWebhookValidateRequest", {
+  enumerable: true,
+  get: function get() {
+    return _CCWebhookValidateRequest["default"];
   }
 });
 Object.defineProperty(exports, "CandyMachineSearchRequest", {
@@ -105,52 +159,10 @@ Object.defineProperty(exports, "CandyMachineSearchRequest", {
     return _CandyMachineSearchRequest["default"];
   }
 });
-Object.defineProperty(exports, "CreateTestCandyMachineRequest", {
-  enumerable: true,
-  get: function get() {
-    return _CreateTestCandyMachineRequest["default"];
-  }
-});
-Object.defineProperty(exports, "CreateTestCandyMachineResponse", {
-  enumerable: true,
-  get: function get() {
-    return _CreateTestCandyMachineResponse["default"];
-  }
-});
-Object.defineProperty(exports, "DelistRequest", {
-  enumerable: true,
-  get: function get() {
-    return _DelistRequest["default"];
-  }
-});
-Object.defineProperty(exports, "DelistResponse", {
-  enumerable: true,
-  get: function get() {
-    return _DelistResponse["default"];
-  }
-});
 Object.defineProperty(exports, "DoubleTransferResponse", {
   enumerable: true,
   get: function get() {
     return _DoubleTransferResponse["default"];
-  }
-});
-Object.defineProperty(exports, "Endpoint", {
-  enumerable: true,
-  get: function get() {
-    return _Endpoint["default"];
-  }
-});
-Object.defineProperty(exports, "EndpointApi", {
-  enumerable: true,
-  get: function get() {
-    return _EndpointApi["default"];
-  }
-});
-Object.defineProperty(exports, "EndpointReference", {
-  enumerable: true,
-  get: function get() {
-    return _EndpointReference["default"];
   }
 });
 Object.defineProperty(exports, "EthereumPublicAddress", {
@@ -333,12 +345,6 @@ Object.defineProperty(exports, "GetCandyMetadataResponseCreators", {
     return _GetCandyMetadataResponseCreators["default"];
   }
 });
-Object.defineProperty(exports, "GetNFTListingResponse", {
-  enumerable: true,
-  get: function get() {
-    return _GetNFTListingResponse["default"];
-  }
-});
 Object.defineProperty(exports, "GetPublicKeyRequest", {
   enumerable: true,
   get: function get() {
@@ -351,22 +357,10 @@ Object.defineProperty(exports, "GetSPLTokenResponse", {
     return _GetSPLTokenResponse["default"];
   }
 });
-Object.defineProperty(exports, "Group", {
-  enumerable: true,
-  get: function get() {
-    return _Group["default"];
-  }
-});
 Object.defineProperty(exports, "HexPrivateKey", {
   enumerable: true,
   get: function get() {
     return _HexPrivateKey["default"];
-  }
-});
-Object.defineProperty(exports, "InlineObject", {
-  enumerable: true,
-  get: function get() {
-    return _InlineObject["default"];
   }
 });
 Object.defineProperty(exports, "InputBlockchainIdentifier", {
@@ -385,36 +379,6 @@ Object.defineProperty(exports, "ListNFTsResponse", {
   enumerable: true,
   get: function get() {
     return _ListNFTsResponse["default"];
-  }
-});
-Object.defineProperty(exports, "ListRequest", {
-  enumerable: true,
-  get: function get() {
-    return _ListRequest["default"];
-  }
-});
-Object.defineProperty(exports, "ListResponse", {
-  enumerable: true,
-  get: function get() {
-    return _ListResponse["default"];
-  }
-});
-Object.defineProperty(exports, "MintNFTErrorResponse", {
-  enumerable: true,
-  get: function get() {
-    return _MintNFTErrorResponse["default"];
-  }
-});
-Object.defineProperty(exports, "MintNFTRequest", {
-  enumerable: true,
-  get: function get() {
-    return _MintNFTRequest["default"];
-  }
-});
-Object.defineProperty(exports, "MintNFTResponse", {
-  enumerable: true,
-  get: function get() {
-    return _MintNFTResponse["default"];
   }
 });
 Object.defineProperty(exports, "NFT", {
@@ -453,6 +417,18 @@ Object.defineProperty(exports, "NFTMintRequest", {
     return _NFTMintRequest["default"];
   }
 });
+Object.defineProperty(exports, "NFTOwnerAdvancedResponse", {
+  enumerable: true,
+  get: function get() {
+    return _NFTOwnerAdvancedResponse["default"];
+  }
+});
+Object.defineProperty(exports, "NFTOwnerAdvancedResponseContract", {
+  enumerable: true,
+  get: function get() {
+    return _NFTOwnerAdvancedResponseContract["default"];
+  }
+});
 Object.defineProperty(exports, "NFTOwnerResponse", {
   enumerable: true,
   get: function get() {
@@ -483,40 +459,10 @@ Object.defineProperty(exports, "NearPublicKey", {
     return _NearPublicKey["default"];
   }
 });
-Object.defineProperty(exports, "ParameterSpecification", {
-  enumerable: true,
-  get: function get() {
-    return _ParameterSpecification["default"];
-  }
-});
 Object.defineProperty(exports, "PrivateKey", {
   enumerable: true,
   get: function get() {
     return _PrivateKey["default"];
-  }
-});
-Object.defineProperty(exports, "Project", {
-  enumerable: true,
-  get: function get() {
-    return _Project["default"];
-  }
-});
-Object.defineProperty(exports, "ProjectApi", {
-  enumerable: true,
-  get: function get() {
-    return _ProjectApi["default"];
-  }
-});
-Object.defineProperty(exports, "ProjectCreateRequest", {
-  enumerable: true,
-  get: function get() {
-    return _ProjectCreateRequest["default"];
-  }
-});
-Object.defineProperty(exports, "ProjectDeploymentURL", {
-  enumerable: true,
-  get: function get() {
-    return _ProjectDeploymentURL["default"];
   }
 });
 Object.defineProperty(exports, "PublicKey", {
@@ -553,12 +499,6 @@ Object.defineProperty(exports, "SolanaNFTApi", {
   enumerable: true,
   get: function get() {
     return _SolanaNFTApi["default"];
-  }
-});
-Object.defineProperty(exports, "SolanaNFTMarketplacesApi", {
-  enumerable: true,
-  get: function get() {
-    return _SolanaNFTMarketplacesApi["default"];
   }
 });
 Object.defineProperty(exports, "SolanaPublicKey", {
@@ -601,12 +541,6 @@ Object.defineProperty(exports, "SolanaWalletApi", {
   enumerable: true,
   get: function get() {
     return _SolanaWalletApi["default"];
-  }
-});
-Object.defineProperty(exports, "StatItem", {
-  enumerable: true,
-  get: function get() {
-    return _StatItem["default"];
   }
 });
 Object.defineProperty(exports, "SupplyWalletRequest", {
@@ -710,25 +644,25 @@ var _BalanceRequest = _interopRequireDefault(require("./model/BalanceRequest"));
 
 var _BalanceResponse = _interopRequireDefault(require("./model/BalanceResponse"));
 
-var _BuyRequest = _interopRequireDefault(require("./model/BuyRequest"));
+var _CCPayment = _interopRequireDefault(require("./model/CCPayment"));
 
-var _BuyResponse = _interopRequireDefault(require("./model/BuyResponse"));
+var _CCPaymentBlockchainPaymentDetails = _interopRequireDefault(require("./model/CCPaymentBlockchainPaymentDetails"));
+
+var _CCProject = _interopRequireDefault(require("./model/CCProject"));
+
+var _CCProjectCreateRequest = _interopRequireDefault(require("./model/CCProjectCreateRequest"));
+
+var _CCProjectCreateRequestCustomerIdToCollect = _interopRequireDefault(require("./model/CCProjectCreateRequestCustomerIdToCollect"));
+
+var _CCProjectCreateRequestPayoutMethod = _interopRequireDefault(require("./model/CCProjectCreateRequestPayoutMethod"));
+
+var _CCWebhook = _interopRequireDefault(require("./model/CCWebhook"));
+
+var _CCWebhookValidateRequest = _interopRequireDefault(require("./model/CCWebhookValidateRequest"));
 
 var _CandyMachineSearchRequest = _interopRequireDefault(require("./model/CandyMachineSearchRequest"));
 
-var _CreateTestCandyMachineRequest = _interopRequireDefault(require("./model/CreateTestCandyMachineRequest"));
-
-var _CreateTestCandyMachineResponse = _interopRequireDefault(require("./model/CreateTestCandyMachineResponse"));
-
-var _DelistRequest = _interopRequireDefault(require("./model/DelistRequest"));
-
-var _DelistResponse = _interopRequireDefault(require("./model/DelistResponse"));
-
 var _DoubleTransferResponse = _interopRequireDefault(require("./model/DoubleTransferResponse"));
-
-var _Endpoint = _interopRequireDefault(require("./model/Endpoint"));
-
-var _EndpointReference = _interopRequireDefault(require("./model/EndpointReference"));
 
 var _EthereumPublicAddress = _interopRequireDefault(require("./model/EthereumPublicAddress"));
 
@@ -790,33 +724,17 @@ var _GetCandyMetadataResponse = _interopRequireDefault(require("./model/GetCandy
 
 var _GetCandyMetadataResponseCreators = _interopRequireDefault(require("./model/GetCandyMetadataResponseCreators"));
 
-var _GetNFTListingResponse = _interopRequireDefault(require("./model/GetNFTListingResponse"));
-
 var _GetPublicKeyRequest = _interopRequireDefault(require("./model/GetPublicKeyRequest"));
 
 var _GetSPLTokenResponse = _interopRequireDefault(require("./model/GetSPLTokenResponse"));
 
-var _Group = _interopRequireDefault(require("./model/Group"));
-
 var _HexPrivateKey = _interopRequireDefault(require("./model/HexPrivateKey"));
-
-var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
 
 var _InputBlockchainIdentifier = _interopRequireDefault(require("./model/InputBlockchainIdentifier"));
 
 var _InputName = _interopRequireDefault(require("./model/InputName"));
 
 var _ListNFTsResponse = _interopRequireDefault(require("./model/ListNFTsResponse"));
-
-var _ListRequest = _interopRequireDefault(require("./model/ListRequest"));
-
-var _ListResponse = _interopRequireDefault(require("./model/ListResponse"));
-
-var _MintNFTErrorResponse = _interopRequireDefault(require("./model/MintNFTErrorResponse"));
-
-var _MintNFTRequest = _interopRequireDefault(require("./model/MintNFTRequest"));
-
-var _MintNFTResponse = _interopRequireDefault(require("./model/MintNFTResponse"));
 
 var _NFT = _interopRequireDefault(require("./model/NFT"));
 
@@ -830,6 +748,10 @@ var _NFTMintFee = _interopRequireDefault(require("./model/NFTMintFee"));
 
 var _NFTMintRequest = _interopRequireDefault(require("./model/NFTMintRequest"));
 
+var _NFTOwnerAdvancedResponse = _interopRequireDefault(require("./model/NFTOwnerAdvancedResponse"));
+
+var _NFTOwnerAdvancedResponseContract = _interopRequireDefault(require("./model/NFTOwnerAdvancedResponseContract"));
+
 var _NFTOwnerResponse = _interopRequireDefault(require("./model/NFTOwnerResponse"));
 
 var _NFTSearchRequest = _interopRequireDefault(require("./model/NFTSearchRequest"));
@@ -838,15 +760,7 @@ var _NFTSearchResponse = _interopRequireDefault(require("./model/NFTSearchRespon
 
 var _NearPublicKey = _interopRequireDefault(require("./model/NearPublicKey"));
 
-var _ParameterSpecification = _interopRequireDefault(require("./model/ParameterSpecification"));
-
 var _PrivateKey = _interopRequireDefault(require("./model/PrivateKey"));
-
-var _Project = _interopRequireDefault(require("./model/Project"));
-
-var _ProjectCreateRequest = _interopRequireDefault(require("./model/ProjectCreateRequest"));
-
-var _ProjectDeploymentURL = _interopRequireDefault(require("./model/ProjectDeploymentURL"));
 
 var _PublicKey = _interopRequireDefault(require("./model/PublicKey"));
 
@@ -861,8 +775,6 @@ var _SolanaTransaction = _interopRequireDefault(require("./model/SolanaTransacti
 var _SolanaTransactionCompiledResponse = _interopRequireDefault(require("./model/SolanaTransactionCompiledResponse"));
 
 var _SolanaTransactionMadeResponse = _interopRequireDefault(require("./model/SolanaTransactionMadeResponse"));
-
-var _StatItem = _interopRequireDefault(require("./model/StatItem"));
 
 var _SupplyWalletRequest = _interopRequireDefault(require("./model/SupplyWalletRequest"));
 
@@ -882,19 +794,19 @@ var _Wallet = _interopRequireDefault(require("./model/Wallet"));
 
 var _WalletIdentifiers = _interopRequireDefault(require("./model/WalletIdentifiers"));
 
-var _EndpointApi = _interopRequireDefault(require("./api/EndpointApi"));
+var _CCPaymentApi = _interopRequireDefault(require("./api/CCPaymentApi"));
+
+var _CCProjectApi = _interopRequireDefault(require("./api/CCProjectApi"));
+
+var _CCWebhookApi = _interopRequireDefault(require("./api/CCWebhookApi"));
 
 var _NameServiceApi = _interopRequireDefault(require("./api/NameServiceApi"));
-
-var _ProjectApi = _interopRequireDefault(require("./api/ProjectApi"));
 
 var _SolanaAccountApi = _interopRequireDefault(require("./api/SolanaAccountApi"));
 
 var _SolanaCandyMachineApi = _interopRequireDefault(require("./api/SolanaCandyMachineApi"));
 
 var _SolanaNFTApi = _interopRequireDefault(require("./api/SolanaNFTApi"));
-
-var _SolanaNFTMarketplacesApi = _interopRequireDefault(require("./api/SolanaNFTMarketplacesApi"));
 
 var _SolanaSPLTokenApi = _interopRequireDefault(require("./api/SolanaSPLTokenApi"));
 

@@ -19,6 +19,8 @@ var _NFTMintFee = _interopRequireDefault(require("../model/NFTMintFee"));
 
 var _NFTMintRequest = _interopRequireDefault(require("../model/NFTMintRequest"));
 
+var _NFTOwnerAdvancedResponse = _interopRequireDefault(require("../model/NFTOwnerAdvancedResponse"));
+
 var _NFTOwnerResponse = _interopRequireDefault(require("../model/NFTOwnerResponse"));
 
 var _NFTSearchRequest = _interopRequireDefault(require("../model/NFTSearchRequest"));
@@ -31,12 +33,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * SolanaNFT service.
 * @module api/SolanaNFTApi
-* @version 1.0.9
+* @version 1.0.9407
 */
 var SolanaNFTApi = /*#__PURE__*/function () {
   /**
@@ -220,6 +222,56 @@ var SolanaNFTApi = /*#__PURE__*/function () {
     key: "solanaGetNFTOwner",
     value: function solanaGetNFTOwner(network, mintAddress) {
       return this.solanaGetNFTOwnerWithHttpInfo(network, mintAddress).then(function (response_and_data) {
+        return response_and_data.data;
+      });
+    }
+    /**
+     * Get owner of an NFT (advanced)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-owner\" target=\"_blank\">See examples (Python, JavaScript)</a>.       Get the owner, state, listed price, and listed marketplace (if any) of an NFT.   Here's are a couple of example responses: ``` {     'contract': {         'contract_blockchain_identifier': 'M2mx93ekt1fmXSVkTrUL9xVFHkmME8HTUi5Cyc5aF7K',          'contract_id': 'magic-eden-v2',          'contract_name': 'Magic Eden v2',          'contract_type': 'marketplace'     },      'owner': '25UJMR3FiMM6noQtPEaCJ6eDU2YQ7myDhikVQXmMuSRW',      'price': 50000000,      'state': 'listing' } ```  ``` {     'contract': null,      'owner': 'C37PJiJU8WTgoUoFqmB1Maw8hkuENDZoGDQA1pm54Fdd',      'price': null,      'state': 'holding' } ```  This function will return whether the NFT is `listed`, `loaned` (Yawww NFT loans), `otc`, `staked`, `burned`, or `held`.  If listed, it will return the contract, the readable name of the contract (e.g., Magic Eden, OpenSea), the contract ID (if any; e.g., open-sea), the owner, and the listed price. From this, you can get the floor of a collection. We currently support Magic Eden (v1, v2), Exchange.Art (auction, singles), CoralCube, Solanart (v1, v2), Yawww Loans, Yawww OTC, OpenSea, Fractal, SolSea, and AlphaArt.   If loaned, it will return the loan requester as the owner, the loan amount, and the loan contract. We only support the Yawww loaning contract.  If listed on an OTC marketplace, it will return the same information as `listed`. OTC is used to distinguish between marketplaces that respect royalties (OTC) and those that don't (normal ones). The only `OTC` contract we track is Yawwww, at the moment. We do not yet track Solanart v3.  If staked, it will return the owner and the staking contract public key.  If burned, it will return the `burner` as the `owner`.  If held, it will simply return the owner.  If you want to get the literal owner, which may or may not be the same as the owner returned here, call the simplified [get NFT owner function](/#tag/Solana-NFT/operation/solanaGetNFTOwner). For example, Bob might own the NFT, but if it is listed on Magic Eden, then the NFT is held in escrow and \"owned\" by Magic Eden. The simplified function will return Magic Eden as the owner (the literal owner). This advanced function will tell you the implied owner, which would be Bob.  `Cost: 1.0 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/String} network The network ID
+     * @param {String} mintAddress The mint address of the NFT
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NFTOwnerAdvancedResponse} and HTTP response
+     */
+
+  }, {
+    key: "solanaGetNFTOwnerAdvancedWithHttpInfo",
+    value: function solanaGetNFTOwnerAdvancedWithHttpInfo(network, mintAddress) {
+      var postBody = null; // verify the required parameter 'network' is set
+
+      if (network === undefined || network === null) {
+        throw new Error("Missing the required parameter 'network' when calling solanaGetNFTOwnerAdvanced");
+      } // verify the required parameter 'mintAddress' is set
+
+
+      if (mintAddress === undefined || mintAddress === null) {
+        throw new Error("Missing the required parameter 'mintAddress' when calling solanaGetNFTOwnerAdvanced");
+      }
+
+      var pathParams = {
+        'network': network,
+        'mint_address': mintAddress
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['APIKeyID', 'APISecretKey'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _NFTOwnerAdvancedResponse["default"];
+      return this.apiClient.callApi('/solana/nft/{network}/{mint_address}/owner_advanced', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
+    }
+    /**
+     * Get owner of an NFT (advanced)
+     * <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-owner\" target=\"_blank\">See examples (Python, JavaScript)</a>.       Get the owner, state, listed price, and listed marketplace (if any) of an NFT.   Here's are a couple of example responses: ``` {     'contract': {         'contract_blockchain_identifier': 'M2mx93ekt1fmXSVkTrUL9xVFHkmME8HTUi5Cyc5aF7K',          'contract_id': 'magic-eden-v2',          'contract_name': 'Magic Eden v2',          'contract_type': 'marketplace'     },      'owner': '25UJMR3FiMM6noQtPEaCJ6eDU2YQ7myDhikVQXmMuSRW',      'price': 50000000,      'state': 'listing' } ```  ``` {     'contract': null,      'owner': 'C37PJiJU8WTgoUoFqmB1Maw8hkuENDZoGDQA1pm54Fdd',      'price': null,      'state': 'holding' } ```  This function will return whether the NFT is `listed`, `loaned` (Yawww NFT loans), `otc`, `staked`, `burned`, or `held`.  If listed, it will return the contract, the readable name of the contract (e.g., Magic Eden, OpenSea), the contract ID (if any; e.g., open-sea), the owner, and the listed price. From this, you can get the floor of a collection. We currently support Magic Eden (v1, v2), Exchange.Art (auction, singles), CoralCube, Solanart (v1, v2), Yawww Loans, Yawww OTC, OpenSea, Fractal, SolSea, and AlphaArt.   If loaned, it will return the loan requester as the owner, the loan amount, and the loan contract. We only support the Yawww loaning contract.  If listed on an OTC marketplace, it will return the same information as `listed`. OTC is used to distinguish between marketplaces that respect royalties (OTC) and those that don't (normal ones). The only `OTC` contract we track is Yawwww, at the moment. We do not yet track Solanart v3.  If staked, it will return the owner and the staking contract public key.  If burned, it will return the `burner` as the `owner`.  If held, it will simply return the owner.  If you want to get the literal owner, which may or may not be the same as the owner returned here, call the simplified [get NFT owner function](/#tag/Solana-NFT/operation/solanaGetNFTOwner). For example, Bob might own the NFT, but if it is listed on Magic Eden, then the NFT is held in escrow and \"owned\" by Magic Eden. The simplified function will return Magic Eden as the owner (the literal owner). This advanced function will tell you the implied owner, which would be Bob.  `Cost: 1.0 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)
+     * @param {module:model/String} network The network ID
+     * @param {String} mintAddress The mint address of the NFT
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NFTOwnerAdvancedResponse}
+     */
+
+  }, {
+    key: "solanaGetNFTOwnerAdvanced",
+    value: function solanaGetNFTOwnerAdvanced(network, mintAddress) {
+      return this.solanaGetNFTOwnerAdvancedWithHttpInfo(network, mintAddress).then(function (response_and_data) {
         return response_and_data.data;
       });
     }

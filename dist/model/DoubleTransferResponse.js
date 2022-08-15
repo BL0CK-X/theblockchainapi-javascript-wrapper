@@ -17,12 +17,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The DoubleTransferResponse model module.
  * @module model/DoubleTransferResponse
- * @version 1.0.9
+ * @version 1.0.9407
  */
 var DoubleTransferResponse = /*#__PURE__*/function () {
   /**
@@ -72,6 +72,10 @@ var DoubleTransferResponse = /*#__PURE__*/function () {
           obj['transaction_signature'] = _ApiClient["default"].convertToType(data['transaction_signature'], 'String');
         }
 
+        if (data.hasOwnProperty('confirmed')) {
+          obj['confirmed'] = _ApiClient["default"].convertToType(data['confirmed'], 'Boolean');
+        }
+
         if (data.hasOwnProperty('b58_compiled_transaction')) {
           obj['b58_compiled_transaction'] = _ApiClient["default"].convertToType(data['b58_compiled_transaction'], 'String');
         }
@@ -95,6 +99,12 @@ var DoubleTransferResponse = /*#__PURE__*/function () {
 
 DoubleTransferResponse.prototype['transaction_signature'] = undefined;
 /**
+ * Whether or not the transaction was confirmed or simply submitted for processing. The status depends on your input for `wait_for_confirmation`. This only is returned when you are submitting a transaction, not when retrieving signatures for a public key, for example.
+ * @member {Boolean} confirmed
+ */
+
+DoubleTransferResponse.prototype['confirmed'] = undefined;
+/**
  * A base58 encoded byte array in string representation. Really easy to submit to Phantom. See <a href=\"https://github.com/BL0CK-X/blockchain-api/blob/main/examples/tutorials/phantom_tutorials/transfer_solana.html\" target=\"_blank\">here</a> for an example on how to submit it to a Phantom wallet for signing.
  * @member {String} b58_compiled_transaction
  */
@@ -112,7 +122,13 @@ DoubleTransferResponse.prototype['compiled_transaction'] = undefined; // Impleme
  * @member {String} transaction_signature
  */
 
-_TransferResponse["default"].prototype['transaction_signature'] = undefined; // Implement TransferResponseCompiled interface:
+_TransferResponse["default"].prototype['transaction_signature'] = undefined;
+/**
+ * Whether or not the transaction was confirmed or simply submitted for processing. The status depends on your input for `wait_for_confirmation`. This only is returned when you are submitting a transaction, not when retrieving signatures for a public key, for example.
+ * @member {Boolean} confirmed
+ */
+
+_TransferResponse["default"].prototype['confirmed'] = undefined; // Implement TransferResponseCompiled interface:
 
 /**
  * A base58 encoded byte array in string representation. Really easy to submit to Phantom. See <a href=\"https://github.com/BL0CK-X/blockchain-api/blob/main/examples/tutorials/phantom_tutorials/transfer_solana.html\" target=\"_blank\">here</a> for an example on how to submit it to a Phantom wallet for signing.
